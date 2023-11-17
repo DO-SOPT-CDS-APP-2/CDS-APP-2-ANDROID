@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 염문, 숫자 타이포 : Gmarket Sans-->
+    <style name="TextAppearance.Eng" parent="">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/grayscale_black</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="TextAppearance.Eng.Bold">
+        <item name="font">@font/gmarket_sans_bold</item>
+    </style>
+
+    <style name="TextAppearance.Eng.Medium">
+        <item name="font">@font/gmarket_sans_medium</item>
+    </style>
+
+    <style name="TextAppearance.Eng.Light">
+        <item name="font">@font/gmarket_sans_light</item>
+    </style>
+
+    <!-- 한글 타이포 : Noto Sans Kr-->
+    <style name="TextAppearance.Kor" parent="">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/grayscale_black</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="TextAppearance.Kor.Bold">
+        <item name="font">@font/noto_sans_kr_bold</item>
+    </style>
+
+    <style name="TextAppearance.Kor.SemiBold">
+        <item name="font">@font/noto_sans_kr_semibold</item>
+    </style>
+
+    <style name="TextAppearance.Kor.Regular">
+        <item name="font">@font/noto_sans_kr_regular</item>
+    </style>
+
+    <style name="TextAppearance.Kor.Medium">
+        <item name="font">@font/noto_sans_kr_medium</item>
+    </style>
+
+</resources>
