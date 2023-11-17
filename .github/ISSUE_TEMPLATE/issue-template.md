@@ -1,5 +1,5 @@
 ---
-name: "\bISSUE TEMPLATE"
+name: "ISSUE TEMPLATE"
 about: 29cm cds default issue template
 title: "[TAG] where / what"
 labels: ''
