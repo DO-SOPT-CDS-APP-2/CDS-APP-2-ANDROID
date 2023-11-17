@@ -16,6 +16,6 @@
         android:text="29cm"
         style="@style/TextAppearance.Eng.Bold"
         android:textSize="18sp"
-        android:textColor="@color/grayscale_medium_gray"
+        android:textColor="@color/grayscale_medium_gray"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
