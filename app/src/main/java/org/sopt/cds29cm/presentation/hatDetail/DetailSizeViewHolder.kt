@@ -7,6 +7,5 @@ class DetailSizeViewHolder(
     val binding: ItemDetailSizeBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun onBind() {
-    }
+    fun onBind() {}
 }

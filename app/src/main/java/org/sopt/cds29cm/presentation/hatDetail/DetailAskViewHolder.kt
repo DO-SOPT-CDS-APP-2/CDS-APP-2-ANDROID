@@ -7,6 +7,5 @@ class DetailAskViewHolder(
     val binding: ItemDetailAskBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun onBind() {
-    }
+    fun onBind() {}
 }

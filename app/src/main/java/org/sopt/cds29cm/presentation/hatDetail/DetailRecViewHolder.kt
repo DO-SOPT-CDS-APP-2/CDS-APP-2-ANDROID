@@ -7,6 +7,5 @@ class DetailRecViewHolder(
     val binding: ItemDetailRecBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun onBind() {
-    }
+    fun onBind() {}
 }
