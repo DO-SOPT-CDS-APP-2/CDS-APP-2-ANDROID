@@ -18,9 +18,6 @@
         tools:targetApi="31">
         <activity
             android:name=".presentation.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.MockActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
