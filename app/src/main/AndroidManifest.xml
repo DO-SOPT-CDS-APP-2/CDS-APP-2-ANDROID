@@ -16,7 +16,9 @@
         android:theme="@style/Theme.CDS29cm"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".presentation.MainActivity"
+            android:exported="false" />
         <activity
             android:name=".presentation.MockActivity"
             android:exported="true"
@@ -27,7 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
