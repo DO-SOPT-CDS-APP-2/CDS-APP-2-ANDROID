@@ -27,11 +27,20 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
     }
 
     private fun setTabLayoutNames() {
-        binding.tabHatDetail.setDetailTabNames()
+        with(binding) {
+            tabHatDetail.setDetailTabNames()
+            tabHatDetailSize.setDetailTabNames()
+            tabHatDetailSize.setScrollPosition(1, 0f, false)
+            tabHatDetailRec.setDetailTabNames()
+            tabHatDetailRec.setScrollPosition(2, 0f, false)
+            tabHatDetailReview.setDetailTabNames()
+            tabHatDetailReview.setScrollPosition(3, 0f, false)
+            tabHatDetailAsk.setDetailTabNames()
+            tabHatDetailAsk.setScrollPosition(4, 0f, false)
+        }
     }
 
     private fun TabLayout.setDetailTabNames() {
-        this.removeAllTabs()
         for (tabName in tabTextList) {
             val tab = this.newTab()
             tab.text = tabName
