@@ -34,9 +34,11 @@
                         android:id="@+id/title_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/white"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/grayscale_light_gray"
                         android:gravity="center"
-                        android:paddingVertical="200dp"
+                        android:paddingVertical="400dp"
                         android:text="상품 설명"
                         android:textColor="@color/grayscale_black"
                         android:textSize="20sp"
@@ -53,13 +55,13 @@
                 android:id="@+id/tab_hat_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="12dp"
+                android:layout_marginHorizontal="16dp"
                 android:background="@color/white"
-                app:layout_collapseMode="pin"
                 app:tabIndicatorColor="@color/grayscale_black"
                 app:tabIndicatorFullWidth="true"
                 app:tabRippleColor="@android:color/transparent"
                 app:tabSelectedTextColor="@color/grayscale_black"
+                app:tabTextAppearance="@style/TextAppearance.Kor.TabLayout"
                 app:tabTextColor="@color/grayscale_light_gray">
 
                 <com.google.android.material.tabs.TabItem
@@ -95,8 +97,7 @@
             android:id="@+id/sv_hat_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginVertical="12dp"
+            android:overScrollMode="never"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
@@ -108,13 +109,15 @@
                     android:id="@+id/layout_info"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingVertical="12dp">
+                    android:layout_marginHorizontal="16dp"
+                    android:paddingBottom="16dp">
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="400dp"
+                        android:layout_height="300dp"
                         android:background="@color/grayscale_medium_gray"
-                        android:text="1"
+                        android:gravity="center"
+                        android:text="상품정보"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -124,13 +127,15 @@
                     android:id="@+id/layout_size"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingVertical="12dp">
+                    android:layout_marginHorizontal="16dp"
+                    android:paddingBottom="16dp">
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="400dp"
+                        android:layout_height="300dp"
                         android:background="@color/grayscale_medium_gray"
-                        android:text="2"
+                        android:gravity="center"
+                        android:text="사이즈"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -140,13 +145,15 @@
                     android:id="@+id/layout_recommend"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingVertical="12dp">
+                    android:layout_marginHorizontal="16dp"
+                    android:paddingBottom="16dp">
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="400dp"
+                        android:layout_height="300dp"
                         android:background="@color/grayscale_medium_gray"
-                        android:text="3"
+                        android:gravity="center"
+                        android:text="추천"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -156,13 +163,15 @@
                     android:id="@+id/layout_review"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingVertical="12dp">
+                    android:layout_marginHorizontal="16dp"
+                    android:paddingBottom="16dp">
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="400dp"
+                        android:layout_height="300dp"
                         android:background="@color/grayscale_medium_gray"
-                        android:text="4"
+                        android:gravity="center"
+                        android:text="리뷰"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -172,13 +181,15 @@
                     android:id="@+id/layout_ask"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingVertical="12dp">
+                    android:layout_marginHorizontal="16dp"
+                    android:paddingBottom="16dp">
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="400dp"
+                        android:layout_height="800dp"
                         android:background="@color/grayscale_medium_gray"
-                        android:text="5"
+                        android:gravity="center"
+                        android:text="문의"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 

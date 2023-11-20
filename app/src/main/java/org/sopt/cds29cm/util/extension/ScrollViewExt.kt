@@ -23,18 +23,13 @@ internal fun calculateRectOnScreen(view: View): Rect {
     )
 }
 
-fun NestedScrollView.scrollToView(view: View) {
-    val y = computeDistanceToView(view)
-    this.scrollTo(0, y)
-}
-
 fun NestedScrollView.smoothScrollToView(
     view: View,
     marginTop: Int = 0,
     maxDuration: Long = 500L,
     onEnd: () -> Unit = {}
 ) {
-    if (this.getChildAt(0).height <= this.height) { // 스크롤의 의미가 없다.
+    if (this.getChildAt(0).height <= this.height) {
         onEnd()
         return
     }

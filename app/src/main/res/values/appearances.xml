@@ -45,4 +45,10 @@
         <item name="font">@font/noto_sans_kr_medium</item>
     </style>
 
+    <!-- HatDetail 뷰 TabLayout 타이포그래피-->
+    <style name="TextAppearance.Kor.TabLayout">
+        <item name="font">@font/noto_sans_kr_bold</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
 </resources>
