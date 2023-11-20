@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/bnv_home_ic"
+        android:title="HOME" />
+
+    <item
+        android:id="@+id/menu_category"
+        android:icon="@drawable/bnv_category_ic"
+        android:title="CATEGORY" />
+
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/bnv_search_ic"
+        android:title="SEARCH" />
+
+    <item
+        android:id="@+id/menu_like"
+        android:icon="@drawable/bnv_like_ic"
+        android:title="LIKE" />
+
+    <item
+        android:id="@+id/menu_my"
+        android:icon="@drawable/bnv_my_ic"
+        android:title="MY" />
+</menu>
