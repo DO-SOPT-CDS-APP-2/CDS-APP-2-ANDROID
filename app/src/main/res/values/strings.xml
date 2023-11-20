@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">CDS-29cm</string>
-
     <string name="view_type_error_msg">Unknown View Type : %d</string>
     <string name="adapter_not_initialized_error_msg">Adapter is not initialized</string>
 </resources>
