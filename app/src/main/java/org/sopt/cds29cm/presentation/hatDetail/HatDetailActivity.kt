@@ -1,7 +1,6 @@
 package org.sopt.cds29cm.presentation.hatDetail
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.google.android.material.tabs.TabLayout
 import org.sopt.cds29cm.R
@@ -13,11 +12,31 @@ import org.sopt.cds29cm.util.extension.smoothScrollToView
 class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.activity_hat_detail),
     TabLayout.OnTabSelectedListener, View.OnScrollChangeListener {
 
+    private val tabTextList = listOf("상품정보", "사이즈", "추천", "리뷰", "문의")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        initTabLayoutScrollListener()
+        setTabLayoutNames()
+    }
+
+    private fun initTabLayoutScrollListener() {
         binding.tabHatDetail.addOnTabSelectedListener(this)
         binding.svHatDetail.setOnScrollChangeListener(this)
+    }
+
+    private fun setTabLayoutNames() {
+        binding.tabHatDetail.setDetailTabNames()
+    }
+
+    private fun TabLayout.setDetailTabNames() {
+        this.removeAllTabs()
+        for (tabName in tabTextList) {
+            val tab = this.newTab()
+            tab.text = tabName
+            this.addTab(tab)
+        }
     }
 
     override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -57,7 +76,7 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
             }
 
             scrollY >= binding.svHatDetail.computeDistanceToView(binding.layoutAsk) -> {
-                binding.tabHatDetail.setScrollPosition(4,0f,true)
+                binding.tabHatDetail.setScrollPosition(4, 0f, true)
             }
         }
     }
