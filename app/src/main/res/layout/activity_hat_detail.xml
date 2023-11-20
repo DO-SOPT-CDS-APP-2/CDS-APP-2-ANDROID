@@ -6,70 +6,97 @@
 
     </data>
 
-    <androidx.constraintlayout.motion.widget.MotionLayout
-        android:id="@+id/motionlayout"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/layout_hat_detail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutDescription="@xml/motion_scene_tabscroll"
-        app:layout_scrollFlags="scroll">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/title_tv"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_hat_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="13dp"
-            android:paddingTop="25dp"
-            android:text="상품/서비스"
-            android:textColor="@color/grayscale_black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:background="@color/white">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tablayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:scrollIndicators="bottom"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_tv"
-            app:tabIndicatorColor="@color/grayscale_black"
-            app:tabIndicatorFullWidth="false"
-            app:tabMinWidth="22dp"
-            app:tabMode="auto"
-            app:tabRippleColor="@android:color/transparent"
-            app:tabSelectedTextColor="@color/point"
-            app:tabTextColor="@color/point">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/toolbar_hat_detail"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#6056EA"
-                android:text="전체" />
+                app:contentScrim="@android:color/transparent"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+                app:statusBarScrim="@android:color/transparent">
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true">
+
+                    <TextView
+                        android:id="@+id/title_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:paddingVertical="200dp"
+                        android:text="상품 설명"
+                        android:textColor="@color/grayscale_black"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_hat_detail"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#96BD5C"
-                android:text="예적금" />
+                android:layout_marginHorizontal="12dp"
+                android:background="@color/white"
+                app:layout_collapseMode="pin"
+                app:tabIndicatorColor="@color/grayscale_black"
+                app:tabIndicatorFullWidth="true"
+                app:tabRippleColor="@android:color/transparent"
+                app:tabSelectedTextColor="@color/grayscale_black"
+                app:tabTextColor="@color/grayscale_light_gray">
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#8D5CBD"
-                android:text="예적dd금" />
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="상품정보" />
 
-        </com.google.android.material.tabs.TabLayout>
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사이즈" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="추천" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="리뷰" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="문의" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
-            android:id="@+id/nested_scrollview"
+            android:id="@+id/sv_hat_detail"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginVertical="12dp"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tablayout">
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -79,36 +106,51 @@
                 <TextView
                     android:id="@+id/viewpager_iv"
                     android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    android:text="dddddddd"
+                    android:layout_height="400dp"
+                    android:background="@color/grayscale_medium_gray"
+                    android:text="1"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/deposit_tv"
                     android:layout_width="match_parent"
                     android:layout_height="480dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:background="#D16363"
-                    android:paddingTop="40dp"
-                    android:text="예금,적금"
-                    android:textSize="16sp"
+                    android:text="2"
                     app:layout_constraintTop_toBottomOf="@id/viewpager_iv" />
 
                 <TextView
                     android:id="@+id/depodsit_tv"
                     android:layout_width="match_parent"
                     android:layout_height="480dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:background="#28ACA6"
-                    android:paddingTop="40dp"
-                    android:text="예금,적dd금"
-                    android:textSize="16sp"
+                    android:text="3"
                     app:layout_constraintTop_toBottomOf="@id/deposit_tv" />
+
+                <TextView
+                    android:id="@+id/depoddsit_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="480dp"
+                    android:layout_marginTop="15dp"
+                    android:background="#D16363"
+                    android:text="4"
+                    app:layout_constraintTop_toBottomOf="@id/depodsit_tv" />
+
+                <TextView
+                    android:id="@+id/depoddddsit_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="480dp"
+                    android:layout_marginTop="15dp"
+                    android:background="#28ACA6"
+                    android:text="5"
+                    app:layout_constraintTop_toBottomOf="@id/depoddsit_tv" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
 
-    </androidx.constraintlayout.motion.widget.MotionLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>
