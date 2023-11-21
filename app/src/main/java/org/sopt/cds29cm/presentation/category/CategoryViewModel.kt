@@ -3,29 +3,31 @@ package org.sopt.cds29cm.presentation.category
 import androidx.lifecycle.ViewModel
 import org.sopt.cds29cm.R
 import org.sopt.cds29cm.data.CategoryHorizontal
+import org.sopt.cds29cm.data.CategoryVertical
 
-class CategoryViewModel :ViewModel() {
+class CategoryViewModel : ViewModel() {
 
     //상단 가로스크롤 카테고리
     val categoryHorizontalDataList = listOf<CategoryHorizontal>(
         CategoryHorizontal(
             categoryName = "모아보기",
-            categoryImage = R.drawable.ic_category_horizontal_all
+            categoryImage = R.drawable.ic_category_horizontal_primium
         ),
         CategoryHorizontal(
             categoryName = "쇼케이스",
-            categoryImage = R.drawable.ic_category_horizontal_showcase
+            categoryImage = R.drawable.ic_category_horizontal_primium
         ),
         CategoryHorizontal(
             categoryName = "PT",
-            categoryImage = R.drawable.ic_category_horizontal_pt
-        ),CategoryHorizontal(
+            categoryImage = R.drawable.ic_category_horizontal_primium
+        ),
+        CategoryHorizontal(
             categoryName = "선물하기",
-            categoryImage = R.drawable.ic_category_horizontal_present
+            categoryImage = R.drawable.ic_category_horizontal_primium
         ),
         CategoryHorizontal(
             categoryName = "해외브랜드",
-            categoryImage = R.drawable.ic_category_horizontal_oversea
+            categoryImage = R.drawable.ic_category_horizontal_primium
         ),
         CategoryHorizontal(
             categoryName = "프리미엄홈",
@@ -33,35 +35,35 @@ class CategoryViewModel :ViewModel() {
         ),
         CategoryHorizontal(
             categoryName = "전시공간",
-            categoryImage = R.drawable.ic_category_horizontal_exhibit,
+            categoryImage = R.drawable.ic_category_horizontal_primium,
         ),
         CategoryHorizontal(
             categoryName = "던스트",
-            categoryImage = R.drawable.ic_category_horizontal_dunst,
+            categoryImage = R.drawable.ic_category_horizontal_primium,
         ),
         CategoryHorizontal(
             categoryName = "테이블웨어",
-            categoryImage = R.drawable.ic_category_horizontal_table,
+            categoryImage = R.drawable.ic_category_horizontal_primium,
         ),
         CategoryHorizontal(
             categoryName = "이벤트",
-            categoryImage = R.drawable.ic_category_horizontal_event,
+            categoryImage = R.drawable.ic_category_horizontal_primium,
         ),
         CategoryHorizontal(
             categoryName = "리빙스타일",
-            categoryImage = R.drawable.ic_category_horizontal_living,
+            categoryImage = R.drawable.ic_category_horizontal_primium,
         ),
         CategoryHorizontal(
             categoryName = "WELOVE",
-            categoryImage = R.drawable.ic_category_horizontal_welove,
+            categoryImage = R.drawable.ic_category_horizontal_primium,
         ),
         CategoryHorizontal(
             categoryName = "룩북",
-            categoryImage = R.drawable.ic_category_horizontal_lookbook,
+            categoryImage = R.drawable.ic_category_horizontal_primium,
         ),
         CategoryHorizontal(
             categoryName = "스페셜오더",
-            categoryImage = R.drawable.ic_category_horizontal_special,
+            categoryImage = R.drawable.ic_category_horizontal_primium,
         ),
 
     )
