@@ -13,7 +13,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="15.5dp"
         android:layout_marginBottom="13.5dp"
-        android:layout_marginEnd="183dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_alignParentLeft="true"
@@ -26,5 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="13dp"
-        android:layout_marginBottom="13dp"/>
+        android:layout_marginBottom="13dp"
+        android:layout_marginStart="183dp"
+        android:src="@drawable/ic_category_vertical_right_detail"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
