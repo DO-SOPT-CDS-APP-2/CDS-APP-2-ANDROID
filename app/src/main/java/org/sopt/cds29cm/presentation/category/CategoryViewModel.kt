@@ -66,5 +66,32 @@ class CategoryViewModel : ViewModel() {
             categoryImage = R.drawable.ic_category_horizontal_primium,
         ),
 
+        )
+
+    val CategoryVerticalLeftDataList = listOf<CategoryVertical>(
+        CategoryVertical(categoryName = "의류"),
+        CategoryVertical(categoryName = "가방"),
+        CategoryVertical(categoryName = "신발"),
+        CategoryVertical(categoryName = "액세서리"),
+        CategoryVertical(categoryName = "가구/인테리어"),
+        CategoryVertical(categoryName = "주방/생활"),
+        CategoryVertical(categoryName = "가전"),
+        CategoryVertical(categoryName = "컴퓨터/디지털"),
+        CategoryVertical(categoryName = "뷰티"),
+        CategoryVertical(categoryName = "푸드"),
+    )
+
+    val CategoryVerticalRightDataList = listOf<CategoryVertical>(
+        CategoryVertical(categoryName = "전체"),
+        CategoryVertical(categoryName = "FOR YOU"),
+        CategoryVertical(categoryName = "BEST"),
+        CategoryVertical(categoryName = "NEW"),
+        CategoryVertical(categoryName = "모자"),
+        CategoryVertical(categoryName = "주얼리"),
+        CategoryVertical(categoryName = "시계"),
+        CategoryVertical(categoryName = "아이웨어"),
+        CategoryVertical(categoryName = "패션 액세서리"),
+        CategoryVertical(categoryName = "EXCLUSIVE"),
+        CategoryVertical(categoryName = "해외브랜드"),
     )
 }
