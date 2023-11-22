@@ -17,7 +17,6 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
 
         initTabLayoutSelectedListener()
         initOnScrollChangeListener()
-        setOtherTabLayout()
     }
 
     private fun initTabLayoutSelectedListener() {
@@ -59,20 +58,5 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
             val selectedTabIndex = distances.indexOfFirst { scrollY >= it }
             binding.tabHatDetail.setScrollPosition(selectedTabIndex, 0f, true)
         }
-    }
-
-    private fun setOtherTabLayout() {
-        with(binding) {
-            tabHatDetailSize.initNotWorkingTabLayout(1)
-            tabHatDetailRec.initNotWorkingTabLayout(2)
-            tabHatDetailReview.initNotWorkingTabLayout(3)
-            tabHatDetailAsk.initNotWorkingTabLayout(4)
-        }
-    }
-
-    private fun TabLayout.initNotWorkingTabLayout(selectedTab: Int) {
-        setDetailTabNames()
-        setScrollPosition(selectedTab, 0f, true)
-        touchables.forEach { it.isClickable = false }
     }
 }

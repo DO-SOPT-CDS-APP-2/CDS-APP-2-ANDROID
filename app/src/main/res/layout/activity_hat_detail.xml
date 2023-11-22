@@ -95,21 +95,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tab_hat_detail_size"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_info"
-                        app:tabIndicatorColor="@color/grayscale_black"
-                        app:tabIndicatorFullWidth="true"
-                        app:tabRippleColor="@android:color/transparent"
-                        app:tabSelectedTextColor="@color/grayscale_black"
-                        app:tabTextAppearance="@style/TextAppearance.Kor.TabLayout"
-                        app:tabTextColor="@color/grayscale_light_gray" />
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -128,21 +113,6 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tab_hat_detail_rec"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_size"
-                        app:tabIndicatorColor="@color/grayscale_black"
-                        app:tabIndicatorFullWidth="true"
-                        app:tabRippleColor="@android:color/transparent"
-                        app:tabSelectedTextColor="@color/grayscale_black"
-                        app:tabTextAppearance="@style/TextAppearance.Kor.TabLayout"
-                        app:tabTextColor="@color/grayscale_light_gray" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -163,21 +133,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tab_hat_detail_review"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_rec"
-                        app:tabIndicatorColor="@color/grayscale_black"
-                        app:tabIndicatorFullWidth="true"
-                        app:tabRippleColor="@android:color/transparent"
-                        app:tabSelectedTextColor="@color/grayscale_black"
-                        app:tabTextAppearance="@style/TextAppearance.Kor.TabLayout"
-                        app:tabTextColor="@color/grayscale_light_gray" />
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -196,21 +151,6 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tab_hat_detail_ask"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_review"
-                        app:tabIndicatorColor="@color/grayscale_black"
-                        app:tabIndicatorFullWidth="true"
-                        app:tabRippleColor="@android:color/transparent"
-                        app:tabSelectedTextColor="@color/grayscale_black"
-                        app:tabTextAppearance="@style/TextAppearance.Kor.TabLayout"
-                        app:tabTextColor="@color/grayscale_light_gray" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
