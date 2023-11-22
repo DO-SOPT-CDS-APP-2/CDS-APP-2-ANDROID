@@ -19,7 +19,8 @@
         <activity
             android:name=".presentation.hatDetail.HatDetailActivity"
             android:exported="true"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LightStatusBar" />
 
         <activity
             android:name=".presentation.MainActivity"
