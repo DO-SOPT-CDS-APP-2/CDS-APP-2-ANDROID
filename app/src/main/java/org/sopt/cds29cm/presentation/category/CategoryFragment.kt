@@ -34,10 +34,13 @@ class CategoryFragment : Fragment() {
         //fragment영역에 적용
         binding.rvCategoryHorizontal.adapter = categoryHorizontalAdapter
 
-
         val categoryVerticalLeftAdapter = CategoryVerticalLeftAdapter(requireContext())
         categoryVerticalLeftAdapter.setCategoryVerticalLeftList(viewModel.CategoryVerticalLeftDataList)
-        binding.rvCategoryVerticalLeft.adapter=categoryVerticalLeftAdapter
+        binding.rvCategoryVerticalLeft.adapter = categoryVerticalLeftAdapter
+
+        val categoryVerticalRightAdapter = CategoryVerticalRightAdapter(requireContext())
+        categoryVerticalRightAdapter.setCategoryVerticalRightList(viewModel.CategoryVerticalRightDataList)
+        binding.rvCategoryVerticalRight.adapter = categoryVerticalRightAdapter
 
     }
 
