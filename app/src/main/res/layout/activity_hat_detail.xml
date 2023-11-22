@@ -6,175 +6,231 @@
 
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/layout_hat_detail"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar_hat_detail"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar_top_hat_detail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white">
+            android:layout_height="wrap_content">
 
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:id="@+id/toolbar_hat_detail"
+            <ImageView
+                android:id="@+id/btn_hat_detail_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="17dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btn_hat_detail_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="17dp"
+                android:layout_marginEnd="19dp"
+                android:src="@drawable/ic_cart_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btn_hat_detail_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="17dp"
+                android:layout_marginEnd="18dp"
+                android:src="@drawable/ic_search_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_hat_detail_cart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btn_hat_detail_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="17dp"
+                android:layout_marginEnd="18dp"
+                android:src="@drawable/ic_home_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_hat_detail_search"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/layout_hat_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar_hat_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:contentScrim="@android:color/transparent"
-                app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
-                app:statusBarScrim="@android:color/transparent">
+                android:background="@color/white">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/toolbar_hat_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="false">
+                    app:contentScrim="@android:color/transparent"
+                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+                    app:statusBarScrim="@android:color/transparent">
 
-                    <TextView
-                        android:id="@+id/title_tv"
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="16dp"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/grayscale_light_gray"
-                        android:gravity="center"
-                        android:paddingVertical="400dp"
-                        android:text="상품 설명"
-                        android:textColor="@color/grayscale_black"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:adjustViewBounds="false">
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/title_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:background="@color/grayscale_light_gray"
+                            android:gravity="center"
+                            android:paddingVertical="400dp"
+                            android:text="상품 설명"
+                            android:textColor="@color/grayscale_black"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_hat_detail"
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_hat_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@color/white"
+                    app:tabIndicatorColor="@color/grayscale_black"
+                    app:tabIndicatorFullWidth="true"
+                    app:tabRippleColor="@android:color/transparent"
+                    app:tabSelectedTextColor="@color/grayscale_black"
+                    app:tabTextAppearance="@style/TextAppearance.Kor.TabLayout"
+                    app:tabTextColor="@color/grayscale_light_gray" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/sv_hat_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:background="@color/white"
-                app:tabIndicatorColor="@color/grayscale_black"
-                app:tabIndicatorFullWidth="true"
-                app:tabRippleColor="@android:color/transparent"
-                app:tabSelectedTextColor="@color/grayscale_black"
-                app:tabTextAppearance="@style/TextAppearance.Kor.TabLayout"
-                app:tabTextColor="@color/grayscale_light_gray" />
+                android:overScrollMode="never"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/sv_hat_detail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:overScrollMode="never"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_info"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginHorizontal="16dp">
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/tv_info"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_info"
                         android:layout_width="match_parent"
-                        android:layout_height="300dp"
-                        android:background="@color/grayscale_medium_gray"
-                        android:gravity="center"
-                        android:text="상품정보"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="16dp">
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/tv_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:background="@color/grayscale_medium_gray"
+                            android:gravity="center"
+                            android:text="상품정보"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_size"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="16dp">
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/tv_size"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_size"
                         android:layout_width="match_parent"
-                        android:layout_height="300dp"
-                        android:background="@color/grayscale_medium_gray"
-                        android:gravity="center"
-                        android:text="사이즈"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="16dp">
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/tv_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:background="@color/grayscale_medium_gray"
+                            android:gravity="center"
+                            android:text="사이즈"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_recommend"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="16dp">
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/tv_rec"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_recommend"
                         android:layout_width="match_parent"
-                        android:layout_height="300dp"
-                        android:background="@color/grayscale_medium_gray"
-                        android:gravity="center"
-                        android:text="추천"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="16dp">
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/tv_rec"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:background="@color/grayscale_medium_gray"
+                            android:gravity="center"
+                            android:text="추천"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_review"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="16dp">
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/tv_review"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_review"
                         android:layout_width="match_parent"
-                        android:layout_height="300dp"
-                        android:background="@color/grayscale_medium_gray"
-                        android:gravity="center"
-                        android:text="리뷰"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="16dp">
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/tv_review"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:background="@color/grayscale_medium_gray"
+                            android:gravity="center"
+                            android:text="리뷰"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_ask"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="16dp">
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_ask"
                         android:layout_width="match_parent"
-                        android:layout_height="800dp"
-                        android:background="@color/grayscale_medium_gray"
-                        android:gravity="center"
-                        android:text="문의"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="16dp">
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="800dp"
+                            android:background="@color/grayscale_medium_gray"
+                            android:gravity="center"
+                            android:text="문의"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-            </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.core.widget.NestedScrollView>
+                </LinearLayout>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </LinearLayout>
 
 </layout>
