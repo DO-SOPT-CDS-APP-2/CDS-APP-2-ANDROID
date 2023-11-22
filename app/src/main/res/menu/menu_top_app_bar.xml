@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/btn_search"
+        android:icon="@drawable/ic_search_white"
+        app:showAsAction="ifRoom"
+        android:title="music" />
+
+    <item
+        android:id="@+id/btn_alert"
+        android:icon="@drawable/ic_alert_white"
+        android:title="edit"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/btn_cart"
+        android:icon="@drawable/ic_cart_white"
+        android:title="edit"
+        app:showAsAction="ifRoom" />
+</menu>
