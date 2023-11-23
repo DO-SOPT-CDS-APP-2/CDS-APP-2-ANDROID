@@ -102,6 +102,7 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <HorizontalScrollView
+                android:id="@+id/sc_home_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -195,6 +196,43 @@
                 app:layout_constraintTop_toTopOf="@id/tv_home_38"
                 app:layout_constraintBottom_toBottomOf="@id/tv_home_38"/>
 
+                    <TextView
+                        android:id="@+id/tv_home_39"
+                        android:layout_width="176dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/shape_white_fill_20_rect"
+                        app:layout_constraintStart_toEndOf="@id/tv_home_38"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <ImageView
+                        android:id="@+id/iv_home_39"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/img_home_39"
+                        app:layout_constraintStart_toStartOf="@id/tv_home_39"
+                        app:layout_constraintTop_toTopOf="@id/tv_home_39"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_home_39"/>
+
+                    <TextView
+                        android:id="@+id/tv_home_40"
+                        android:layout_width="176dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/shape_white_fill_20_rect"
+                        app:layout_constraintStart_toEndOf="@id/tv_home_38"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <ImageView
+                        android:id="@+id/iv_home_40"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/img_home_40"
+                        app:layout_constraintStart_toStartOf="@id/tv_home_40"
+                        app:layout_constraintTop_toTopOf="@id/tv_home_40"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_home_40"/>
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -202,6 +240,39 @@
 
             </HorizontalScrollView>
 
+<ImageView
+    android:id="@+id/iv_home_recommendation"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_home_43"
+    android:layout_marginTop="10dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/sc_home_horizontal"/>
+
+            <TextView
+                android:id="@+id/tv_home_recommendation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="노티아의 겨울 추천 코디"
+                android:textSize="20sp"
+                android:textAppearance="@style/TextAppearance.Kor.SemiBold"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@id/iv_home_recommendation"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_recommendation"
+                />
+
+            <TextView
+                android:id="@+id/tv_home_recommendation_sub"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:text="노티아와 크리에이터 디팟이 추천합니다. 올 겨울 코디하기 좋은
+다양한 룩을 준비했어요."
+                android:textAppearance="@style/TextAppearance.Kor.Regular"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/iv_home_recommendation"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_recommendation"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
