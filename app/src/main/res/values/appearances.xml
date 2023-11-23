@@ -10,15 +10,15 @@
     </style>
 
     <style name="TextAppearance.Eng.Bold">
-        <item name="font">@font/gmarket_sans_bold</item>
+        <item name="fontFamily">@font/font_gmarket_sans_bold</item>
     </style>
 
     <style name="TextAppearance.Eng.Medium">
-        <item name="font">@font/gmarket_sans_medium</item>
+        <item name="fontFamily">@font/font_gmarket_sans_medium</item>
     </style>
 
     <style name="TextAppearance.Eng.Light">
-        <item name="font">@font/gmarket_sans_light</item>
+        <item name="fontFamily">@font/font_gmarket_sans_light</item>
     </style>
 
     <!-- 한글 타이포 : Noto Sans Kr-->
@@ -30,19 +30,25 @@
     </style>
 
     <style name="TextAppearance.Kor.Bold">
-        <item name="font">@font/noto_sans_kr_bold</item>
+        <item name="fontFamily">@font/font_noto_sans_kr_bold</item>
     </style>
 
     <style name="TextAppearance.Kor.SemiBold">
-        <item name="font">@font/noto_sans_kr_semibold</item>
+        <item name="fontFamily">@font/font_noto_sans_kr_semibold</item>
     </style>
 
     <style name="TextAppearance.Kor.Regular">
-        <item name="font">@font/noto_sans_kr_regular</item>
+        <item name="fontFamily">@font/font_noto_sans_kr_regular</item>
     </style>
 
     <style name="TextAppearance.Kor.Medium">
-        <item name="font">@font/noto_sans_kr_medium</item>
+        <item name="fontFamily">@font/font_noto_sans_kr_medium</item>
+    </style>
+
+    <!-- HatDetail 뷰 TabLayout 타이포그래피-->
+    <style name="TextAppearance.Kor.TabLayout">
+        <item name="fontFamily">@font/font_noto_sans_kr_semibold</item>
+        <item name="android:textSize">11sp</item>
     </style>
 
 </resources>

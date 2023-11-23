@@ -17,6 +17,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.hatDetail.HatDetailActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".presentation.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
