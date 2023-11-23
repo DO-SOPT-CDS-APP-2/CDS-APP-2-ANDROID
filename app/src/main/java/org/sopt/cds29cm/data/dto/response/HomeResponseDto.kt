@@ -4,19 +4,15 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class NotiaResponseDto(
+data class HomeResponseDto(
     @SerialName("imageUrl")
     val imageUrl: String,
     @SerialName("brand")
     val brand: String,
     @SerialName("name")
     val name: String,
-    @SerialName("discountRate")
-    val discountRate: Int,
-    @SerialName("discountedPrice")
-    val discountedPrice: Int,
-    @SerialName("like")
-    val like: Boolean,
-    @SerialName("likeCount")
-    val likeCount: Int,
+    @SerialName("discount")
+    val discount: Int,
+    @SerialName("Price")
+    val Price: Int,
 )
