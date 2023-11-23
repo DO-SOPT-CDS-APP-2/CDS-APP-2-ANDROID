@@ -109,7 +109,6 @@
                 android:scrollbars="none"
                 android:overScrollMode="never"
                 android:layout_marginTop="10dp"
-                android:layout_marginStart="30dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_main_image">
 
@@ -123,6 +122,7 @@
                 android:id="@+id/tv_home_38"
                 android:layout_width="294dp"
                 android:layout_height="94dp"
+                android:layout_marginStart="30dp"
                 android:background="@drawable/shape_white_fill_20_rect"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
@@ -273,6 +273,7 @@
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="@id/iv_home_recommendation"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_recommendation"/>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
