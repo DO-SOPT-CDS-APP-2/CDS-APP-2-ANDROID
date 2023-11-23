@@ -15,7 +15,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/toolbar_top_hat_detail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/white">
 
             <ImageView
                 android:id="@+id/btn_hat_detail_back"
@@ -369,6 +370,116 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/layout_user_price" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_delivery"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/divider_hat_detail_two">
+
+                            <TextView
+                                android:id="@+id/tv_delivery_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="배송정보"
+                                android:textAppearance="@style/TextAppearance.Kor.Bold"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_delivery_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp"
+                                android:text="배송비"
+                                android:textAppearance="@style/TextAppearance.Kor.Medium"
+                                android:textColor="@color/grayscale_dark_gray"
+                                android:textSize="13sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_title" />
+
+                            <TextView
+                                android:id="@+id/tv_delivery_price_text_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="66dp"
+                                android:layout_marginTop="13dp"
+                                android:text="해당 브랜드 제품은 무료배송 됩니다."
+                                android:textAppearance="@style/TextAppearance.Kor.Medium"
+                                android:textColor="@color/grayscale_dark_gray"
+                                android:textSize="13sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_title" />
+
+                            <TextView
+                                android:id="@+id/tv_delivery_price_text_two"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="66dp"
+                                android:layout_marginTop="7dp"
+                                android:maxLines="2"
+                                android:text="제주도를 포함한 도서/산간지역은 추가배송비 3,500원"
+                                android:textAppearance="@style/TextAppearance.Kor.Medium"
+                                android:textColor="@color/grayscale_dark_gray"
+                                android:textSize="13sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_price_text_one" />
+
+                            <TextView
+                                android:id="@+id/tv_delivery_price_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="64dp"
+                                android:text="배송예정"
+                                android:textAppearance="@style/TextAppearance.Kor.Medium"
+                                android:textColor="@color/grayscale_dark_gray"
+                                android:textSize="13sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_price" />
+
+                            <TextView
+                                android:id="@+id/tv_delivery_price_date_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="66dp"
+                                android:layout_marginTop="64dp"
+                                android:text="2일 이내"
+                                android:textAppearance="@style/TextAppearance.Kor.Medium"
+                                android:textColor="@color/point"
+                                android:textSize="13sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_price" />
+
+                            <TextView
+                                android:id="@+id/tv_delivery_price_date_two"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="64dp"
+                                android:text="출고 (주말, 공휴일제외)"
+                                android:textAppearance="@style/TextAppearance.Kor.Medium"
+                                android:textColor="@color/grayscale_dark_gray"
+                                android:textSize="13sp"
+                                app:layout_constraintStart_toEndOf="@id/tv_delivery_price_date_one"
+                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_price" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider_delivery"
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:layout_marginTop="20dp"
+                            app:dividerColor="@color/grayscale_background"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/layout_delivery" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
