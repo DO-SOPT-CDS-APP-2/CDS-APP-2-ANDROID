@@ -472,7 +472,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <com.google.android.material.divider.MaterialDivider
-                            android:id="@+id/divider_delivery"
+                            android:id="@+id/divider_delivery_one"
                             android:layout_width="match_parent"
                             android:layout_height="8dp"
                             android:layout_marginTop="20dp"
@@ -480,6 +480,103 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/layout_delivery" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_brand_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="17dp"
+                            android:layout_marginTop="21dp"
+                            android:background="@drawable/shape_border_line_rect"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/divider_delivery_one">
+
+                            <ImageView
+                                android:id="@+id/iv_brand_info_image"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/img_hatdetail_19"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_brand_info_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="typeservice"
+                                android:textAppearance="@style/TextAppearance.Eng.Bold"
+                                android:textColor="@color/grayscale_dark_gray"
+                                android:textSize="13sp"
+                                app:layout_constraintBottom_toTopOf="@id/tv_brand_info_name_kor"
+                                app:layout_constraintStart_toEndOf="@id/iv_brand_info_image"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_chainStyle="packed" />
+
+                            <ImageView
+                                android:id="@+id/iv_brand_info_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="2dp"
+                                android:src="@drawable/ic_detail_right_gray_10dp"
+                                app:layout_constraintBottom_toBottomOf="@id/tv_brand_info_name"
+                                app:layout_constraintStart_toEndOf="@id/tv_brand_info_name"
+                                app:layout_constraintTop_toTopOf="@id/tv_brand_info_name" />
+
+                            <TextView
+                                android:id="@+id/tv_brand_info_name_kor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="타입서비스"
+                                android:textAppearance="@style/TextAppearance.Kor.SemiBold"
+                                android:textColor="@color/grayscale_dark_gray"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/iv_brand_info_image"
+                                app:layout_constraintTop_toBottomOf="@id/tv_brand_info_name"
+                                app:layout_constraintVertical_chainStyle="packed" />
+
+                            <ImageView
+                                android:id="@+id/iv_brand_info_like"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="19dp"
+                                android:src="@drawable/ic_like_off_gray_24dp"
+                                app:layout_constraintBottom_toTopOf="@id/tv_brand_info_like_count"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_chainStyle="packed" />
+
+                            <TextView
+                                android:id="@+id/tv_brand_info_like_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="2dp"
+                                android:text="50908"
+                                android:textAppearance="@style/TextAppearance.Eng.Medium"
+                                android:textColor="@color/grayscale_light_gray"
+                                android:textSize="8sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@id/iv_brand_info_like"
+                                app:layout_constraintStart_toStartOf="@id/iv_brand_info_like"
+                                app:layout_constraintTop_toBottomOf="@id/iv_brand_info_like"
+                                app:layout_constraintVertical_chainStyle="packed" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider_delivery_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:layout_marginTop="21dp"
+                            app:dividerColor="@color/grayscale_background"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/layout_brand_info" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
