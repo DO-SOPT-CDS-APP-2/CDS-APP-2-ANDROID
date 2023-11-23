@@ -251,7 +251,7 @@
     app:layout_constraintTop_toBottomOf="@id/sc_home_horizontal"/>
 
             <TextView
-                android:id="@+id/tv_home_recommendation"
+                android:id="@+id/tv_home_44"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="노티아의 겨울 추천 코디"
@@ -272,8 +272,25 @@
                 android:textSize="12sp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="@id/iv_home_recommendation"
-                app:layout_constraintTop_toBottomOf="@id/tv_home_recommendation"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_home_44"/>
 
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rv_home_44"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tv_home_recommendation_sub"/>
+
+            <TextView
+                android:id="@+id/tv_home_46"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="김디팟님을 위한 추천 상품"
+                android:textAppearance="@style/TextAppearance.Kor.Bold"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@id/tv_home_44"
+                app:layout_constraintTop_toBottomOf="@id/rv_home_44"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
