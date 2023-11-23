@@ -11,14 +11,17 @@
 
     <style name="TextAppearance.Eng.Bold">
         <item name="font">@font/gmarket_sans_bold</item>
+        <item name="fontWeight">500</item>
     </style>
 
     <style name="TextAppearance.Eng.Medium">
         <item name="font">@font/gmarket_sans_medium</item>
+        <item name="fontWeight">400</item>
     </style>
 
     <style name="TextAppearance.Eng.Light">
         <item name="font">@font/gmarket_sans_light</item>
+        <item name="fontWeight">300</item>
     </style>
 
     <!-- 한글 타이포 : Noto Sans Kr-->
@@ -37,12 +40,12 @@
         <item name="font">@font/noto_sans_kr_semibold</item>
     </style>
 
-    <style name="TextAppearance.Kor.Regular">
-        <item name="font">@font/noto_sans_kr_regular</item>
-    </style>
-
     <style name="TextAppearance.Kor.Medium">
         <item name="font">@font/noto_sans_kr_medium</item>
+    </style>
+
+    <style name="TextAppearance.Kor.Regular">
+        <item name="font">@font/noto_sans_kr_regular</item>
     </style>
 
     <!-- HatDetail 뷰 TabLayout 타이포그래피-->

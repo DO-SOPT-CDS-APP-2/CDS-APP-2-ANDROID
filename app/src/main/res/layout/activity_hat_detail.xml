@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -85,21 +86,182 @@
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="false">
 
-                        <TextView
-                            android:id="@+id/title_tv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="16dp"
-                            android:background="@color/grayscale_light_gray"
-                            android:gravity="center"
-                            android:paddingVertical="400dp"
-                            android:text="상품 설명"
-                            android:textColor="@color/grayscale_black"
-                            android:textSize="20sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                        <ImageView
+                            android:id="@+id/iv_hat_detail_main"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintDimensionRatio="1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:src="@drawable/ic_launcher_foreground" />
+
+                        <TextView
+                            android:id="@+id/tv_hat_detail_brand_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:textAppearance="@style/TextAppearance.Kor.SemiBold"
+                            android:textColor="@color/grayscale_dark_gray"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_hat_detail_like"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_hat_detail_main"
+                            app:layout_constraintTop_toTopOf="@id/iv_hat_detail_like"
+                            tools:text="타입서비스" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:src="@drawable/ic_detail_right_gray_10dp"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_hat_detail_brand_name"
+                            app:layout_constraintStart_toEndOf="@id/tv_hat_detail_brand_name"
+                            app:layout_constraintTop_toTopOf="@id/tv_hat_detail_brand_name" />
+
+                        <ImageView
+                            android:id="@+id/iv_hat_detail_like"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="13dp"
+                            android:layout_marginEnd="17dp"
+                            android:src="@drawable/ic_like_off_gray_44dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_hat_detail_main" />
+
+                        <TextView
+                            android:id="@+id/tv_hat_detail_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:textAppearance="@style/TextAppearance.Eng.Bold"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_hat_detail_like"
+                            tools:text="Typeservice Web Cap [22 Colors]" />
+
+                        <ImageView
+                            android:id="@+id/iv_hat_detail_star"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/ic_five_stars_black"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_hat_detail_name" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginBottom="2dp"
+                            android:textAppearance="@style/TextAppearance.Kor.SemiBold"
+                            android:textColor="@color/grayscale_dark_gray"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_hat_detail_star"
+                            app:layout_constraintStart_toEndOf="@id/iv_hat_detail_star"
+                            app:layout_constraintTop_toTopOf="@id/iv_hat_detail_star"
+                            tools:text="13266개 리뷰 보기" />
+
+                        <TextView
+                            android:id="@+id/tv_hat_detail_original_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="17dp"
+                            android:textAppearance="@style/TextAppearance.Eng.Bold"
+                            android:textColor="@color/grayscale_light_gray"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_hat_detail_star"
+                            tools:text="39,000" />
+
+                        <TextView
+                            android:id="@+id/tv_hat_detail_sale_percent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="5dp"
+                            android:textAppearance="@style/TextAppearance.Eng.Bold"
+                            android:textColor="@color/point"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_hat_detail_original_price"
+                            tools:text="5%" />
+
+                        <TextView
+                            android:id="@+id/tv_hat_detail_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginTop="5dp"
+                            android:textAppearance="@style/TextAppearance.Eng.Bold"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toEndOf="@id/tv_hat_detail_sale_percent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_hat_detail_original_price"
+                            tools:text="37,050" />
+
+                        <TextView
+                            android:id="@+id/tv_hat_detail_price_won"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:text="원"
+                            android:textAppearance="@style/TextAppearance.Kor.Bold"
+                            android:textSize="15sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_hat_detail_price"
+                            app:layout_constraintStart_toEndOf="@id/tv_hat_detail_price"
+                            app:layout_constraintTop_toTopOf="@id/tv_hat_detail_price" />
+
+                        <TextView
+                            android:id="@+id/tv_hat_datail_point"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="11dp"
+                            android:textAppearance="@style/TextAppearance.Eng.Medium"
+                            android:textColor="@color/grayscale_dark_gray"
+                            android:textSize="10sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_hat_detail_price"
+                            tools:text="371p" />
+
+                        <TextView
+                            android:id="@+id/tv_hat_datail_point_percent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:textAppearance="@style/TextAppearance.Eng.Medium"
+                            android:textColor="@color/grayscale_dark_gray"
+                            android:textSize="11sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_hat_datail_point"
+                            app:layout_constraintStart_toEndOf="@id/tv_hat_datail_point"
+                            app:layout_constraintTop_toTopOf="@id/tv_hat_datail_point"
+                            tools:text="(1%)" />
+
+                        <TextView
+                            android:id="@+id/tv_hat_datail_point_earn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="적립"
+                            android:textAppearance="@style/TextAppearance.Kor.Medium"
+                            android:textColor="@color/grayscale_dark_gray"
+                            android:textSize="11sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_hat_datail_point"
+                            app:layout_constraintStart_toEndOf="@id/tv_hat_datail_point_percent"
+                            app:layout_constraintTop_toTopOf="@id/tv_hat_datail_point" />
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider_hat_detail_one"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="27dp"
+                            app:dividerColor="@color/grayscale_border"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_hat_datail_point" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
