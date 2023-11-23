@@ -128,6 +128,32 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:clipToOutline="true"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="8dp"
+                        android:fontFamily="@font/gmarket_sans_bold"
+                        android:text="WOMEN" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="8dp"
+                        android:fontFamily="@font/gmarket_sans_bold"
+                        android:text="MEN" />
+                </LinearLayout>
+
                 <ImageView
                     android:id="@+id/iv_category_banner"
                     android:layout_width="wrap_content"
