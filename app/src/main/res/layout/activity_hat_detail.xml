@@ -134,10 +134,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="13dp"
+                            android:paddingVertical="3dp"
                             android:textAppearance="@style/TextAppearance.Eng.Bold"
-                            android:textSize="18sp"
+                            android:textSize="14sp"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/iv_hat_detail_like"
+                            app:layout_constraintTop_toBottomOf="@id/tv_hat_detail_brand_name"
                             tools:text="Typeservice Web Cap [22 Colors]" />
 
                         <ImageView
@@ -161,7 +163,7 @@
                             app:layout_constraintBottom_toBottomOf="@id/iv_hat_detail_star"
                             app:layout_constraintStart_toEndOf="@id/iv_hat_detail_star"
                             app:layout_constraintTop_toTopOf="@id/iv_hat_detail_star"
-                            tools:text="13266개 리뷰 보기" />
+                            tools:text="13,266개 리뷰 보기" />
 
                         <TextView
                             android:id="@+id/tv_hat_detail_original_price"
@@ -181,7 +183,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="10dp"
                             android:textAppearance="@style/TextAppearance.Eng.Bold"
                             android:textColor="@color/point"
                             android:textSize="18sp"
@@ -194,7 +196,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="7dp"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="10dp"
                             android:textAppearance="@style/TextAppearance.Eng.Bold"
                             android:textSize="18sp"
                             app:layout_constraintStart_toEndOf="@id/tv_hat_detail_sale_percent"
@@ -214,44 +216,48 @@
                             app:layout_constraintTop_toTopOf="@id/tv_hat_detail_price" />
 
                         <TextView
-                            android:id="@+id/tv_hat_datail_point"
+                            android:id="@+id/tv_hat_detail_point"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="0dp"
                             android:layout_marginStart="16dp"
-                            android:layout_marginTop="11dp"
+                            android:gravity="center"
+                            android:paddingTop="3dp"
                             android:textAppearance="@style/TextAppearance.Eng.Medium"
                             android:textColor="@color/grayscale_dark_gray"
                             android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_hat_detail_point_earn"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tv_hat_detail_price"
+                            app:layout_constraintTop_toTopOf="@id/tv_hat_detail_point_earn"
                             tools:text="371p" />
 
                         <TextView
-                            android:id="@+id/tv_hat_datail_point_percent"
+                            android:id="@+id/tv_hat_detail_point_percent"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="0dp"
                             android:layout_marginStart="2dp"
+                            android:gravity="center"
+                            android:paddingTop="3dp"
                             android:textAppearance="@style/TextAppearance.Eng.Medium"
                             android:textColor="@color/grayscale_dark_gray"
                             android:textSize="11sp"
-                            app:layout_constraintBottom_toBottomOf="@id/tv_hat_datail_point"
-                            app:layout_constraintStart_toEndOf="@id/tv_hat_datail_point"
-                            app:layout_constraintTop_toTopOf="@id/tv_hat_datail_point"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_hat_detail_point_earn"
+                            app:layout_constraintStart_toEndOf="@id/tv_hat_detail_point"
+                            app:layout_constraintTop_toTopOf="@id/tv_hat_detail_point_earn"
                             tools:text="(1%)" />
 
                         <TextView
-                            android:id="@+id/tv_hat_datail_point_earn"
+                            android:id="@+id/tv_hat_detail_point_earn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="2dp"
+                            android:layout_marginTop="11dp"
                             android:layout_marginBottom="2dp"
                             android:text="적립"
                             android:textAppearance="@style/TextAppearance.Kor.Medium"
                             android:textColor="@color/grayscale_dark_gray"
                             android:textSize="11sp"
-                            app:layout_constraintBottom_toBottomOf="@id/tv_hat_datail_point"
-                            app:layout_constraintStart_toEndOf="@id/tv_hat_datail_point_percent"
-                            app:layout_constraintTop_toTopOf="@id/tv_hat_datail_point" />
+                            app:layout_constraintStart_toEndOf="@id/tv_hat_detail_point_percent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_hat_detail_sale_percent" />
 
                         <com.google.android.material.divider.MaterialDivider
                             android:id="@+id/divider_hat_detail_one"
@@ -261,7 +267,108 @@
                             app:dividerColor="@color/grayscale_border"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tv_hat_datail_point" />
+                            app:layout_constraintTop_toBottomOf="@id/tv_hat_detail_point" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_user_price"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="19dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/divider_hat_detail_one">
+
+                            <ImageView
+                                android:id="@+id/btn_user_price_down"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_detail_down_gray_24dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_user_price_won"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="원"
+                                android:textAppearance="@style/TextAppearance.Kor.Bold"
+                                android:textSize="15sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/btn_user_price_down"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_user_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:textAppearance="@style/TextAppearance.Eng.Bold"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/tv_user_price_won"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="34,468" />
+
+                            <TextView
+                                android:id="@+id/tv_user_price_percent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginEnd="3dp"
+                                android:textAppearance="@style/TextAppearance.Eng.Bold"
+                                android:textColor="@color/grayscale_medium_gray"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/tv_user_price"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="12%" />
+
+                            <TextView
+                                android:id="@+id/tv_user_price_user"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.Kor.Medium"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="김솝트" />
+
+                            <TextView
+                                android:id="@+id/tv_user_price_user_is"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="님의 구매 가능 가격"
+                                android:textAppearance="@style/TextAppearance.Kor.Medium"
+                                android:textColor="@color/grayscale_medium_gray"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tv_user_price_user"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="2dp"
+                                android:src="@drawable/ic_question_circle"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tv_user_price_user_is"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider_hat_detail_two"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="19dp"
+                            app:dividerColor="@color/grayscale_border"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/layout_user_price" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
