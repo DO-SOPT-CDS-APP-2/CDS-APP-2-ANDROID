@@ -99,7 +99,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_category_vertical"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rv_category_horizontal">
 
@@ -126,6 +127,15 @@
                 android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_category_banner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:src="@drawable/ic_category_vertical_recyclerview_banner"
+                    app:layout_constraintStart_toEndOf="@id/rv_category_vertical_left"
+                    tools:ignore="MissingConstraints" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_category_vertical_right"
