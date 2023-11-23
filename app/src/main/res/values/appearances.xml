@@ -10,7 +10,7 @@
     </style>
 
     <style name="TextAppearance.Eng.Bold">
-        <item name="font">@font/gmarket_sans_bold</item>
+        <item name="fontFamily">@font/font_gmarket_sans_bold</item>
     </style>
 
     <style name="TextAppearance.Eng.Medium">
