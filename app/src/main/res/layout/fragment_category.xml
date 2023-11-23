@@ -51,7 +51,7 @@
                 android:layout_marginEnd="8dp"
                 android:clipToOutline="true"
                 android:contentDescription="TODO"
-                android:src="@drawable/ic_category_search"
+                android:src="@drawable/ic_search_black"
                 app:layout_constraintEnd_toEndOf="@id/layout_category_searchbox"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -65,7 +65,7 @@
             android:layout_marginTop="17dp"
             android:layout_marginEnd="15dp"
             android:clipToOutline="true"
-            android:src="@drawable/ic_category_alarm"
+            android:src="@drawable/ic_alert_black"
             app:layout_constraintEnd_toStartOf="@id/ic_category_myCartIcon"
             app:layout_constraintTop_toTopOf="parent"
 
@@ -80,7 +80,7 @@
             android:layout_marginTop="17dp"
             android:layout_marginEnd="17dp"
             android:clipToOutline="true"
-            android:src="@drawable/ic_category_mycart"
+            android:src="@drawable/ic_cart_black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

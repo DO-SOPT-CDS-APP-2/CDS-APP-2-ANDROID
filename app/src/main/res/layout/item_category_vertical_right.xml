@@ -27,5 +27,5 @@
         android:layout_marginTop="13dp"
         android:layout_marginBottom="13dp"
         android:layout_marginStart="183dp"
-        android:src="@drawable/ic_category_vertical_right_detail"/>
+        android:src="@drawable/ic_detail_right_gray"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
