@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
@@ -291,6 +292,19 @@
                 android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="@id/tv_home_44"
                 app:layout_constraintTop_toBottomOf="@id/rv_home_44"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_home_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/item_home_recommend"
+                app:spanCount="2"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_46"/>
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
