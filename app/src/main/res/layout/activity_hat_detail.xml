@@ -487,7 +487,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="17dp"
                             android:layout_marginTop="21dp"
-                            android:background="@drawable/shape_border_line_rect"
+                            android:background="@drawable/shape_border_line_1_rect"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/divider_delivery_one">
@@ -619,8 +619,8 @@
                             android:id="@+id/iv_info_detail"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
                             android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="30dp"
                             android:adjustViewBounds="true"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -631,9 +631,9 @@
                             android:id="@+id/layout_info_more"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="22dp"
                             android:layout_marginHorizontal="16dp"
-                            android:background="@drawable/shape_black_line_rect"
+                            android:layout_marginTop="22dp"
+                            android:background="@drawable/shape_black_line_1_rect"
                             android:paddingVertical="17dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -673,7 +673,7 @@
                             app:dividerColor="@color/grayscale_background"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/layout_info_more"/>
+                            app:layout_constraintTop_toBottomOf="@id/layout_info_more" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -685,22 +685,197 @@
 
                         <TextView
                             android:id="@+id/tv_size"
-                            android:layout_width="match_parent"
-                            android:layout_height="300dp"
-                            android:background="@color/grayscale_medium_gray"
-                            android:gravity="center"
-                            android:text="사이즈"
-                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:text="실측 사이즈"
+                            android:textAppearance="@style/TextAppearance.Kor.Bold"
+                            android:textSize="18sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/iv_size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:src="@drawable/img_hat_size"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_size" />
+
+                        <GridLayout
+                            android:id="@+id/layout_size_detail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="32dp"
+                            android:background="@drawable/shape_border_line_1_rect"
+                            android:columnCount="4"
+                            android:rowCount="2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_size">
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:background="@drawable/shape_bg_fill_border_line_05_rect"
+                                android:gravity="center"
+                                android:paddingTop="18dp"
+                                android:paddingBottom="16dp"
+                                android:text="CM"
+                                android:textAppearance="@style/TextAppearance.Eng.Medium"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:background="@drawable/shape_border_line_05_rect"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1"
+                                    android:textAppearance="@style/TextAppearance.Eng.Medium"
+                                    android:textColor="@color/point"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="머리둘레"
+                                    android:textAppearance="@style/TextAppearance.Kor.Medium"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:background="@drawable/shape_border_line_05_rect"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2"
+                                    android:textAppearance="@style/TextAppearance.Eng.Medium"
+                                    android:textColor="@color/point"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="깊이"
+                                    android:textAppearance="@style/TextAppearance.Kor.Medium"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:background="@drawable/shape_border_line_05_rect"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="3"
+                                    android:textAppearance="@style/TextAppearance.Eng.Medium"
+                                    android:textColor="@color/point"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="챙길이"
+                                    android:textAppearance="@style/TextAppearance.Kor.Medium"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:background="@drawable/shape_bg_fill_border_line_05_rect"
+                                android:backgroundTint="@color/grayscale_background"
+                                android:gravity="center"
+                                android:paddingTop="18dp"
+                                android:paddingBottom="16dp"
+                                android:text="FREE"
+                                android:textAppearance="@style/TextAppearance.Eng.Medium"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:background="@drawable/shape_border_line_05_rect"
+                                android:gravity="center"
+                                android:paddingTop="2dp"
+                                android:text="58"
+                                android:textAppearance="@style/TextAppearance.Eng.Medium"
+                                android:textColor="@color/grayscale_dark_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:background="@drawable/shape_border_line_05_rect"
+                                android:gravity="center"
+                                android:paddingTop="2dp"
+                                android:text="16.5"
+                                android:textAppearance="@style/TextAppearance.Eng.Medium"
+                                android:textColor="@color/grayscale_dark_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:background="@drawable/shape_border_line_05_rect"
+                                android:gravity="center"
+                                android:paddingTop="2dp"
+                                android:text="7.5"
+                                android:textAppearance="@style/TextAppearance.Eng.Medium"
+                                android:textColor="@color/grayscale_dark_gray"
+                                android:textSize="12sp" />
+
+                        </GridLayout>
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:layout_marginTop="22dp"
+                            app:dividerColor="@color/grayscale_background"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/layout_size_detail" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/layout_recommend"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="16dp">
+                        android:layout_height="match_parent">
 
                         <TextView
                             android:id="@+id/tv_rec"
