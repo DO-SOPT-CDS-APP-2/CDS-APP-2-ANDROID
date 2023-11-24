@@ -99,26 +99,37 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_category_vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rv_category_horizontal">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_category_vertical_left"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_category_vertical_left"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_height="match_parent"
+            android:background="@color/grayscale_background"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintTop_toTopOf="@id/layout_category_vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_category_vertical_left"
+                layout_constrainedHeight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="@id/layout_category_vertical_left"
+                app:layout_constraintTop_toTopOf="@id/layout_category_vertical_left"></androidx.recyclerview.widget.RecyclerView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.core.widget.NestedScrollView
+            android:id="@+id/sv_category_vertical_right"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:fillViewport="true"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/rv_category_vertical_left"
+            app:layout_constraintStart_toEndOf="@id/layout_category_vertical_left"
             app:layout_constraintTop_toTopOf="@id/layout_category_vertical">
 
             <LinearLayout
@@ -126,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="@id/sv_category_vertical_right">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -140,17 +151,17 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
                         android:clipToOutline="true"
+                        android:fontFamily="@font/gmarket_sans_bold"
                         android:paddingHorizontal="15dp"
                         android:paddingVertical="8dp"
-                        android:fontFamily="@font/gmarket_sans_bold"
                         android:text="WOMEN" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/gmarket_sans_bold"
                         android:paddingHorizontal="15dp"
                         android:paddingVertical="8dp"
-                        android:fontFamily="@font/gmarket_sans_bold"
                         android:text="MEN" />
                 </LinearLayout>
 
