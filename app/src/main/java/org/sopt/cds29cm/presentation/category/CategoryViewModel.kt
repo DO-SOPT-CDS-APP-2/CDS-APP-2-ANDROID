@@ -11,59 +11,59 @@ class CategoryViewModel : ViewModel() {
     val categoryHorizontalDataList = listOf<CategoryHorizontal>(
         CategoryHorizontal(
             categoryName = "모아보기",
-            categoryImage = R.drawable.ic_category_horizontal_primium
+            categoryImage = R.drawable.img_category_20
         ),
         CategoryHorizontal(
             categoryName = "쇼케이스",
-            categoryImage = R.drawable.ic_category_horizontal_primium
+            categoryImage = R.drawable.img_category_20
         ),
         CategoryHorizontal(
             categoryName = "PT",
-            categoryImage = R.drawable.ic_category_horizontal_primium
+            categoryImage = R.drawable.img_category_20
         ),
         CategoryHorizontal(
             categoryName = "선물하기",
-            categoryImage = R.drawable.ic_category_horizontal_primium
+            categoryImage = R.drawable.img_category_20
         ),
         CategoryHorizontal(
             categoryName = "해외브랜드",
-            categoryImage = R.drawable.ic_category_horizontal_primium
+            categoryImage = R.drawable.img_category_20
         ),
         CategoryHorizontal(
             categoryName = "프리미엄홈",
-            categoryImage = R.drawable.ic_category_horizontal_primium
+            categoryImage = R.drawable.img_category_20
         ),
         CategoryHorizontal(
             categoryName = "전시공간",
-            categoryImage = R.drawable.ic_category_horizontal_primium,
+            categoryImage = R.drawable.img_category_20,
         ),
         CategoryHorizontal(
             categoryName = "던스트",
-            categoryImage = R.drawable.ic_category_horizontal_primium,
+            categoryImage = R.drawable.img_category_20,
         ),
         CategoryHorizontal(
             categoryName = "테이블웨어",
-            categoryImage = R.drawable.ic_category_horizontal_primium,
+            categoryImage = R.drawable.img_category_20,
         ),
         CategoryHorizontal(
             categoryName = "이벤트",
-            categoryImage = R.drawable.ic_category_horizontal_primium,
+            categoryImage = R.drawable.img_category_20,
         ),
         CategoryHorizontal(
             categoryName = "리빙스타일",
-            categoryImage = R.drawable.ic_category_horizontal_primium,
+            categoryImage = R.drawable.img_category_20,
         ),
         CategoryHorizontal(
             categoryName = "WELOVE",
-            categoryImage = R.drawable.ic_category_horizontal_primium,
+            categoryImage = R.drawable.img_category_20,
         ),
         CategoryHorizontal(
             categoryName = "룩북",
-            categoryImage = R.drawable.ic_category_horizontal_primium,
+            categoryImage = R.drawable.img_category_20,
         ),
         CategoryHorizontal(
             categoryName = "스페셜오더",
-            categoryImage = R.drawable.ic_category_horizontal_primium,
+            categoryImage = R.drawable.img_category_20,
         ),
 
         )
