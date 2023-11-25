@@ -17,5 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:textSize="12sp"
+        android:textAppearance="@style/TextAppearance.Kor.Regular"
         android:text="모자"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

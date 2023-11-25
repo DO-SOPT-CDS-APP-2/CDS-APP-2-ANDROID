@@ -16,8 +16,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="15.5dp"
         android:layout_marginBottom="13.5dp"
-        android:fontFamily="@font/noto_sans_kr_semibold"
         android:text="전체"
+        android:textAppearance="@style/TextAppearance.Kor.SemiBold"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
