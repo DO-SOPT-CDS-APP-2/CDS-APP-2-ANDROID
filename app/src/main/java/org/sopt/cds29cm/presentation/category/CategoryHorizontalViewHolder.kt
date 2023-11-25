@@ -10,6 +10,8 @@ class CategoryHorizontalViewHolder(private val binding: ItemCategoryHorizontalBi
         with(binding) {
             tvCategoryHorizontal.text = categoryHorizontalData.categoryName
             ivCategoryHorizontal.setImageResource(categoryHorizontalData.categoryImage)
+            if(categoryHorizontalData.categoryName=="PT")
+                tvCategoryHorizontal.textSize= 9F
         }
     }
 }
