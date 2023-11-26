@@ -31,6 +31,11 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initRecommendAdapter()
+
+
+    }
+    private fun initRecommendAdapter(){
         val recommendAdapter = HomeRecommendAdapter(requireContext())
         binding.rvHomeRecommend.adapter = recommendAdapter
         recommendAdapter.setRecommendList(viewModel.mockRecommend)

@@ -297,6 +297,8 @@
                 android:id="@+id/rv_home_recommend"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 tools:listitem="@layout/item_home_recommend"
                 app:spanCount="2"
@@ -304,7 +306,172 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_46"/>
 
+            <TextView
+                android:id="@+id/tv_home_recommend_btn"
+                android:layout_width="336dp"
+                android:layout_height="46dp"
+                android:text="추천 상품 전체 보기"
+                android:layout_marginTop="20dp"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.Kor.Regular"
+                android:background="@drawable/shape_gray_line_rect"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_home_recommend"/>
 
+
+            <TextView
+                android:id="@+id/tv_home_issue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="주목할 만한 브랜드 이슈"
+                android:textAppearance="@style/TextAppearance.Kor.Bold"
+                android:textSize="18sp"
+                android:layout_marginTop="60dp"
+                app:layout_constraintStart_toStartOf="@id/tv_home_44"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_recommend_btn"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_home_issue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                tools:listitem="@layout/item_home_issue"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_issue"/>
+
+
+            <TextView
+                android:id="@+id/tv_home_popular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text = "넘겨보는 인기 액세서리"
+                android:textAppearance="@style/TextAppearance.Kor.Bold"
+                android:textSize="18sp"
+                android:layout_marginTop="60dp"
+                app:layout_constraintStart_toStartOf="@id/tv_home_44"
+                app:layout_constraintTop_toBottomOf="@id/rv_home_issue"/>
+
+
+            <LinearLayout
+                android:id="@+id/chip_group_popular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_popular"
+                app:layout_constraintStart_toStartOf="@id/tv_home_popular">
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipCornerRadius="16dp"
+                    app:chipBackgroundColor="@color/half_transparent"
+                    app:chipStrokeColor="@color/white"
+                    android:textColor="@color/white"
+                    android:text="모자" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipCornerRadius="16dp"
+                    android:layout_marginStart="10dp"
+                    app:chipStrokeColor="@color/grayscale_dark_gray"
+                    android:width="1dp"
+                    android:textColor="@color/grayscale_dark_gray"
+                    android:text="주얼리"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipCornerRadius="16dp"
+                    android:layout_marginStart="10dp"
+                    app:chipStrokeColor="@color/grayscale_dark_gray"
+                    android:width="1dp"
+                    android:textColor="@color/grayscale_dark_gray"
+                    android:text="시계"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipCornerRadius="16dp"
+                    android:layout_marginStart="10dp"
+                    app:chipStrokeColor="@color/grayscale_dark_gray"
+                    android:width="1dp"
+                    android:textColor="@color/grayscale_dark_gray"
+                    android:text="아이웨어"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipCornerRadius="16dp"
+                    android:layout_marginStart="10dp"
+                    app:chipStrokeColor="@color/grayscale_dark_gray"
+                    android:width="1dp"
+                    android:textColor="@color/grayscale_dark_gray"
+                    android:text="패선 악세서리"/>
+            </LinearLayout>
+
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_home_popular"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/item_home_popular"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chip_group_popular"/>
+
+            <ImageView
+                android:id="@+id/iv_home_58"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_home_58"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_home_popular"/>
+
+
+
+            <TextView
+                android:id="@+id/tv_home_59"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="디팟입점회로 만나요"
+                android:textAppearance="@style/TextAppearance.Kor.Bold"
+                android:textSize="18sp"
+                android:layout_marginTop="60dp"
+                app:layout_constraintStart_toStartOf="@id/tv_home_44"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_58"/>
+
+            <TextView
+                android:id="@+id/tv_home_60"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:text="마론에디션의 디팟입점회가 시작되었어요. 29% 쿠폰으로 만나는 큰
+혜택, 놓치지 마시길 바라요!"
+                android:textAppearance="@style/TextAppearance.Kor.Regular"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/iv_home_recommendation"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_59"/>
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/rv_home_marron"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/tv_home_60"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
