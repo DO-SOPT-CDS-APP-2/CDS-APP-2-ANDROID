@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import org.sopt.cds29cm.data.mock.HomeIssueViewModel
+import org.sopt.cds29cm.data.mock.HomeMarronViewModel
 import org.sopt.cds29cm.data.mock.HomeNotiaViewModel
 import org.sopt.cds29cm.data.mock.HomePopularViewModel
 import org.sopt.cds29cm.data.mock.HomeRecommendViewModel
@@ -25,6 +26,8 @@ class HomeFragment : Fragment() {
     private val notiaViewModel by viewModels<HomeNotiaViewModel>()
     private val issueViewModel by viewModels<HomeIssueViewModel>()
     private val popularViewModel by viewModels<HomePopularViewModel>()
+    private val marronViewModel by viewModels<HomeMarronViewModel>()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +44,7 @@ class HomeFragment : Fragment() {
         initNotiaAdapter()
         initIssueAdapter()
         initPopularAdapter()
+        initMarronAdapter()
     }
     private fun initRecommendAdapter(){
         val recommendAdapter = HomeRecommendAdapter(requireContext())
@@ -62,6 +66,11 @@ class HomeFragment : Fragment() {
         val popularAdapter = HomePopularAdapter(requireContext())
         binding.rvHomePopular.adapter = popularAdapter
         popularAdapter.setRecommendList(popularViewModel.mockPopular)
+    }
+    private fun initMarronAdapter(){
+        val marronAdapter = HomeMarronAdapter(requireContext())
+        binding.rvHomeMarron.adapter = marronAdapter
+        marronAdapter.setRecommendList(marronViewModel.mockMarron)
     }
     override fun onDestroyView() {
         super.onDestroyView()
