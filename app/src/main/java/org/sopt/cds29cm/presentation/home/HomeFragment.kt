@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import org.sopt.cds29cm.data.mock.HomeIssueViewModel
 import org.sopt.cds29cm.data.mock.HomeNotiaViewModel
 import org.sopt.cds29cm.data.mock.HomeRecommendViewModel
 import org.sopt.cds29cm.databinding.FragmentHomeBinding
@@ -21,6 +22,7 @@ class HomeFragment : Fragment() {
     private val binding get()= _binding!!
     private val recommendViewModel by viewModels<HomeRecommendViewModel>()
     private val notiaViewModel by viewModels<HomeNotiaViewModel>()
+    private val issueViewModel by viewModels<HomeIssueViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +37,7 @@ class HomeFragment : Fragment() {
 
         initRecommendAdapter()
         initNotiaAdapter()
-
+        initIssueAdpater()
     }
     private fun initRecommendAdapter(){
         val recommendAdapter = HomeRecommendAdapter(requireContext())
@@ -47,6 +49,11 @@ class HomeFragment : Fragment() {
         val notiaAdapter = HomeNotiaAdapter(requireContext())
         binding.rvHomeNotia.adapter = notiaAdapter
         notiaAdapter.setRecommendList(notiaViewModel.mockNotia)
+    }
+    private fun initIssueAdpater(){
+        val issueAdapter = HomeIssueAdapter(requireContext())
+        binding.rvHomeIssue.adapter = issueAdapter
+        issueAdapter.setRecommendList(issueViewModel.mockIssue)
     }
     override fun onDestroyView() {
         super.onDestroyView()
