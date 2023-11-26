@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import org.sopt.cds29cm.data.mock.HomeIssueViewModel
 import org.sopt.cds29cm.data.mock.HomeNotiaViewModel
+import org.sopt.cds29cm.data.mock.HomePopularViewModel
 import org.sopt.cds29cm.data.mock.HomeRecommendViewModel
 import org.sopt.cds29cm.databinding.FragmentHomeBinding
 
@@ -23,6 +24,7 @@ class HomeFragment : Fragment() {
     private val recommendViewModel by viewModels<HomeRecommendViewModel>()
     private val notiaViewModel by viewModels<HomeNotiaViewModel>()
     private val issueViewModel by viewModels<HomeIssueViewModel>()
+    private val popularViewModel by viewModels<HomePopularViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +39,8 @@ class HomeFragment : Fragment() {
 
         initRecommendAdapter()
         initNotiaAdapter()
-        initIssueAdpater()
+        initIssueAdapter()
+        initPopularAdapter()
     }
     private fun initRecommendAdapter(){
         val recommendAdapter = HomeRecommendAdapter(requireContext())
@@ -50,10 +53,15 @@ class HomeFragment : Fragment() {
         binding.rvHomeNotia.adapter = notiaAdapter
         notiaAdapter.setRecommendList(notiaViewModel.mockNotia)
     }
-    private fun initIssueAdpater(){
+    private fun initIssueAdapter(){
         val issueAdapter = HomeIssueAdapter(requireContext())
         binding.rvHomeIssue.adapter = issueAdapter
         issueAdapter.setRecommendList(issueViewModel.mockIssue)
+    }
+    private fun initPopularAdapter(){
+        val popularAdapter = HomePopularAdapter(requireContext())
+        binding.rvHomePopular.adapter = popularAdapter
+        popularAdapter.setRecommendList(popularViewModel.mockPopular)
     }
     override fun onDestroyView() {
         super.onDestroyView()

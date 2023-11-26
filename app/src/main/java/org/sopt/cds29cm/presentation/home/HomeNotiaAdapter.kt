@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import android.content.Context
 import org.sopt.cds29cm.data.dataclass.HomeNotia
-import org.sopt.cds29cm.data.dataclass.HomeRecommend
 import org.sopt.cds29cm.databinding.ItemHomeNotiaBinding
 
 class HomeNotiaAdapter(context: Context) : RecyclerView.Adapter<HomeNotiaViewHolder>() {
