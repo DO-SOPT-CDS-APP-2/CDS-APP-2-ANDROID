@@ -7,8 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import org.sopt.cds29cm.data.dataclass.HomeRecommend
 import org.sopt.cds29cm.databinding.ItemHomeRecommendBinding
 
-class HomeRecommendAdapter(context: Context) :
-    RecyclerView.Adapter<HomeRecommendViewHolder>() {
+class HomeRecommendAdapter(context: Context) : RecyclerView.Adapter<HomeRecommendViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
 
     private var homeRecommendlList: List<HomeRecommend> = emptyList()

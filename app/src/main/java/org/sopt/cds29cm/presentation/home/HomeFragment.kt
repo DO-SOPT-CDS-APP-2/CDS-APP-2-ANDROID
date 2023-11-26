@@ -12,12 +12,15 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import org.sopt.cds29cm.data.mock.HomeNotiaViewModel
 import org.sopt.cds29cm.data.mock.HomeRecommendViewModel
 import org.sopt.cds29cm.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
     private var _binding : FragmentHomeBinding? = null
     private val binding get()= _binding!!
+    private val recommendViewModel by viewModels<HomeRecommendViewModel>()
+    private val notiaViewModel by viewModels<HomeNotiaViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,19 +29,24 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
-    private val viewModel by viewModels<HomeRecommendViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         initRecommendAdapter()
-
+        initNotiaAdapter()
 
     }
     private fun initRecommendAdapter(){
         val recommendAdapter = HomeRecommendAdapter(requireContext())
         binding.rvHomeRecommend.adapter = recommendAdapter
-        recommendAdapter.setRecommendList(viewModel.mockRecommend)
+        recommendAdapter.setRecommendList(recommendViewModel.mockRecommend)
+    }
+
+    private fun initNotiaAdapter(){
+        val notiaAdapter = HomeNotiaAdapter(requireContext())
+        binding.rvHomeNotia.adapter = notiaAdapter
+        notiaAdapter.setRecommendList(notiaViewModel.mockNotia)
     }
     override fun onDestroyView() {
         super.onDestroyView()
