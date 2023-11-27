@@ -79,8 +79,8 @@
         android:id="@+id/layout_hat_category_toolbar_current_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="9dp"
         android:paddingBottom="11dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,5 +132,43 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_hat_category_bottom_current_category"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="1dp"
+        app:dividerColor="@color/grayscale_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_hat_category_toolbar_current_category" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_hat_category_toolbar_hat_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="11dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_current_category">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_hat_category_hat_sub_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layout_hat_category_toolbar_hat_category" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_hat_category_bottom_hat_category"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="1dp"
+        app:dividerColor="@color/grayscale_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_hat_category_toolbar_hat_category" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
