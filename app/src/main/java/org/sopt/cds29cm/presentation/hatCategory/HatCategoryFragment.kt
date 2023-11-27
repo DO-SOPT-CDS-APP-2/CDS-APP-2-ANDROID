@@ -33,6 +33,10 @@ class HatCategoryFragment : Fragment() {
             bestItemAdapter.setHatSubCategoryList(hatCateViewModel.bestItemDataList)
             rvHatCategoryBestItem.adapter = bestItemAdapter
 
+            val itemFilterAdapter = HatCategoryFilterAdapter(requireContext())
+            itemFilterAdapter.setHatSubCategoryList(hatCateViewModel.filterDataList)
+            rvHatCategoryFilter.adapter = itemFilterAdapter
+
         }
 
     }

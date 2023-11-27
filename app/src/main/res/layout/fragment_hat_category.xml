@@ -171,28 +171,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_hat_category_toolbar_hat_category" />
 
-    <TextView
-        android:id="@+id/tv_hat_category_best_title"
-        android:layout_width="wrap_content"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sv_hat_category_item"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="18dp"
-        android:text="실시간 베스트"
-        android:textAppearance="@style/TextAppearance.Kor.Bold"
-        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_hat_category" />
+        app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_hat_category">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_hat_category_best_item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="14dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_hat_category_best_title" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_hat_category_best_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="18dp"
+                android:text="실시간 베스트"
+                android:textAppearance="@style/TextAppearance.Kor.Bold"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_hat_category" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_hat_category_best_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_hat_category_best_title" />
 
             <com.google.android.material.divider.MaterialDivider
                 android:id="@+id/divider_hat_category_bottom_best"
@@ -213,6 +225,22 @@
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_best">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_hat_category_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:text="텍스트 요 있다~" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

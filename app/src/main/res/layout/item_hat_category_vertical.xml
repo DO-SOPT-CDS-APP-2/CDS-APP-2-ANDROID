@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="11dp"
             android:src="@drawable/ic_like_off"
-            app:layout_constraintEnd_toEndOf="@id/layout_category_vertical_right"
+            app:layout_constraintEnd_toEndOf="@id/layout_hat_category_item_scroll"
             app:layout_constraintTop_toBottomOf="@id/layout_hat_category_item_scroll" />
 
         <TextView
