@@ -194,41 +194,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_hat_category_best_title" />
 
-    <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/divider_hat_category_bottom_best"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="26dp"
-        app:dividerColor="@color/grayscale_border"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_hat_category_best_item" />
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_hat_category_bottom_best"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="26dp"
+                app:dividerColor="@color/grayscale_border"
+                app:layout_constraintEnd_toEndOf="@id/sv_hat_category_item"
+                app:layout_constraintStart_toStartOf="@id/sv_hat_category_item"
+                app:layout_constraintTop_toBottomOf="@id/rv_hat_category_best_item" />
 
-    <LinearLayout
-        android:id="@+id/layout_hat_category_filter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_best">
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="추천순"
-            android:textAppearance="@style/TextAppearance.Kor.Medium"
-            android:textColor="@color/grayscale_dark_gray"
-
-            app:chipBackgroundColor="@color/white"
-            app:chipCornerRadius="15.5dp"
-            app:chipStrokeColor="@color/grayscale_border">
-
-        </com.google.android.material.chip.Chip>
-
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layout_hat_category_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="13dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_best">
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

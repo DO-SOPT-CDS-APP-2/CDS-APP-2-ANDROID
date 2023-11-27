@@ -3,6 +3,7 @@ package org.sopt.cds29cm.presentation.hatCategory
 import androidx.lifecycle.ViewModel
 import org.sopt.cds29cm.R
 import org.sopt.cds29cm.data.BestItem
+import org.sopt.cds29cm.data.CategoryFilter
 import org.sopt.cds29cm.data.CategoryVertical
 
 class HatCategoryViewModel : ViewModel() {
@@ -51,5 +52,13 @@ class HatCategoryViewModel : ViewModel() {
             itemImage = R.drawable.img_hat_category_33,
 
             ),
+    )
+
+    val filterDataList=listOf<CategoryFilter>(
+        CategoryFilter(filterName="추천순"),
+        CategoryFilter(filterName="색상"),
+        CategoryFilter(filterName="가격대"),
+        CategoryFilter(filterName="상품정보"),
+        CategoryFilter(filterName="브랜드"),
     )
 }
