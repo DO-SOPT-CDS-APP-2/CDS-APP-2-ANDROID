@@ -1,79 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_category_searchbox"
-        android:layout_height="28dp"
-        android:layout_width="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/layout_category_round"
+        android:id="@+id/layout_category_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/iv_category_alarmIcon"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
-
-        <TextView
-            android:id="@+id/tv_category_searchbox_text"
-            android:layout_width="187dp"
-            android:layout_height="19dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="13dp"
-            android:layout_marginTop="6dp"
-            android:gravity="top"
-            android:text="@string/category_search"
-            android:textColor="@color/grayscale_medium_gray"
-            android:textSize="13dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_category_searchbox"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_marginVertical="15dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/layout_category_round"
+            app:layout_constraintEnd_toStartOf="@id/iv_category_alarmIcon"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_category_searchbox_text"
+                android:layout_width="187dp"
+                android:layout_height="19dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="4dp"
+                android:gravity="top"
+                android:text="@string/category_search"
+                android:textAppearance="@style/TextAppearance.Kor.Medium"
+                android:textColor="@color/grayscale_medium_gray"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_category_search_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="8dp"
+                android:clipToOutline="true"
+                android:contentDescription="TODO"
+                android:src="@drawable/ic_search_black"
+                app:layout_constraintEnd_toEndOf="@id/layout_category_searchbox"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
-            android:id="@+id/iv_category_searchIcon"
+            android:id="@+id/iv_category_alarmIcon"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="15dp"
             android:clipToOutline="true"
-            android:contentDescription="TODO"
-            android:src="@drawable/ic_category_search"
-            app:layout_constraintEnd_toEndOf="@id/layout_category_searchbox"
+            android:src="@drawable/ic_alert_black"
+            app:layout_constraintEnd_toStartOf="@id/ic_category_myCartIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ic_category_myCartIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="17dp"
+            android:clipToOutline="true"
+            android:src="@drawable/ic_cart_black"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/iv_category_alarmIcon"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="15dp"
-        android:clipToOutline="true"
-        android:src="@drawable/ic_category_alarm"
-        app:layout_constraintEnd_toStartOf="@id/ic_category_myCartIcon"
-        app:layout_constraintTop_toTopOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_category_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal"
+        android:paddingStart="15dp"
+        android:paddingBottom="21dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_category_toolbar" />
 
-        />
-
-    <ImageView
-        android:id="@+id/ic_category_myCartIcon"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="17dp"
-        android:clipToOutline="true"
-        android:src="@drawable/ic_category_mycart"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_category_vertical"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_category_horizontal">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_category_vertical_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/grayscale_background"
+            android:paddingEnd="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layout_category_vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_category_vertical_left"
+                layout_constrainedHeight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="@id/layout_category_vertical_left"
+                app:layout_constraintTop_toTopOf="@id/layout_category_vertical_left" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/sv_category_vertical_right"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/layout_category_vertical_left"
+            app:layout_constraintTop_toTopOf="@id/layout_category_vertical"
+            app:layout_constraintVertical_bias="1.0">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/sv_category_vertical_right">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15dp"
+                    android:layout_marginStart="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:clipToOutline="true"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="8dp"
+                        android:text="WOMEN"
+                        android:textAppearance="@style/TextAppearance.Eng.Bold"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="8dp"
+                        android:text="MEN"
+                        android:textAppearance="@style/TextAppearance.Eng.Bold"
+                        android:textColor="@color/grayscale_border"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_category_banner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/img_category_29"
+                    app:layout_constraintStart_toEndOf="@id/rv_category_vertical_left"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_category_vertical_right"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:overScrollMode="never"
+                    android:paddingEnd="11dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
