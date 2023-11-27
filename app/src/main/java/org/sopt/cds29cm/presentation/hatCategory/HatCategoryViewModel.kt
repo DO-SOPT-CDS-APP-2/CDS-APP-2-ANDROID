@@ -1,6 +1,8 @@
 package org.sopt.cds29cm.presentation.hatCategory
 
 import androidx.lifecycle.ViewModel
+import org.sopt.cds29cm.R
+import org.sopt.cds29cm.data.BestItem
 import org.sopt.cds29cm.data.CategoryVertical
 
 class HatCategoryViewModel : ViewModel() {
@@ -14,5 +16,40 @@ class HatCategoryViewModel : ViewModel() {
         CategoryVertical(categoryName = "베레모"),
         CategoryVertical(categoryName = "트루퍼"),
         CategoryVertical(categoryName = "페도라"),
+    )
+
+    val bestItemDataList = listOf<BestItem>(
+        BestItem(
+            itemName = "타입서비스",
+            itemDiscount = "5%",
+            itemPrice = "37,050",
+            itemRanking = 1,
+            itemImage = R.drawable.img_hat_category_30,
+
+            ),
+        BestItem(
+            itemName = "슬리피슬립",
+            itemDiscount = "10%",
+            itemPrice = "52,200",
+            itemRanking = 2,
+            itemImage = R.drawable.img_hat_category_31,
+
+            ),
+        BestItem(
+            itemName = "론론",
+            itemDiscount = "15%",
+            itemPrice = "140,250",
+            itemRanking = 3,
+            itemImage = R.drawable.img_hat_category_32,
+
+            ),
+        BestItem(
+            itemName = "시엔느",
+            itemDiscount = "5%",
+            itemPrice = "37,050",
+            itemRanking = 4,
+            itemImage = R.drawable.img_hat_category_33,
+
+            ),
     )
 }

@@ -171,4 +171,64 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_hat_category_toolbar_hat_category" />
 
+    <TextView
+        android:id="@+id/tv_hat_category_best_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:text="실시간 베스트"
+        android:textAppearance="@style/TextAppearance.Kor.Bold"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_hat_category" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_hat_category_best_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_hat_category_best_title" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_hat_category_bottom_best"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="26dp"
+        app:dividerColor="@color/grayscale_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_hat_category_best_item" />
+
+    <LinearLayout
+        android:id="@+id/layout_hat_category_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="13dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_best">
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="추천순"
+            android:textAppearance="@style/TextAppearance.Kor.Medium"
+            android:textColor="@color/grayscale_dark_gray"
+
+            app:chipBackgroundColor="@color/white"
+            app:chipCornerRadius="15.5dp"
+            app:chipStrokeColor="@color/grayscale_border">
+
+        </com.google.android.material.chip.Chip>
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

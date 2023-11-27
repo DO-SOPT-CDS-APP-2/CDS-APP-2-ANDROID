@@ -11,7 +11,7 @@ import org.sopt.cds29cm.databinding.FragmentHatCategoryBinding
 class HatCategoryFragment : Fragment() {
     private var _binding: FragmentHatCategoryBinding? = null
     private val binding: FragmentHatCategoryBinding get() = requireNotNull(_binding)
-    private val hatCateviewModel by viewModels<HatCategoryViewModel>()
+    private val hatCateViewModel by viewModels<HatCategoryViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,11 +20,20 @@ class HatCategoryFragment : Fragment() {
         _binding = FragmentHatCategoryBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        with(binding)
+        {
+            val hatSubCategoryAdapter = HatCategoryHorizontalCategoryAdapter(requireContext())
+            hatSubCategoryAdapter.setHatSubCategoryList(hatCateViewModel.subCategoryHatDataList)
+            rvHatCategoryHatSubCategory.adapter = hatSubCategoryAdapter
 
-        val hatSubCategoryAdapter = HatCategoryHorizontalCategoryAdapter(requireContext())
-        hatSubCategoryAdapter.setHatSubCategoryList(hatCateviewModel.subCategoryHatDataList)
-        binding.rvHatCategoryHatSubCategory.adapter = hatSubCategoryAdapter
+            val bestItemAdapter = HatCategoryBestItemAdapter(requireContext())
+            bestItemAdapter.setHatSubCategoryList(hatCateViewModel.bestItemDataList)
+            rvHatCategoryBestItem.adapter = bestItemAdapter
+
+        }
+
     }
 }
