@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_hat_category_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="5dp"
@@ -17,8 +18,8 @@
             android:id="@+id/iv_hat_category_toolbar_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_marginVertical="5dp"
+            android:layout_marginStart="5dp"
             android:padding="12dp"
             android:src="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,8 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:layout_marginBottom="15dp"
-            android:fontFamily="@font/noto_sans_kr_semibold"
             android:text="여성액세서리"
+            android:textAppearance="@style/TextAppearance.Kor.SemiBold"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,5 +75,62 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_hat_category_toolbar_current_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginStart="20dp"
+        android:paddingBottom="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_hat_category_toolbar">
+
+        <TextView
+            android:id="@+id/tv_hat_category_toolbar_current_top_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여성액세서리"
+            android:textAppearance="@style/TextAppearance.Kor.Medium"
+            android:textColor="@color/grayscale_medium_gray"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layout_hat_category_toolbar_current_category" />
+
+        <ImageView
+            android:id="@+id/iv_hat_category_toolbar_current_category_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/ic_detail_right_gray_10dp"
+            app:layout_constraintStart_toEndOf="@id/tv_hat_category_toolbar_current_top_category"
+            app:layout_constraintTop_toTopOf="@id/layout_hat_category_toolbar_current_category" />
+
+        <TextView
+            android:id="@+id/tv_hat_category_toolbar_current_sub_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="모자"
+            android:textAppearance="@style/TextAppearance.Kor.Medium"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@id/iv_hat_category_toolbar_current_category_detail"
+            app:layout_constraintTop_toTopOf="@id/layout_hat_category_toolbar_current_category" />
+
+        <ImageView
+            android:id="@+id/iv_hat_category_toolbar_current_category_detail_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="3dp"
+            android:src="@drawable/ic_detail_down_black_10dp"
+            app:layout_constraintStart_toEndOf="@id/tv_hat_category_toolbar_current_sub_category"
+            app:layout_constraintTop_toTopOf="@id/layout_hat_category_toolbar_current_category" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
