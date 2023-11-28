@@ -402,8 +402,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="13dp"
-                                android:text="배송비"
                                 android:includeFontPadding="false"
+                                android:text="배송비"
                                 android:textAppearance="@style/TextAppearance.Kor.Medium"
                                 android:textColor="@color/grayscale_dark_gray"
                                 android:textSize="13sp"
@@ -416,12 +416,12 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="66dp"
                                 android:layout_marginTop="13dp"
+                                android:includeFontPadding="false"
                                 android:text="해당 브랜드 제품은 무료배송 됩니다."
                                 android:textAppearance="@style/TextAppearance.Kor.Medium"
                                 android:textColor="@color/grayscale_dark_gray"
                                 android:textSize="13sp"
                                 app:layout_constraintStart_toStartOf="parent"
-                                android:includeFontPadding="false"
                                 app:layout_constraintTop_toBottomOf="@id/tv_delivery_title" />
 
                             <TextView
@@ -430,8 +430,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="66dp"
                                 android:layout_marginTop="7dp"
-                                android:maxLines="2"
                                 android:includeFontPadding="false"
+                                android:maxLines="2"
                                 android:text="제주도를 포함한 도서/산간지역은 추가배송비 3,500원"
                                 android:textAppearance="@style/TextAppearance.Kor.Medium"
                                 android:textColor="@color/grayscale_dark_gray"
@@ -444,8 +444,8 @@
                                 android:id="@+id/tv_delivery_price_date"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:includeFontPadding="false"
                                 android:layout_marginTop="19dp"
+                                android:includeFontPadding="false"
                                 android:text="배송예정"
                                 android:textAppearance="@style/TextAppearance.Kor.Medium"
                                 android:textColor="@color/grayscale_dark_gray"
@@ -456,10 +456,10 @@
                             <TextView
                                 android:id="@+id/tv_delivery_price_date_one"
                                 android:layout_width="wrap_content"
-                                android:includeFontPadding="false"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="66dp"
                                 android:layout_marginTop="19dp"
+                                android:includeFontPadding="false"
                                 android:text="2일 이내"
                                 android:textAppearance="@style/TextAppearance.Kor.Medium"
                                 android:textColor="@color/point"
@@ -472,14 +472,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="4dp"
-                                android:includeFontPadding="false"
                                 android:layout_marginTop="19dp"
+                                android:includeFontPadding="false"
                                 android:text="출고 (주말, 공휴일제외)"
                                 android:textAppearance="@style/TextAppearance.Kor.Medium"
                                 android:textColor="@color/grayscale_dark_gray"
                                 android:textSize="13sp"
                                 app:layout_constraintStart_toEndOf="@id/tv_delivery_price_date_one"
-                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_price_text_two"/>
+                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_price_text_two" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -1057,9 +1057,9 @@
                             android:id="@+id/tv_ask_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
                             android:paddingVertical="21dp"
                             android:text="상품번호"
-                            android:includeFontPadding="false"
                             android:textAppearance="@style/TextAppearance.Kor.Bold"
                             android:textSize="16sp"
                             app:layout_constraintStart_toStartOf="parent"
@@ -1117,10 +1117,10 @@
                             app:layout_constraintTop_toBottomOf="@id/tv_ask_3" />
 
                         <TextView
-                            android:includeFontPadding="false"
                             android:id="@+id/tv_ask_4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
                             android:paddingVertical="21dp"
                             android:text="판매자정보"
                             android:textAppearance="@style/TextAppearance.Kor.Bold"
@@ -1149,11 +1149,71 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/bnv_buy"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:background="@color/grayscale_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/btn_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="24dp"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/ic_like"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btn_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="24dp"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/ic_share"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_like"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="44dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="선물하기"
+                    android:includeFontPadding="false"
+                    android:textAppearance="@style/TextAppearance.Kor.SemiBold"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="4dp"
+                    app:dividerColor="@color/grayscale_border" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="구매하기"
+                    android:includeFontPadding="false"
+                    android:textAppearance="@style/TextAppearance.Kor.SemiBold"
+                    android:textColor="@color/point"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
