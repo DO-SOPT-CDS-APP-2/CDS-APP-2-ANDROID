@@ -403,6 +403,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="13dp"
                                 android:text="배송비"
+                                android:includeFontPadding="false"
                                 android:textAppearance="@style/TextAppearance.Kor.Medium"
                                 android:textColor="@color/grayscale_dark_gray"
                                 android:textSize="13sp"
@@ -420,6 +421,7 @@
                                 android:textColor="@color/grayscale_dark_gray"
                                 android:textSize="13sp"
                                 app:layout_constraintStart_toStartOf="parent"
+                                android:includeFontPadding="false"
                                 app:layout_constraintTop_toBottomOf="@id/tv_delivery_title" />
 
                             <TextView
@@ -429,6 +431,7 @@
                                 android:layout_marginStart="66dp"
                                 android:layout_marginTop="7dp"
                                 android:maxLines="2"
+                                android:includeFontPadding="false"
                                 android:text="제주도를 포함한 도서/산간지역은 추가배송비 3,500원"
                                 android:textAppearance="@style/TextAppearance.Kor.Medium"
                                 android:textColor="@color/grayscale_dark_gray"
@@ -441,39 +444,42 @@
                                 android:id="@+id/tv_delivery_price_date"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="64dp"
+                                android:includeFontPadding="false"
+                                android:layout_marginTop="19dp"
                                 android:text="배송예정"
                                 android:textAppearance="@style/TextAppearance.Kor.Medium"
                                 android:textColor="@color/grayscale_dark_gray"
                                 android:textSize="13sp"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_price" />
+                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_price_text_two" />
 
                             <TextView
                                 android:id="@+id/tv_delivery_price_date_one"
                                 android:layout_width="wrap_content"
+                                android:includeFontPadding="false"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="66dp"
-                                android:layout_marginTop="64dp"
+                                android:layout_marginTop="19dp"
                                 android:text="2일 이내"
                                 android:textAppearance="@style/TextAppearance.Kor.Medium"
                                 android:textColor="@color/point"
                                 android:textSize="13sp"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_price" />
+                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_price_text_two" />
 
                             <TextView
                                 android:id="@+id/tv_delivery_price_date_two"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="4dp"
-                                android:layout_marginTop="64dp"
+                                android:includeFontPadding="false"
+                                android:layout_marginTop="19dp"
                                 android:text="출고 (주말, 공휴일제외)"
                                 android:textAppearance="@style/TextAppearance.Kor.Medium"
                                 android:textColor="@color/grayscale_dark_gray"
                                 android:textSize="13sp"
                                 app:layout_constraintStart_toEndOf="@id/tv_delivery_price_date_one"
-                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_price" />
+                                app:layout_constraintTop_toBottomOf="@id/tv_delivery_price_text_two"/>
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -537,6 +543,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="2dp"
+                                android:includeFontPadding="false"
                                 android:text="타입서비스"
                                 android:textAppearance="@style/TextAppearance.Kor.SemiBold"
                                 android:textColor="@color/grayscale_dark_gray"
@@ -594,6 +601,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
                     android:background="@color/white"
+                    android:textSize="14sp"
                     app:tabIndicatorColor="@color/grayscale_black"
                     app:tabIndicatorFullWidth="true"
                     app:tabRippleColor="@android:color/transparent"
@@ -759,6 +767,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
                                     android:text="머리둘레"
                                     android:textAppearance="@style/TextAppearance.Kor.Medium"
                                     android:textSize="12sp" />
@@ -785,6 +794,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
                                     android:text="깊이"
                                     android:textAppearance="@style/TextAppearance.Kor.Medium"
                                     android:textSize="12sp" />
@@ -811,6 +821,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
                                     android:text="챙길이"
                                     android:textAppearance="@style/TextAppearance.Kor.Medium"
                                     android:textSize="12sp" />
@@ -904,7 +915,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="3dp"
-                            android:text="의 이 상품은 어떄요?"
+                            android:text="의 이 상품은 어때요?"
                             android:textAppearance="@style/TextAppearance.Kor.Bold"
                             android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="@id/tv_recommend_title_point"
@@ -1003,9 +1014,16 @@
                             android:src="@drawable/img_hat_detail_3"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tv_review_title" />
+                            app:layout_constraintTop_toBottomOf="@id/iv_review_image" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:id="@+id/divider_review"
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="22dp"
+                        app:dividerColor="@color/grayscale_background" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/layout_ask"
@@ -1041,6 +1059,7 @@
                             android:layout_height="wrap_content"
                             android:paddingVertical="21dp"
                             android:text="상품번호"
+                            android:includeFontPadding="false"
                             android:textAppearance="@style/TextAppearance.Kor.Bold"
                             android:textSize="16sp"
                             app:layout_constraintStart_toStartOf="parent"
@@ -1059,6 +1078,7 @@
                             android:id="@+id/tv_ask_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
                             android:paddingVertical="21dp"
                             android:text="배송정보, 교환/환불안내"
                             android:textAppearance="@style/TextAppearance.Kor.Bold"
@@ -1079,6 +1099,7 @@
                             android:id="@+id/tv_ask_3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
                             android:paddingVertical="21dp"
                             android:text="상품정보 보기"
                             android:textAppearance="@style/TextAppearance.Kor.Bold"
@@ -1096,6 +1117,7 @@
                             app:layout_constraintTop_toBottomOf="@id/tv_ask_3" />
 
                         <TextView
+                            android:includeFontPadding="false"
                             android:id="@+id/tv_ask_4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
