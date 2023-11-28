@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/iv_home_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_home_52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_home_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="227dp"
+        android:textAppearance="@style/TextAppearance.Kor.Regular"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/iv_home_first"
+        app:layout_constraintTop_toTopOf="@id/iv_home_first"
+        tools:text="피에톤" />
+
+    <TextView
+        android:id="@+id/tv_home_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Kor.Bold"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/tv_home_brand"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_brand"
+        tools:text="피에톤 겨울 컬렉션 공개\n5% 단독할인" />
+
+    <ImageView
+        android:id="@+id/tv_home_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="100dp"
+        android:src="@drawable/ic_detail_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_brand" />
+
+    <ImageView
+        android:id="@+id/iv_home_third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/img_home_54"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_home_first" />
+
+    <ImageView
+        android:id="@+id/iv_home_third_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_like_off_gray"
+        app:layout_constraintBottom_toBottomOf="@id/iv_home_third"
+        app:layout_constraintEnd_toEndOf="@id/iv_home_third" />
+
+    <TextView
+        android:id="@+id/tv_home_third_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textAppearance="@style/TextAppearance.Kor.Regular"
+        android:textColor="@color/grayscale_dark_gray"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@id/iv_home_third"
+        app:layout_constraintTop_toBottomOf="@id/iv_home_third"
+        tools:text="피에톤" />
+
+
+    <TextView
+        android:id="@+id/tv_home_third_discount_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textAppearance="@style/TextAppearance.Kor.Bold"
+        android:textColor="@color/point"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@id/iv_home_third"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_third_brand"
+        tools:text="10%" />
+
+    <TextView
+        android:id="@+id/tv_home_third_discounted_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textAppearance="@style/TextAppearance.Kor.Bold"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_home_third_discount_rate"
+        app:layout_constraintStart_toEndOf="@id/tv_home_third_discount_rate"
+        app:layout_constraintTop_toTopOf="@id/tv_home_third_discount_rate"
+        tools:text="106,200" />
+
+
+    <ImageView
+        android:id="@+id/iv_home_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/img_home_53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_home_first" />
+
+    <ImageView
+        android:id="@+id/iv_home_second_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_like_off_gray"
+        app:layout_constraintBottom_toBottomOf="@id/iv_home_second"
+        app:layout_constraintEnd_toEndOf="@id/iv_home_second" />
+
+    <TextView
+        android:id="@+id/tv_home_second_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textAppearance="@style/TextAppearance.Kor.Regular"
+        android:textColor="@color/grayscale_dark_gray"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_home_second"
+        tools:text="피에톤" />
+
+
+    <TextView
+        android:id="@+id/tv_home_discount_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textAppearance="@style/TextAppearance.Kor.Bold"
+        android:textColor="@color/point"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_second_brand"
+        tools:text="10%" />
+
+    <TextView
+        android:id="@+id/tv_home_discounted_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textAppearance="@style/TextAppearance.Kor.Bold"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_home_discount_rate"
+        app:layout_constraintStart_toEndOf="@id/tv_home_discount_rate"
+        app:layout_constraintTop_toTopOf="@id/tv_home_discount_rate"
+        tools:text="95,400" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

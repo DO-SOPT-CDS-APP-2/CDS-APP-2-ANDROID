@@ -1,19 +1,79 @@
 package org.sopt.cds29cm.presentation.home
 
+import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import org.sopt.cds29cm.R
+import android.view.WindowManager
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import org.sopt.cds29cm.data.mock.HomeIssueViewModel
+import org.sopt.cds29cm.data.mock.HomeMarronViewModel
+import org.sopt.cds29cm.data.mock.HomeNotiaViewModel
+import org.sopt.cds29cm.data.mock.HomePopularViewModel
+import org.sopt.cds29cm.data.mock.HomeRecommendViewModel
+import org.sopt.cds29cm.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
+    private var _binding : FragmentHomeBinding? = null
+    private val binding get()= _binding!!
+    private val recommendViewModel by viewModels<HomeRecommendViewModel>()
+    private val notiaViewModel by viewModels<HomeNotiaViewModel>()
+    private val issueViewModel by viewModels<HomeIssueViewModel>()
+    private val popularViewModel by viewModels<HomePopularViewModel>()
+    private val marronViewModel by viewModels<HomeMarronViewModel>()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initRecommendAdapter()
+        initNotiaAdapter()
+        initIssueAdapter()
+        initPopularAdapter()
+        initMarronAdapter()
+    }
+    private fun initRecommendAdapter(){
+        val recommendAdapter = HomeRecommendAdapter(requireContext())
+        binding.rvHomeRecommend.adapter = recommendAdapter
+        recommendAdapter.setRecommendList(recommendViewModel.mockRecommend)
+    }
+
+    private fun initNotiaAdapter(){
+        val notiaAdapter = HomeNotiaAdapter(requireContext())
+        binding.rvHomeNotia.adapter = notiaAdapter
+        notiaAdapter.setRecommendList(notiaViewModel.mockNotia)
+    }
+    private fun initIssueAdapter(){
+        val issueAdapter = HomeIssueAdapter(requireContext())
+        binding.rvHomeIssue.adapter = issueAdapter
+        issueAdapter.setRecommendList(issueViewModel.mockIssue)
+    }
+    private fun initPopularAdapter(){
+        val popularAdapter = HomePopularAdapter(requireContext())
+        binding.rvHomePopular.adapter = popularAdapter
+        popularAdapter.setRecommendList(popularViewModel.mockPopular)
+    }
+    private fun initMarronAdapter(){
+        val marronAdapter = HomeMarronAdapter(requireContext())
+        binding.rvHomeMarron.adapter = marronAdapter
+        marronAdapter.setRecommendList(marronViewModel.mockMarron)
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
