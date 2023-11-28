@@ -27,7 +27,7 @@ class HatCategoryFilterAdapter(context: Context) :
 
     override fun getItemCount() = filterList.size
 
-    fun setHatSubCategoryList(categoryList: List<CategoryFilter>) {
+    fun setList(categoryList: List<CategoryFilter>) {
         this.filterList = categoryList.toList()
         notifyDataSetChanged()
     }

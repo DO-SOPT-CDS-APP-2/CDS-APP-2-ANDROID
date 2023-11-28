@@ -28,7 +28,7 @@ class CategoryHorizontalAdapter(context: Context) :
 
     override fun getItemCount()= CategoryHorizontalList.size
 
-    fun setCategoryHorizontalList(categoryList: List<CategoryHorizontal>) {
+    fun setList(categoryList: List<CategoryHorizontal>) {
         this.CategoryHorizontalList = categoryList.toList()
         notifyDataSetChanged()
     }

@@ -27,7 +27,7 @@ class HatCategoryItemAdapter(context: Context) :
 
     override fun getItemCount() = itemList.size
 
-    fun setHatSubCategoryList(categoryList: List<ResponseCategoryItemDTO>) {
+    fun setList(categoryList: List<ResponseCategoryItemDTO>) {
         this.itemList = categoryList.toList()
         notifyDataSetChanged()
     }

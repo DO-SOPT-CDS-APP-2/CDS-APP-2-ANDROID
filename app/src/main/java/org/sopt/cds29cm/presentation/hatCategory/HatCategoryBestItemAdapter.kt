@@ -27,7 +27,7 @@ class HatCategoryBestItemAdapter(context: Context) :
 
     override fun getItemCount() = bestItemList.size
 
-    fun setHatSubCategoryList(categoryList: List<BestItem>) {
+    fun setList(categoryList: List<BestItem>) {
         this.bestItemList = categoryList.toList()
         notifyDataSetChanged()
     }

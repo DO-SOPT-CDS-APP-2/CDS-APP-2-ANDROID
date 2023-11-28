@@ -28,7 +28,7 @@ class HatCategoryHorizontalCategoryAdapter(context: Context) :
 
     override fun getItemCount() = hatSubCategoryList.size
 
-    fun setHatSubCategoryList(categoryList: List<CategoryVertical>) {
+    fun setList(categoryList: List<CategoryVertical>) {
         this.hatSubCategoryList = categoryList.toList()
         notifyDataSetChanged()
     }
