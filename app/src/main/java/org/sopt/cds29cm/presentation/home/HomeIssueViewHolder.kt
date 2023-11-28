@@ -9,16 +9,18 @@ import org.sopt.cds29cm.databinding.ItemHomeNotiaBinding
 open class HomeIssueViewHolder(private val binding: ItemHomeIssueBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun onBind(homeIssue: HomeIssue) {
-        binding.ivHomeFirst.setImageResource(homeIssue.homeFirstImage)
-        binding.tvHomeBrand.text = homeIssue.homeFirstBrand
-        binding.tvHomeTitle.text = homeIssue.homeFirstTitle
-        binding.ivHomeSecond.setImageResource(homeIssue.homeSecondImage)
-        binding.tvHomeSecondBrand.text = homeIssue.homeSecondBrand
-        binding.tvHomeDiscountRate.text = homeIssue.homeSecondDiscount
-        binding.tvHomeDiscountedPrice.text = homeIssue.homeSecondPrice
-        binding.ivHomeThird.setImageResource(homeIssue.homeThirdImage)
-        binding.tvHomeThirdBrand.text = homeIssue.homeThirdBrand
-        binding.tvHomeThirdDiscountRate.text = homeIssue.homeThirdDiscount
-        binding.tvHomeThirdDiscountedPrice.text = homeIssue.homeThirdPrice
+        binding.run{
+            ivHomeFirst.setImageResource(homeIssue.homeFirstImage)
+            tvHomeBrand.text = homeIssue.homeFirstBrand
+            tvHomeTitle.text = homeIssue.homeFirstTitle
+            ivHomeSecond.setImageResource(homeIssue.homeSecondImage)
+            tvHomeSecondBrand.text = homeIssue.homeSecondBrand
+            tvHomeDiscountRate.text = homeIssue.homeSecondDiscount
+            tvHomeDiscountedPrice.text = homeIssue.homeSecondPrice
+            ivHomeThird.setImageResource(homeIssue.homeThirdImage)
+            tvHomeThirdBrand.text = homeIssue.homeThirdBrand
+            tvHomeThirdDiscountRate.text = homeIssue.homeThirdDiscount
+            tvHomeThirdDiscountedPrice.text = homeIssue.homeThirdPrice
+        }
     }
 }
