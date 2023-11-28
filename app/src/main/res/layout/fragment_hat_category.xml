@@ -76,7 +76,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_hat_category_toolbar_current_category"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="9dp"
@@ -144,10 +144,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_hat_category_toolbar_hat_category"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingStart="11dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_current_category">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -172,9 +173,10 @@
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/sv_hat_category_item"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_hat_category">
 
         <LinearLayout
@@ -211,8 +213,8 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="26dp"
                 app:dividerColor="@color/grayscale_border"
-                app:layout_constraintEnd_toEndOf="@id/sv_hat_category_item"
-                app:layout_constraintStart_toStartOf="@id/sv_hat_category_item"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_hat_category_best_item" />
 
             <LinearLayout
@@ -221,7 +223,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="13dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_best">
 
@@ -237,9 +239,10 @@
                     android:id="@+id/rv_hat_category_item"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     app:spanCount="2"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    tools:listItem= "@layout/content_item"/>
 
             </LinearLayout>
 
