@@ -595,6 +595,11 @@
                     app:tabTextAppearance="@style/TextAppearance.Kor.TabLayout"
                     app:tabTextColor="@color/grayscale_light_gray" />
 
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerColor="@color/grayscale_light_gray" />
+
             </com.google.android.material.appbar.AppBarLayout>
 
             <androidx.core.widget.NestedScrollView
@@ -867,10 +872,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="8dp"
                         android:layout_marginTop="22dp"
-                        app:dividerColor="@color/grayscale_background"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/layout_size" />
+                        app:dividerColor="@color/grayscale_background" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/layout_recommend"
@@ -939,22 +941,51 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
+                    <com.google.android.material.divider.MaterialDivider
+                        android:id="@+id/divider_recommend"
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="22dp"
+                        app:dividerColor="@color/grayscale_background" />
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/layout_review"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginHorizontal="16dp">
 
-                        <TextView
-                            android:id="@+id/tv_review"
-                            android:layout_width="match_parent"
-                            android:layout_height="300dp"
-                            android:background="@color/grayscale_medium_gray"
-                            android:gravity="center"
-                            android:text="리뷰"
+                        <ImageView
+                            android:id="@+id/iv_review_star"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/img_hat_detail_review"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_review_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="54dp"
+                            android:text="리뷰(13291)"
+                            android:textAppearance="@style/TextAppearance.Kor.Bold"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_review_star" />
+
+                        <ImageView
+                            android:id="@+id/iv_review_image"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="17dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/img_hat_detail_review_6"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_review_title" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
