@@ -7,16 +7,18 @@
 
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/toolbar_top_hat_detail"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/white">
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/btn_hat_detail_back"
@@ -65,8 +67,12 @@
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/layout_hat_detail"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/bnv_buy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_top_hat_detail">
 
             <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appbar_hat_detail"
@@ -952,7 +958,8 @@
                         android:id="@+id/layout_review"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="16dp">
+                        android:layout_marginHorizontal="16dp"
+                        android:paddingBottom="20dp">
 
                         <ImageView
                             android:id="@+id/iv_review_star"
@@ -987,22 +994,117 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/tv_review_title" />
 
+                        <ImageView
+                            android:id="@+id/btn_review_image"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="22dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/img_hat_detail_3"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_review_title" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/layout_ask"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="16dp">
+                        android:layout_marginHorizontal="16dp"
+                        android:paddingBottom="90dp">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="800dp"
-                            android:background="@color/grayscale_medium_gray"
-                            android:gravity="center"
-                            android:text="문의"
+                        <ImageView
+                            android:id="@+id/iv_ask"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/img_hat_detail_4"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider_ask_1"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="30dp"
+                            app:dividerColor="@color/grayscale_border"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_ask" />
+
+                        <TextView
+                            android:id="@+id/tv_ask_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="21dp"
+                            android:text="상품번호"
+                            android:textAppearance="@style/TextAppearance.Kor.Bold"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/divider_ask_1" />
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider_ask_2"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            app:dividerColor="@color/grayscale_border"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_ask_1" />
+
+                        <TextView
+                            android:id="@+id/tv_ask_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="21dp"
+                            android:text="배송정보, 교환/환불안내"
+                            android:textAppearance="@style/TextAppearance.Kor.Bold"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/divider_ask_2" />
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider_ask_3"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            app:dividerColor="@color/grayscale_border"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_ask_2" />
+
+                        <TextView
+                            android:id="@+id/tv_ask_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="21dp"
+                            android:text="상품정보 보기"
+                            android:textAppearance="@style/TextAppearance.Kor.Bold"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/divider_ask_3" />
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider_ask_4"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            app:dividerColor="@color/grayscale_border"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_ask_3" />
+
+                        <TextView
+                            android:id="@+id/tv_ask_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="21dp"
+                            android:text="판매자정보"
+                            android:textAppearance="@style/TextAppearance.Kor.Bold"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/divider_ask_4" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -1012,6 +1114,27 @@
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/fab_hat_detail_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="21dp"
+            android:src="@drawable/ic_btn_up"
+            app:layout_constraintBottom_toTopOf="@id/bnv_buy"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bnv_buy"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@color/grayscale_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
