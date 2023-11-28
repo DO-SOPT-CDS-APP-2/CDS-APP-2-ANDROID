@@ -9,4 +9,5 @@
     <color name="grayscale_dark_gray">#666666</color>
     <color name="grayscale_black">#222222</color>
     <color name="transparent">#00ff0000</color>
+    <color name="half_transparent">#E6343434</color>
 </resources>
