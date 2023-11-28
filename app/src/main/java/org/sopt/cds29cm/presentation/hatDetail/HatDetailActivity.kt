@@ -47,16 +47,31 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
     }
 
     private fun initOnScrollChangeListener() {
-        val distances = listOf(
-            binding.layoutSize,
-            binding.layoutRecommend,
-            binding.layoutReview,
-            binding.layoutAsk
-        ).map { binding.svHatDetail.computeDistanceToView(it) }
-
         binding.svHatDetail.setOnScrollChangeListener { _, _, scrollY, _, _ ->
-            val selectedTabIndex = distances.indexOfFirst { scrollY >= it }
-            binding.tabHatDetail.setScrollPosition(selectedTabIndex, 0f, true)
+            when {
+                scrollY < binding.svHatDetail.computeDistanceToView(binding.layoutSize) -> {
+                    binding.tabHatDetail.setScrollPosition(0, 0f, true)
+                }
+
+                scrollY >= binding.svHatDetail.computeDistanceToView(binding.layoutSize) &&
+                        scrollY < binding.svHatDetail.computeDistanceToView(binding.layoutRecommend) -> {
+                    binding.tabHatDetail.setScrollPosition(1, 0f, true)
+                }
+
+                scrollY >= binding.svHatDetail.computeDistanceToView(binding.layoutRecommend) &&
+                        scrollY < binding.svHatDetail.computeDistanceToView(binding.layoutReview) -> {
+                    binding.tabHatDetail.setScrollPosition(2, 0f, true)
+                }
+
+                scrollY >= binding.svHatDetail.computeDistanceToView(binding.layoutReview) &&
+                        scrollY < binding.svHatDetail.computeDistanceToView(binding.layoutAsk) -> {
+                    binding.tabHatDetail.setScrollPosition(3, 0f, true)
+                }
+
+                scrollY >= binding.svHatDetail.computeDistanceToView(binding.layoutAsk) -> {
+                    binding.tabHatDetail.setScrollPosition(4, 0f, true)
+                }
+            }
         }
     }
 }
