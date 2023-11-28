@@ -6,6 +6,7 @@ import org.sopt.cds29cm.R
 import org.sopt.cds29cm.databinding.ActivityHatDetailBinding
 import org.sopt.cds29cm.util.base.BindingActivity
 import org.sopt.cds29cm.util.extension.computeDistanceToView
+import org.sopt.cds29cm.util.extension.setOnSingleClickListener
 import org.sopt.cds29cm.util.extension.smoothScrollToView
 
 class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.activity_hat_detail) {
@@ -17,6 +18,7 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
 
         initTabLayoutSelectedListener()
         initOnScrollChangeListener()
+        initFabListener()
     }
 
     private fun initTabLayoutSelectedListener() {
@@ -72,6 +74,13 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
                     binding.tabHatDetail.setScrollPosition(4, 0f, true)
                 }
             }
+        }
+    }
+
+    private fun initFabListener() {
+        binding.fabHatDetailUp.setOnSingleClickListener {
+            binding.svHatDetail.smoothScrollToView(binding.layoutInfo)
+            binding.appbarHatDetail.setExpanded(true)
         }
     }
 }
