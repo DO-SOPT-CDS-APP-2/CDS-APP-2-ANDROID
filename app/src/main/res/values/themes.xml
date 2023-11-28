@@ -3,7 +3,7 @@
     <style name="Base.Theme.CDS29cm" parent="Theme.Material3.Light.NoActionBar">
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/grayscale_black</item>
+        <item name="android:statusBarColor">@color/transparent</item>
 
         <!-- Remove font padding. -->
         <item name="android:includeFontPadding">false</item>
