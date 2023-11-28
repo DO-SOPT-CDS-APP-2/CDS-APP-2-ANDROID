@@ -20,8 +20,13 @@ class HomeViewModel(private val homeService : HomeService) : ViewModel() {
 
     fun getData(){
         viewModelScope.launch {
-                val response = homeService.getHomeDataFromServer()
-                _responseSuccess.value = response.status == 200
+            runCatching {
+                homeService.getHomeDataFromServer()
+            }.onSuccess {
+                _responseSuccess.value = true
+            }.onFailure {
+                _responseSuccess.value = false
+            }
         }
     }
 
