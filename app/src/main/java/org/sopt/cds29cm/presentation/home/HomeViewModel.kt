@@ -1,14 +1,30 @@
 package org.sopt.cds29cm.presentation.home
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
 import org.sopt.cds29cm.R
 import org.sopt.cds29cm.data.dataclass.HomeIssue
 import org.sopt.cds29cm.data.dataclass.HomeMarron
 import org.sopt.cds29cm.data.dataclass.HomeNotia
 import org.sopt.cds29cm.data.dataclass.HomePopular
 import org.sopt.cds29cm.data.dataclass.HomeRecommend
+import org.sopt.cds29cm.data.service.HomeService
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel(private val homeService : HomeService) : ViewModel() {
+
+    private val _responseSuccess: MutableLiveData<Boolean> = MutableLiveData()
+    val responseSuccess: LiveData<Boolean> get() = _responseSuccess
+
+    fun getData(){
+        viewModelScope.launch {
+                val response = homeService.getHomeDataFromServer()
+                _responseSuccess.value = response.status == 200
+        }
+    }
+
     val mockIssue = listOf<HomeIssue>(
         HomeIssue(
             homeFirstImage = R.drawable.img_home_52,
