@@ -860,33 +860,82 @@
 
                         </GridLayout>
 
-                        <com.google.android.material.divider.MaterialDivider
-                            android:id="@+id/divider_size"
-                            android:layout_width="match_parent"
-                            android:layout_height="8dp"
-                            android:layout_marginTop="22dp"
-                            app:dividerColor="@color/grayscale_background"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/layout_size_detail" />
-
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:id="@+id/divider_size"
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="22dp"
+                        app:dividerColor="@color/grayscale_background"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/layout_size" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/layout_recommend"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:paddingBottom="20dp">
 
                         <TextView
-                            android:id="@+id/tv_rec"
-                            android:layout_width="match_parent"
-                            android:layout_height="300dp"
-                            android:background="@color/grayscale_medium_gray"
-                            android:gravity="center"
-                            android:text="추천"
-                            app:layout_constraintEnd_toEndOf="parent"
+                            android:id="@+id/tv_recommend_title_point"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="30dp"
+                            android:text="타입서비스"
+                            android:textAppearance="@style/TextAppearance.Kor.Bold"
+                            android:textColor="@color/point"
+                            android:textSize="18sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_recommend_title_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="의 이 상품은 어떄요?"
+                            android:textAppearance="@style/TextAppearance.Kor.Bold"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_recommend_title_point"
+                            app:layout_constraintStart_toEndOf="@id/tv_recommend_title_point"
+                            app:layout_constraintTop_toTopOf="@id/tv_recommend_title_point" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_recommend_brand"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="14dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_recommend_title_point"
+                            tools:listitem="@layout/item_recommend_brand" />
+
+                        <TextView
+                            android:id="@+id/tv_recommend_event"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="59dp"
+                            android:text="관련 이벤트"
+                            android:textAppearance="@style/TextAppearance.Kor.Bold"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/rv_recommend_brand" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_recommend_event"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_recommend_event"
+                            tools:listitem="@layout/item_recommend_event" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
