@@ -1,6 +1,7 @@
 package org.sopt.cds29cm.presentation.hatDetail
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.google.android.material.tabs.TabLayout
 import org.sopt.cds29cm.R
 import org.sopt.cds29cm.data.mock.mockHatDetailBrandList
@@ -14,6 +15,8 @@ import org.sopt.cds29cm.util.extension.smoothScrollToView
 class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.activity_hat_detail) {
 
     private val tabTextList = listOf("상품정보", "사이즈", "추천", "리뷰", "문의")
+
+    private val viewModel by viewModels<HatDetailViewModel>()
 
     private var _brandAdapter: HatDetailBrandAdapter? = null
     private val brandAdapter
@@ -31,6 +34,7 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
         initFabListener()
         setBrandRecyclerView()
         setEventRecyclerView()
+        viewModel.getHatDetailFromServer(1)
     }
 
     private fun initTabLayoutSelectedListener() {

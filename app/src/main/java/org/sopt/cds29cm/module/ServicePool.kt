@@ -1,5 +1,7 @@
 package org.sopt.cds29cm.module
 
+import org.sopt.cds29cm.data.service.HatDetailService
+
 object ServicePool {
-    // val authService = ApiFactory.create<AuthService>()
+    val hatDetailService = ApiFactory.create<HatDetailService>()
 }
