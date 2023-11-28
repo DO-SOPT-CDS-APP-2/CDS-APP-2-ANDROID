@@ -6,10 +6,12 @@ import org.sopt.cds29cm.databinding.ItemHomeRecommendBinding
 
 class HomeRecommendViewHolder(private val binding: ItemHomeRecommendBinding) : RecyclerView.ViewHolder(binding.root){
     fun onBind(homeRecommend: HomeRecommend) {
-        binding.ivHomeImage.setImageResource(homeRecommend.homeImage)
-        binding.tvHomeName.text = homeRecommend.homeName
-        binding.tvHomeDiscount.text = homeRecommend.homeDiscount
-        binding.tvHomePrice.text = homeRecommend.homePrice
-        binding.ivHomeLike.setImageResource(homeRecommend.homeLike)
+        binding.run{
+            ivHomeImage.setImageResource(homeRecommend.homeImage)
+            tvHomeName.text = homeRecommend.homeName
+            tvHomeDiscount.text = homeRecommend.homeDiscount
+            tvHomePrice.text = homeRecommend.homePrice
+            ivHomeLike.setImageResource(homeRecommend.homeLike)
+        }
     }
 }
