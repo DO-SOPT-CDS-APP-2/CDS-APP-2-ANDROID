@@ -3,6 +3,8 @@ package org.sopt.cds29cm.presentation.hatDetail
 import android.os.Bundle
 import com.google.android.material.tabs.TabLayout
 import org.sopt.cds29cm.R
+import org.sopt.cds29cm.data.mock.mockHatDetailBrandList
+import org.sopt.cds29cm.data.mock.mockHatDetailEventList
 import org.sopt.cds29cm.databinding.ActivityHatDetailBinding
 import org.sopt.cds29cm.util.base.BindingActivity
 import org.sopt.cds29cm.util.extension.computeDistanceToView
@@ -13,12 +15,22 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
 
     private val tabTextList = listOf("상품정보", "사이즈", "추천", "리뷰", "문의")
 
+    private var _brandAdapter: HatDetailBrandAdapter? = null
+    private val brandAdapter
+        get() = requireNotNull(_brandAdapter) { getString(R.string.adapter_not_initialized_error_msg) }
+
+    private var _eventAdapter: HatDetailEventAdapter? = null
+    private val eventAdapter
+        get() = requireNotNull(_eventAdapter) { getString(R.string.adapter_not_initialized_error_msg) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         initTabLayoutSelectedListener()
         initOnScrollChangeListener()
         initFabListener()
+        setBrandRecyclerView()
+        setEventRecyclerView()
     }
 
     private fun initTabLayoutSelectedListener() {
@@ -82,5 +94,23 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
             binding.svHatDetail.smoothScrollToView(binding.layoutInfo)
             binding.appbarHatDetail.setExpanded(true)
         }
+    }
+
+    private fun setBrandRecyclerView() {
+        _brandAdapter = HatDetailBrandAdapter()
+        binding.rvRecommendBrand.adapter = brandAdapter
+        brandAdapter.submitList(mockHatDetailBrandList)
+    }
+
+    private fun setEventRecyclerView() {
+        _eventAdapter = HatDetailEventAdapter()
+        binding.rvRecommendEvent.adapter = eventAdapter
+        eventAdapter.submitList(mockHatDetailEventList)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _brandAdapter = null
+        _eventAdapter = null
     }
 }

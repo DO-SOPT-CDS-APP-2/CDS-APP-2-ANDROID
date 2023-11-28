@@ -15,12 +15,12 @@ val mockHatDetailEventList = listOf<HatDetailEvent>(
         "2023.07.11 ~"
     ),
     HatDetailEvent(
-        R.drawable.img_hatdetail_25,
+        R.drawable.img_hatdetail_27,
         "역동적인 봄의 시작",
         "2023.02.17 ~"
     ),
     HatDetailEvent(
-        R.drawable.img_hatdetail_25,
+        R.drawable.img_hatdetail_28,
         "다채로운 꽃의 정원",
         "2022.09.02 ~"
     ),
