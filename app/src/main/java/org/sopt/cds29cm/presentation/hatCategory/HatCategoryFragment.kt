@@ -26,15 +26,15 @@ class HatCategoryFragment : Fragment() {
         with(binding)
         {
             val hatSubCategoryAdapter = HatCategoryHorizontalCategoryAdapter(requireContext())
-            hatSubCategoryAdapter.setHatSubCategoryList(hatCateViewModel.subCategoryHatDataList)
+            hatSubCategoryAdapter.setList(hatCateViewModel.subCategoryHatDataList)
             rvHatCategoryHatSubCategory.adapter = hatSubCategoryAdapter
 
             val bestItemAdapter = HatCategoryBestItemAdapter(requireContext())
-            bestItemAdapter.setHatSubCategoryList(hatCateViewModel.bestItemDataList)
+            bestItemAdapter.setList(hatCateViewModel.bestItemDataList)
             rvHatCategoryBestItem.adapter = bestItemAdapter
 
             val itemFilterAdapter = HatCategoryFilterAdapter(requireContext())
-            itemFilterAdapter.setHatSubCategoryList(hatCateViewModel.filterDataList)
+            itemFilterAdapter.setList(hatCateViewModel.filterDataList)
             rvHatCategoryFilter.adapter = itemFilterAdapter
 
         }

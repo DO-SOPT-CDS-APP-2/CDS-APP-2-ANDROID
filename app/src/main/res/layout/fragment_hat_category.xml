@@ -60,7 +60,6 @@
             android:src="@drawable/ic_search_black"
             app:layout_constraintEnd_toStartOf="@id/iv_hat_category_toolbar_mycart"
             app:layout_constraintTop_toTopOf="parent" />
-        <!--app:layout_constraintEnd_toStartOf="@id/iv_hat_category_toolbar_mycart"-->
 
         <ImageView
             android:id="@+id/iv_hat_category_toolbar_mycart"
@@ -250,6 +249,4 @@
                 android:text="텍스트 요 있다~" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
