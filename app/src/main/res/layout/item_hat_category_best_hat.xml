@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_category_vertical_right"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingEnd="8dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:id="@+id/iv_hat_category_best"
+        android:layout_width="119dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_hat_category_30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/grayscale_black"
+        android:paddingHorizontal="9dp"
+        android:paddingVertical="3dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_hat_category_best"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_hat_category_best_item_ranking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textAppearance="@style/TextAppearance.Kor.Medium"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_hat_category_best_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="타임서비스"
+        android:textAppearance="@style/TextAppearance.Kor.Bold"
+        android:textSize="11dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_hat_category_best" />
+
+    <TextView
+        android:id="@+id/tv_hat_category_best_item_discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="5%"
+        android:textAppearance="@style/TextAppearance.Eng.Bold"
+        android:textColor="@color/point"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_hat_category_best_item_name" />
+
+    <TextView
+        android:id="@+id/tv_hat_category_best_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="6dp"
+        android:text="37,050"
+        android:textAppearance="@style/TextAppearance.Eng.Bold"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/tv_hat_category_best_item_discount"
+        app:layout_constraintTop_toBottomOf="@id/tv_hat_category_best_item_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
