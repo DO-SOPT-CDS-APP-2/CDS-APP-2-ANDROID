@@ -5,6 +5,7 @@ import org.sopt.cds29cm.R
 import org.sopt.cds29cm.data.dataclass.HatBestItem
 import org.sopt.cds29cm.data.dataclass.HatCategoryFilter
 import org.sopt.cds29cm.data.dataclass.CategoryVertical
+import org.sopt.cds29cm.data.dataclass.HatCategoryItemComment
 
 class HatCategoryViewModel : ViewModel() {
 
@@ -54,11 +55,34 @@ class HatCategoryViewModel : ViewModel() {
             ),
     )
 
-    val filterDataList=listOf<HatCategoryFilter>(
-        HatCategoryFilter(filterName="추천순"),
-        HatCategoryFilter(filterName="색상"),
-        HatCategoryFilter(filterName="가격대"),
-        HatCategoryFilter(filterName="상품정보"),
-        HatCategoryFilter(filterName="브랜드"),
+    val filterDataList = listOf<HatCategoryFilter>(
+        HatCategoryFilter(filterName = "추천순"),
+        HatCategoryFilter(filterName = "색상"),
+        HatCategoryFilter(filterName = "가격대"),
+        HatCategoryFilter(filterName = "상품정보"),
+        HatCategoryFilter(filterName = "브랜드"),
+    )
+
+    val hatItemCommentDataList = listOf<HatCategoryItemComment>(
+        HatCategoryItemComment(
+            heart = "93,594",
+            mark = "5.0",
+            markPeople = "(13286)"
+        ),
+        HatCategoryItemComment(
+            heart = "93,594",
+            mark = "5.0",
+            markPeople = "(13286)"
+        ),
+        HatCategoryItemComment(
+            heart = "31,300",
+            mark = "5.0",
+            markPeople = "(4091)"
+        ),
+        HatCategoryItemComment(
+            heart = "31,300",
+            mark = "5.0",
+            markPeople = "(4091)"
+        ),
     )
 }

@@ -49,31 +49,8 @@ class HatCategoryFragment : Fragment() {
                             val itemDataList: HatCategoryItem = requireNotNull(response.body())
                             //어댑터로 끼워넣기
                             val itemAdapter = HatCategoryItemAdapter(requireContext())
-                            itemAdapter.setList(itemDataList.data)
+                            itemAdapter.setList(itemDataList.data, hatCateViewModel.hatItemCommentDataList)
                             rvHatCategoryItem.adapter = itemAdapter
-                            /*
-                                                        //heart 상태 불러오기
-                                                        itemService.putHeartItem(1, data.productId)
-                                                            .enqueue(object :retrofit2.Callback<ResponseHeartDTO>{
-                                                                override fun onResponse(
-                                                                    call: Call<ResponseHeartDTO>,
-                                                                    response: Response<ResponseHeartDTO>
-                                                                ) {
-                                                                    if(response.isSuccessful){
-                                                                        Toast.makeText(context, "하트 통신 됌", Toast.LENGTH_SHORT).show()
-                                                                    }
-                                                                }
-
-                                                                override fun onFailure(
-                                                                    call: Call<ResponseHeartDTO>,
-                                                                    t: Throwable
-                                                                ) {
-                                                                    TODO("Not yet implemented")
-                                                                }
-                                                            })
-                            */
-
-
                         }
                     }
 
