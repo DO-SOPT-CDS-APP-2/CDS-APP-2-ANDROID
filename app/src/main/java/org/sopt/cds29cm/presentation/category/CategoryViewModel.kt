@@ -3,7 +3,7 @@ package org.sopt.cds29cm.presentation.category
 import androidx.lifecycle.ViewModel
 import org.sopt.cds29cm.R
 import org.sopt.cds29cm.data.CategoryHorizontal
-import org.sopt.cds29cm.data.CategoryVertical
+import org.sopt.cds29cm.data.dataclass.CategoryVertical
 
 class CategoryViewModel : ViewModel() {
 

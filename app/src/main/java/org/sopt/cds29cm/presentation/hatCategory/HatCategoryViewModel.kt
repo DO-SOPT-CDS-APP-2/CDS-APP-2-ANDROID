@@ -2,9 +2,9 @@ package org.sopt.cds29cm.presentation.hatCategory
 
 import androidx.lifecycle.ViewModel
 import org.sopt.cds29cm.R
-import org.sopt.cds29cm.data.BestItem
-import org.sopt.cds29cm.data.CategoryFilter
-import org.sopt.cds29cm.data.CategoryVertical
+import org.sopt.cds29cm.data.dataclass.HatBestItem
+import org.sopt.cds29cm.data.dataclass.HatCategoryFilter
+import org.sopt.cds29cm.data.dataclass.CategoryVertical
 
 class HatCategoryViewModel : ViewModel() {
 
