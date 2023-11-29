@@ -5,7 +5,7 @@
     android:id="@+id/layout_category_vertical_right"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="30dp"
+    android:paddingBottom="30dp"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
@@ -17,7 +17,6 @@
         android:src="@drawable/img_hatcategory_13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/tv_hat_category_vertical_item_brand"
@@ -44,19 +43,23 @@
 
     <TextView
         android:id="@+id/tv_hat_category_vertical_item_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="9dp"
+        android:layout_marginEnd="23dp"
+        android:ellipsize="end"
+        android:singleLine="true"
         android:text="Typerserive~~~상품명"
         android:textAppearance="@style/TextAppearance.Eng.Medium"
         android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@id/layout_category_vertical_right"
         app:layout_constraintStart_toStartOf="@id/layout_category_vertical_right"
         app:layout_constraintTop_toBottomOf="@id/tv_hat_category_vertical_item_brand" />
 
 
     <TextView
-        android:id="@+id/tv_hat_category_vertical_item_price"
+        android:id="@+id/tv_hat_category_vertical_item_discount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -70,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_hat_category_vertical_item_name" />
 
     <TextView
-        android:id="@+id/tv_hat_category_vertical_item_discount"
+        android:id="@+id/tv_hat_category_vertical_item_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
@@ -78,7 +81,7 @@
         android:text="37,050"
         android:textAppearance="@style/TextAppearance.Eng.Bold"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@id/tv_hat_category_vertical_item_price"
+        app:layout_constraintStart_toEndOf="@id/tv_hat_category_vertical_item_discount"
         app:layout_constraintTop_toBottomOf="@id/tv_hat_category_vertical_item_name" />
 
     <LinearLayout
@@ -121,8 +124,10 @@
             android:id="@+id/tv_hat_category_vertical_item_heart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
             android:layout_marginTop="2dp"
             android:textAppearance="@style/TextAppearance.Eng.Medium"
+            android:textColor="@color/grayscale_medium_gray"
             android:textSize="8dp" />
 
         <ImageView
@@ -152,6 +157,5 @@
             android:textColor="@color/grayscale_medium_gray"
             android:textSize="8sp" />
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
