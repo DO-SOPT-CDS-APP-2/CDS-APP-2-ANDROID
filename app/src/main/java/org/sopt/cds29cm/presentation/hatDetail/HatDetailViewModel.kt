@@ -1,5 +1,6 @@
 package org.sopt.cds29cm.presentation.hatDetail
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -20,7 +21,7 @@ class HatDetailViewModel() : ViewModel() {
                 hatDetailService.getProductDetail(productId)
             }
                 .onSuccess {
-                    _hatDetailState.value = UiState.Success(it.data)
+                    _hatDetailState.value = UiState.Success(it.body()?.data)
                 }
                 .onFailure {
                     _hatDetailState.value = UiState.Failure(it.message.toString())

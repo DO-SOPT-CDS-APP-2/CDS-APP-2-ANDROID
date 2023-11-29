@@ -1,16 +1,20 @@
 package org.sopt.cds29cm.presentation.hatDetail
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
+import coil.load
 import com.google.android.material.tabs.TabLayout
 import org.sopt.cds29cm.R
 import org.sopt.cds29cm.data.mock.mockHatDetailBrandList
 import org.sopt.cds29cm.data.mock.mockHatDetailEventList
 import org.sopt.cds29cm.databinding.ActivityHatDetailBinding
+import org.sopt.cds29cm.util.UiState
 import org.sopt.cds29cm.util.base.BindingActivity
 import org.sopt.cds29cm.util.extension.computeDistanceToView
 import org.sopt.cds29cm.util.extension.setOnSingleClickListener
 import org.sopt.cds29cm.util.extension.smoothScrollToView
+import org.sopt.cds29cm.util.extension.toast
 
 class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.activity_hat_detail) {
 
@@ -35,6 +39,7 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
         setBrandRecyclerView()
         setEventRecyclerView()
         viewModel.getHatDetailFromServer(1)
+        observeHatDetailData()
     }
 
     private fun initTabLayoutSelectedListener() {
@@ -110,6 +115,37 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
         _eventAdapter = HatDetailEventAdapter()
         binding.rvRecommendEvent.adapter = eventAdapter
         eventAdapter.submitList(mockHatDetailEventList)
+    }
+
+    private fun observeHatDetailData() {
+        viewModel.hatDetailState.observe(this) { state ->
+            when (state) {
+                is UiState.Success -> {
+                    if (state.data != null) {
+                        with(binding) {
+                            ivHatDetailMain.load(state.data.imageUrl)
+                            tvHatDetailBrandName.text = state.data.brand
+                            tvHatDetailName.text = state.data.name
+                            tvHatDetailOriginalPrice.text = String.format("%,d", state.data.price)
+                            tvHatDetailSalePercent.text = state.data.discountRate.toString() + "%"
+                            tvHatDetailPrice.text = String.format("%,d", state.data.discountPrice)
+                            tvHatDetailPoint.text = state.data.point.toString() + "p"
+                            tvHatDetailPointPercent.text =
+                                "(" + state.data.pointRate.toString() + "%)"
+                            ivInfoDetail.load(state.data.description)
+                        }
+                    }
+                }
+
+                is UiState.Failure -> {
+                    toast(getString(R.string.server_error))
+                }
+
+                is UiState.Empty -> return@observe
+
+                is UiState.Loading -> return@observe
+            }
+        }
     }
 
     override fun onDestroy() {

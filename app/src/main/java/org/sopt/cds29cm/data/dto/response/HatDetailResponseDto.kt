@@ -15,8 +15,8 @@ data class HatDetailResponseDto(
     val price: Int,
     @SerialName("discountRate")
     val discountRate: Int,
-    @SerialName("discountedPrice")
-    val discountedPrice: Int,
+    @SerialName("discountPrice")
+    val discountPrice: Int,
     @SerialName("point")
     val point: Int,
     @SerialName("pointRate")

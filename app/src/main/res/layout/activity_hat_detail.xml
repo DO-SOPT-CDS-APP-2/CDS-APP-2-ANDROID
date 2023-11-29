@@ -138,13 +138,15 @@
 
                         <TextView
                             android:id="@+id/tv_hat_detail_name"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="13dp"
+                            android:layout_marginEnd="24dp"
                             android:paddingVertical="3dp"
                             android:textAppearance="@style/TextAppearance.Eng.Bold"
                             android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/tv_hat_detail_brand_name"
                             tools:text="Typeservice Web Cap [22 Colors]" />
@@ -164,13 +166,13 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:layout_marginBottom="2dp"
+                            android:text="13,266개 리뷰 보기"
                             android:textAppearance="@style/TextAppearance.Kor.SemiBold"
                             android:textColor="@color/grayscale_dark_gray"
                             android:textSize="10sp"
                             app:layout_constraintBottom_toBottomOf="@id/iv_hat_detail_star"
                             app:layout_constraintStart_toEndOf="@id/iv_hat_detail_star"
-                            app:layout_constraintTop_toTopOf="@id/iv_hat_detail_star"
-                            tools:text="13,266개 리뷰 보기" />
+                            app:layout_constraintTop_toTopOf="@id/iv_hat_detail_star" />
 
                         <TextView
                             android:id="@+id/tv_hat_detail_original_price"
@@ -311,12 +313,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
+                                android:text="34,468"
                                 android:textAppearance="@style/TextAppearance.Eng.Bold"
                                 android:textSize="14sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toStartOf="@id/tv_user_price_won"
-                                app:layout_constraintTop_toTopOf="parent"
-                                tools:text="34,468" />
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/tv_user_price_percent"
@@ -324,24 +326,24 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
                                 android:layout_marginEnd="3dp"
+                                android:text="12%"
                                 android:textAppearance="@style/TextAppearance.Eng.Bold"
                                 android:textColor="@color/grayscale_medium_gray"
                                 android:textSize="14sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toStartOf="@id/tv_user_price"
-                                app:layout_constraintTop_toTopOf="parent"
-                                tools:text="12%" />
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/tv_user_price_user"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="김솝트"
                                 android:textAppearance="@style/TextAppearance.Kor.Medium"
                                 android:textSize="12sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                tools:text="김솝트" />
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/tv_user_price_user_is"
@@ -663,10 +665,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="4dp"
+                                android:includeFontPadding="false"
                                 android:text="상품 설명 더보기"
                                 android:textAppearance="@style/TextAppearance.Kor.Bold"
                                 android:textSize="13sp"
-                                android:includeFontPadding="false"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toStartOf="@id/iv_info_more"
                                 app:layout_constraintHorizontal_chainStyle="packed"
