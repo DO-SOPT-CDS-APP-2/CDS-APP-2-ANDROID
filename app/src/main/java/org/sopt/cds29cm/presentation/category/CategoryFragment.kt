@@ -30,16 +30,16 @@ class CategoryFragment : Fragment() {
 
         //viewModel에서 가로 스크롤 카테고리 리스트 가져와서 생성
         val categoryHorizontalAdapter = CategoryHorizontalAdapter(requireContext())
-        categoryHorizontalAdapter.setCategoryHorizontalList(viewModel.categoryHorizontalDataList)
+        categoryHorizontalAdapter.setList(viewModel.categoryHorizontalDataList)
         //fragment영역에 적용
         binding.rvCategoryHorizontal.adapter = categoryHorizontalAdapter
 
         val categoryVerticalLeftAdapter = CategoryVerticalLeftAdapter(requireContext())
-        categoryVerticalLeftAdapter.setCategoryVerticalLeftList(viewModel.CategoryVerticalLeftDataList)
+        categoryVerticalLeftAdapter.setList(viewModel.CategoryVerticalLeftDataList)
         binding.rvCategoryVerticalLeft.adapter = categoryVerticalLeftAdapter
 
         val categoryVerticalRightAdapter = CategoryVerticalRightAdapter(requireContext())
-        categoryVerticalRightAdapter.setCategoryVerticalRightList(viewModel.CategoryVerticalRightDataList)
+        categoryVerticalRightAdapter.setList(viewModel.CategoryVerticalRightDataList)
         binding.rvCategoryVerticalRight.adapter = categoryVerticalRightAdapter
 
     }

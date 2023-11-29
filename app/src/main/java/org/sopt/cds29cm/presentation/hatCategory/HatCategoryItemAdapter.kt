@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import org.sopt.cds29cm.data.ResponseCategoryItemDTO
+import org.sopt.cds29cm.data.dto.response.ResponseCategoryItemDTO
 import org.sopt.cds29cm.databinding.ItemHatCategoryVerticalBinding
 
 class HatCategoryItemAdapter(context: Context) :

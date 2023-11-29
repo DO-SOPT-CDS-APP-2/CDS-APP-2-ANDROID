@@ -1,7 +1,7 @@
 package org.sopt.cds29cm.presentation.category
 
 import androidx.recyclerview.widget.RecyclerView
-import org.sopt.cds29cm.data.CategoryVertical
+import org.sopt.cds29cm.data.dataclass.CategoryVertical
 import org.sopt.cds29cm.databinding.ItemCategoryVerticalRightBinding
 
 class CategoryVerticalRightViewHolder(private val binding: ItemCategoryVerticalRightBinding) :

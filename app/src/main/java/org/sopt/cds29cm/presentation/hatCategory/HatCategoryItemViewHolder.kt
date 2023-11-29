@@ -3,7 +3,7 @@ package org.sopt.cds29cm.presentation.hatCategory
 import android.icu.text.DecimalFormat
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import org.sopt.cds29cm.data.ResponseCategoryItemDTO
+import org.sopt.cds29cm.data.dto.response.ResponseCategoryItemDTO
 import org.sopt.cds29cm.databinding.ItemHatCategoryVerticalBinding
 
 class HatCategoryItemViewHolder(private val binding: ItemHatCategoryVerticalBinding) :
@@ -15,7 +15,7 @@ class HatCategoryItemViewHolder(private val binding: ItemHatCategoryVerticalBind
             tvHatCategoryVerticalItemName.text = itemDataList.name
             tvHatCategoryVerticalItemDiscount.text = itemDataList.discount.toString() + "%"
             val decimal = DecimalFormat("#,###")
-            tvHatCategoryVerticalItemPrice.text = decimal.format(itemDataList.price.toString())
+            tvHatCategoryVerticalItemPrice.text = decimal.format(itemDataList.price)
         }
     }
 

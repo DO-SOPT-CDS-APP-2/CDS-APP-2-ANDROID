@@ -1,4 +1,4 @@
-package org.sopt.cds29cm.data
+package org.sopt.cds29cm.data.dto.response
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

@@ -19,8 +19,8 @@ class HatCategoryViewModel : ViewModel() {
         CategoryVertical(categoryName = "페도라"),
     )
 
-    val bestItemDataList = listOf<BestItem>(
-        BestItem(
+    val bestItemDataList = listOf<HatBestItem>(
+        HatBestItem(
             itemName = "타입서비스",
             itemDiscount = "5%",
             itemPrice = "37,050",
@@ -28,7 +28,7 @@ class HatCategoryViewModel : ViewModel() {
             itemImage = R.drawable.img_hat_category_30,
 
             ),
-        BestItem(
+        HatBestItem(
             itemName = "슬리피슬립",
             itemDiscount = "10%",
             itemPrice = "52,200",
@@ -36,7 +36,7 @@ class HatCategoryViewModel : ViewModel() {
             itemImage = R.drawable.img_hat_category_31,
 
             ),
-        BestItem(
+        HatBestItem(
             itemName = "론론",
             itemDiscount = "15%",
             itemPrice = "140,250",
@@ -44,7 +44,7 @@ class HatCategoryViewModel : ViewModel() {
             itemImage = R.drawable.img_hat_category_32,
 
             ),
-        BestItem(
+        HatBestItem(
             itemName = "시엔느",
             itemDiscount = "5%",
             itemPrice = "37,050",
@@ -54,11 +54,11 @@ class HatCategoryViewModel : ViewModel() {
             ),
     )
 
-    val filterDataList=listOf<CategoryFilter>(
-        CategoryFilter(filterName="추천순"),
-        CategoryFilter(filterName="색상"),
-        CategoryFilter(filterName="가격대"),
-        CategoryFilter(filterName="상품정보"),
-        CategoryFilter(filterName="브랜드"),
+    val filterDataList=listOf<HatCategoryFilter>(
+        HatCategoryFilter(filterName="추천순"),
+        HatCategoryFilter(filterName="색상"),
+        HatCategoryFilter(filterName="가격대"),
+        HatCategoryFilter(filterName="상품정보"),
+        HatCategoryFilter(filterName="브랜드"),
     )
 }
