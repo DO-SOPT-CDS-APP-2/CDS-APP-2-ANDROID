@@ -1,7 +1,6 @@
 package org.sopt.cds29cm.presentation.hatDetail
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import coil.load
 import com.google.android.material.tabs.TabLayout
@@ -38,7 +37,7 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
         initFabListener()
         setBrandRecyclerView()
         setEventRecyclerView()
-        viewModel.getHatDetailFromServer(1)
+        viewModel.getHatDetailFromServer(3)
         observeHatDetailData()
     }
 
