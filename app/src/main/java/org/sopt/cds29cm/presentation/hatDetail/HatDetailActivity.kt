@@ -129,8 +129,7 @@ class HatDetailActivity : BindingActivity<ActivityHatDetailBinding>(R.layout.act
                             tvHatDetailSalePercent.text = state.data.discountRate.toString() + "%"
                             tvHatDetailPrice.text = String.format("%,d", state.data.discountPrice)
                             tvHatDetailPoint.text = state.data.point.toString() + "p"
-                            tvHatDetailPointPercent.text =
-                                "(" + state.data.pointRate.toString() + "%)"
+                            tvHatDetailPointPercent.text = "(" + state.data.pointRate.toString() + "%)"
                             ivInfoDetail.load(state.data.description)
                         }
                     }
