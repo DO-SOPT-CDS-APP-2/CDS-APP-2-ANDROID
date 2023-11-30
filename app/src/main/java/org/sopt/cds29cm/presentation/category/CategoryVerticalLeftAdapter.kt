@@ -28,7 +28,7 @@ class CategoryVerticalLeftAdapter(context: Context) :
 
     override fun getItemCount() = CategoryVerticalLeftList.size
 
-    fun setCategoryVerticalLeftList(categoryList: List<CategoryVertical>) {
+    fun setList(categoryList: List<CategoryVertical>) {
         this.CategoryVerticalLeftList = categoryList.toList()
         notifyDataSetChanged()
     }
