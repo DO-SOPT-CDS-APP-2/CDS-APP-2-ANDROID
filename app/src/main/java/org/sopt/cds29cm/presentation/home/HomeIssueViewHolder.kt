@@ -2,9 +2,7 @@ package org.sopt.cds29cm.presentation.home
 
 import androidx.recyclerview.widget.RecyclerView
 import org.sopt.cds29cm.data.dataclass.HomeIssue
-import org.sopt.cds29cm.data.dataclass.HomeNotia
 import org.sopt.cds29cm.databinding.ItemHomeIssueBinding
-import org.sopt.cds29cm.databinding.ItemHomeNotiaBinding
 
 open class HomeIssueViewHolder(private val binding: ItemHomeIssueBinding) : RecyclerView.ViewHolder(binding.root) {
 

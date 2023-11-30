@@ -28,19 +28,19 @@ class CategoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //viewModel에서 가로 스크롤 카테고리 리스트 가져와서 생성
-        val categoryHorizontalAdapter = CategoryHorizontalAdapter(requireContext())
-        categoryHorizontalAdapter.setCategoryHorizontalList(viewModel.categoryHorizontalDataList)
-        //fragment영역에 적용
-        binding.rvCategoryHorizontal.adapter = categoryHorizontalAdapter
-
-        val categoryVerticalLeftAdapter = CategoryVerticalLeftAdapter(requireContext())
-        categoryVerticalLeftAdapter.setCategoryVerticalLeftList(viewModel.CategoryVerticalLeftDataList)
-        binding.rvCategoryVerticalLeft.adapter = categoryVerticalLeftAdapter
-
-        val categoryVerticalRightAdapter = CategoryVerticalRightAdapter(requireContext())
-        categoryVerticalRightAdapter.setCategoryVerticalRightList(viewModel.CategoryVerticalRightDataList)
-        binding.rvCategoryVerticalRight.adapter = categoryVerticalRightAdapter
+//        //viewModel에서 가로 스크롤 카테고리 리스트 가져와서 생성
+//        val categoryHorizontalAdapter = CategoryHorizontalAdapter(requireContext())
+//        categoryHorizontalAdapter.setCategoryHorizontalList(viewModel.categoryHorizontalDataList)
+//        //fragment영역에 적용
+//        binding.rvCategoryHorizontal.adapter = categoryHorizontalAdapter
+//
+//        val categoryVerticalLeftAdapter = CategoryVerticalLeftAdapter(requireContext())
+//        categoryVerticalLeftAdapter.setCategoryVerticalLeftList(viewModel.CategoryVerticalLeftDataList)
+//        binding.rvCategoryVerticalLeft.adapter = categoryVerticalLeftAdapter
+//
+//        val categoryVerticalRightAdapter = CategoryVerticalRightAdapter(requireContext())
+//        categoryVerticalRightAdapter.setCategoryVerticalRightList(viewModel.CategoryVerticalRightDataList)
+//        binding.rvCategoryVerticalRight.adapter = categoryVerticalRightAdapter
 
     }
 

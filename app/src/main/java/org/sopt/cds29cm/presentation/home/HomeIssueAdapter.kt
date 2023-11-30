@@ -5,10 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import android.content.Context
 import org.sopt.cds29cm.data.dataclass.HomeIssue
-import org.sopt.cds29cm.data.dataclass.HomeNotia
-import org.sopt.cds29cm.data.dataclass.HomeRecommend
 import org.sopt.cds29cm.databinding.ItemHomeIssueBinding
-import org.sopt.cds29cm.databinding.ItemHomeNotiaBinding
 
 class HomeIssueAdapter(context: Context) : RecyclerView.Adapter<HomeIssueViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }

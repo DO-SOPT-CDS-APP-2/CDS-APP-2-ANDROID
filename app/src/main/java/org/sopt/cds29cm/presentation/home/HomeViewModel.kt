@@ -8,21 +8,26 @@ import kotlinx.coroutines.launch
 import org.sopt.cds29cm.R
 import org.sopt.cds29cm.data.dataclass.HomeIssue
 import org.sopt.cds29cm.data.dataclass.HomeMarron
-import org.sopt.cds29cm.data.dataclass.HomeNotia
 import org.sopt.cds29cm.data.dataclass.HomePopular
 import org.sopt.cds29cm.data.dataclass.HomeRecommend
+import org.sopt.cds29cm.data.dto.response.HomeResponseDto
 import org.sopt.cds29cm.data.service.HomeService
 
-class HomeViewModel(private val homeService : HomeService) : ViewModel() {
+class HomeViewModel(private val homeService: HomeService) : ViewModel() {
 
     private val _responseSuccess: MutableLiveData<Boolean> = MutableLiveData()
     val responseSuccess: LiveData<Boolean> get() = _responseSuccess
 
-    fun getData(){
+    private val _dataResult: MutableLiveData<HomeResponseDto?> = MutableLiveData()
+
+    val dataResult: MutableLiveData<HomeResponseDto?> get() = _dataResult
+
+    fun getData() {
         viewModelScope.launch {
             runCatching {
                 homeService.getHomeDataFromServer()
             }.onSuccess {
+                _dataResult.value = homeService.getHomeDataFromServer().data
                 _responseSuccess.value = true
             }.onFailure {
                 _responseSuccess.value = false
@@ -81,27 +86,6 @@ class HomeViewModel(private val homeService : HomeService) : ViewModel() {
 
         )
 
-    val mockNotia = listOf<HomeNotia>(
-        HomeNotia(
-            imageUrl = R.drawable.img_home_44,
-            brand = "노티아",
-            name = "MERINO WOOL ROUND CARDIGAN - RED",
-            discount = "10%",
-            price = "106,200",
-            like = R.drawable.ic_like_off,
-            likeCount = "148",
-        ),
-        HomeNotia(
-            imageUrl = R.drawable.img_home_45,
-            brand = "노티아",
-            name = "LUNA BALMACAN HANDMADE COAT - BEIGE",
-            discount = "10%",
-            price = "282,600",
-            like = R.drawable.ic_like_off,
-            likeCount = "148",
-        ),
-
-        )
 
     val mockPopular = listOf<HomePopular>(
         HomePopular(
