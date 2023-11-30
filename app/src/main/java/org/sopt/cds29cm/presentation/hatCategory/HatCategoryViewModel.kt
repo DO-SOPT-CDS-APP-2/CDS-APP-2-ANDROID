@@ -87,9 +87,9 @@ class HatCategoryViewModel : ViewModel() {
         ),
     )
 
-    lateinit private var itemId:String
+     private var itemId:Int? =null
     var itemHolder : HatCategoryItemViewHolder? =null
-    fun setPositionAndHolder(productId: String, holder: HatCategoryItemViewHolder) {
+    fun setPositionAndHolder(productId: Int, holder: HatCategoryItemViewHolder) {
         itemId = productId
         itemHolder = holder
     }

@@ -17,8 +17,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import org.sopt.cds29cm.data.dataclass.HatCategoryItem
 import org.sopt.cds29cm.data.dto.response.BaseResponse
+import org.sopt.cds29cm.data.dto.response.HeartDTO
 import org.sopt.cds29cm.data.dto.response.HeartResponseDto
 import org.sopt.cds29cm.data.dto.response.ResponseCategoryItemDTO
+import org.sopt.cds29cm.data.dto.response.ResponseHeartDTO
 import org.sopt.cds29cm.databinding.FragmentHatCategoryBinding
 import org.sopt.cds29cm.databinding.ItemHatCategoryVerticalBinding
 import org.sopt.cds29cm.module.ServicePool.itemService
@@ -59,13 +61,6 @@ class HatCategoryFragment : Fragment() {
 
             initItemFilterAdapter()
 
-            /*
-                        _adapter = HatCategoryItemAdapter { ResponseCategoryItemDTO, productId, holder ->
-                        //    Toast.makeText(context, "여기", Toast.LENGTH_SHORT).show()
-                            hatCateViewModel.setPositionAndHolder(productId, holder)
-                        }
-            */
-
 
             //item 불러오기
             itemService.getCategoryItem()
@@ -78,22 +73,61 @@ class HatCategoryFragment : Fragment() {
                             val itemDataList: List<ResponseCategoryItemDTO> =
                                 requireNotNull(response.body()!!.data)
 
-                            /*
-                                                        val itemAdapter =
-                                                            HatCategoryItemAdapter { ResponseCategoryItemDTO, position, holder -> }
-                            */
                             _adapter =
                                 HatCategoryItemAdapter { ResponseCategoryItemDTO, position, holder ->
                                     itemService.putHeartItem(position)
+                                        .enqueue(object : Callback<ResponseHeartDTO<HeartDTO>> {
+                                            override fun onResponse(
+                                                call: Call<ResponseHeartDTO<HeartDTO>>,
+                                                response: Response<ResponseHeartDTO<HeartDTO>>
+                                            ) {
+                                                if (response.isSuccessful) {
+                                                    val nowHeartStatus: Boolean =
+                                                        response.body()!!.data.isMade
+                                                    if (nowHeartStatus) {
+                                                        Toast.makeText(
+                                                            context,
+                                                            "${position}번 하트 켜짐",
+                                                            Toast.LENGTH_SHORT
+                                                        ).show()
+                                                    }
+
+                                                    //하트 켜지도록
+                                                    else {
+                                                        //하트 꺼지돌록
+                                                        Toast.makeText(
+                                                            context,
+                                                            "${position}번 하트 꺼짐",
+                                                            Toast.LENGTH_SHORT
+                                                        ).show()
+                                                    }
+                                                } else {
+                                                    Toast.makeText(
+                                                        context,
+                                                        "서버 통신 실패",
+                                                        Toast.LENGTH_SHORT
+                                                    ).show()
+                                                }
+                                            }
+
+                                            override fun onFailure(
+                                                call: Call<ResponseHeartDTO<HeartDTO>>,
+                                                t: Throwable
+                                            ) {
+                                                Toast.makeText(
+                                                    context,
+                                                    "서버 통신 실패",
+                                                    Toast.LENGTH_SHORT
+                                                ).show()
+                                            }
+                                        })
                                 }
 
-                            /*
-                                                        itemAdapter.setList(
-                                                            itemDataList,
-                                                            hatCateViewModel.hatItemCommentDataList
-                                                        )
-                            */
-//                            rvHatCategoryItem.adapter = itemAdapter
+                            adapter.setList(
+                                itemDataList,
+                                hatCateViewModel.hatItemCommentDataList
+                            )
+                            rvHatCategoryItem.adapter = adapter
                         }
                     }
 
@@ -127,5 +161,10 @@ class HatCategoryFragment : Fragment() {
         val hatSubCategoryAdapter = HatCategoryHorizontalCategoryAdapter(requireContext())
         hatSubCategoryAdapter.setList(hatCateViewModel.subCategoryHatDataList)
         rvHatCategoryHatSubCategory.adapter = hatSubCategoryAdapter
+    }
+
+    override fun onDestroyView() {
+        _adapter = null
+        super.onDestroyView()
     }
 }
