@@ -20,7 +20,7 @@ import org.sopt.cds29cm.data.dto.response.ResponseCategoryItemDTO
 import org.sopt.cds29cm.databinding.ItemHatCategoryVerticalBinding
 
 class HatCategoryItemAdapter(
-    private val itemClick: (ResponseCategoryItemDTO, String, HatCategoryItemViewHolder) -> Unit
+    private val itemClick: (ResponseCategoryItemDTO, Int, HatCategoryItemViewHolder) -> Unit
 ) : RecyclerView.Adapter<HatCategoryItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HatCategoryItemViewHolder {
         val inflater by lazy { LayoutInflater.from(parent.context) }

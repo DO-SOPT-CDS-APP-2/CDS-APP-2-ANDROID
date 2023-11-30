@@ -6,6 +6,7 @@ import org.sopt.cds29cm.data.dataclass.HatBestItem
 import org.sopt.cds29cm.data.dataclass.HatCategoryFilter
 import org.sopt.cds29cm.data.dataclass.CategoryVertical
 import org.sopt.cds29cm.data.dataclass.HatCategoryItemComment
+import org.sopt.cds29cm.data.dto.response.ResponseCategoryItemDTO
 
 class HatCategoryViewModel : ViewModel() {
 
@@ -85,4 +86,13 @@ class HatCategoryViewModel : ViewModel() {
             markPeople = "(4091)"
         ),
     )
+
+    lateinit private var itemId:String
+    var itemHolder : HatCategoryItemViewHolder? =null
+    fun setPositionAndHolder(productId: String, holder: HatCategoryItemViewHolder) {
+        itemId = productId
+        itemHolder = holder
+    }
+
+
 }

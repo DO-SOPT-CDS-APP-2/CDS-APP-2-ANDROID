@@ -19,7 +19,7 @@ interface SetOnClickListenerInterface {
 
 class HatCategoryItemViewHolder(
     val binding: ItemHatCategoryVerticalBinding,
-    private val itemClick: (ResponseCategoryItemDTO, String, HatCategoryItemViewHolder) -> Unit,
+    private val itemClick: (ResponseCategoryItemDTO, Int, HatCategoryItemViewHolder) -> Unit,
 ) :
     RecyclerView.ViewHolder(binding.root) {
 
@@ -45,7 +45,7 @@ class HatCategoryItemViewHolder(
 
         binding.ivHatCategoryVerticalItemHeart.setOnSingleClickListener {
             Log.d("어댑터", "클릭인식")
-            itemClick(itemData, itemData.productId.toString(), this)
+            itemClick(itemData, itemData.productId, this)
             Log.d("어댑터에서??", "클릭됌??")
             Toast.makeText(
                 it.context,

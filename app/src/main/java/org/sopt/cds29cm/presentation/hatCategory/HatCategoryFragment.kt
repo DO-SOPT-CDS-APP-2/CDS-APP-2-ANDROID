@@ -42,6 +42,7 @@ class HatCategoryFragment : Fragment() {
 
     private var _adapter: HatCategoryItemAdapter? = null
     lateinit private var fragContext: Context
+    private val adapter get() = requireNotNull(_adapter) { "adapter has not initialized" }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -58,9 +59,12 @@ class HatCategoryFragment : Fragment() {
 
             initItemFilterAdapter()
 
-            _adapter = HatCategoryItemAdapter { ResponseCategoryItemDTO, productId, holder ->
-                hatCateViewModel.setPositionAndHolder(productId, holder)
-            }
+            /*
+                        _adapter = HatCategoryItemAdapter { ResponseCategoryItemDTO, productId, holder ->
+                        //    Toast.makeText(context, "여기", Toast.LENGTH_SHORT).show()
+                            hatCateViewModel.setPositionAndHolder(productId, holder)
+                        }
+            */
 
 
             //item 불러오기
@@ -74,13 +78,22 @@ class HatCategoryFragment : Fragment() {
                             val itemDataList: List<ResponseCategoryItemDTO> =
                                 requireNotNull(response.body()!!.data)
 
-                            val itemAdapter =
-                                HatCategoryItemAdapter { ResponseCategoryItemDTO, position, holder -> }
-                            itemAdapter.setList(
-                                itemDataList,
-                                hatCateViewModel.hatItemCommentDataList
-                            )
-                            rvHatCategoryItem.adapter = itemAdapter
+                            /*
+                                                        val itemAdapter =
+                                                            HatCategoryItemAdapter { ResponseCategoryItemDTO, position, holder -> }
+                            */
+                            _adapter =
+                                HatCategoryItemAdapter { ResponseCategoryItemDTO, position, holder ->
+                                    itemService.putHeartItem(position)
+                                }
+
+                            /*
+                                                        itemAdapter.setList(
+                                                            itemDataList,
+                                                            hatCateViewModel.hatItemCommentDataList
+                                                        )
+                            */
+//                            rvHatCategoryItem.adapter = itemAdapter
                         }
                     }
 
