@@ -274,7 +274,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_notia"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/item_home_notia"
                 android:orientation="vertical"

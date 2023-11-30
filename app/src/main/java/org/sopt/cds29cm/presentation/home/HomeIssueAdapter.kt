@@ -9,7 +9,7 @@ import org.sopt.cds29cm.databinding.ItemHomeIssueBinding
 
 class HomeIssueAdapter(context: Context) : RecyclerView.Adapter<HomeIssueViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
-    private var homeIssueList : List<HomeIssue> = emptyList()
+    private var homeIssueList: List<HomeIssue> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeIssueViewHolder {
         val binding = ItemHomeIssueBinding.inflate(inflater, parent, false)
@@ -26,6 +26,4 @@ class HomeIssueAdapter(context: Context) : RecyclerView.Adapter<HomeIssueViewHol
         this.homeIssueList = categoryList.toList()
         notifyDataSetChanged()
     }
-
-
 }

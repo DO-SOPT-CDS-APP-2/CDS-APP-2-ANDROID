@@ -1,5 +1,6 @@
 package org.sopt.cds29cm.presentation.home
 
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import org.sopt.cds29cm.data.dto.response.HomeResponseDto
@@ -11,7 +12,7 @@ open class HomeNotiaViewHolder(private val binding: ItemHomeNotiaBinding) :
         binding.run {
             ivHomeImage.load(homeResponseDto.imageUrl)
             tvHomeBrand.text = homeResponseDto.brand
-            tvHomeBrandSub.text = homeResponseDto.name
+            tvHomeSub.text = homeResponseDto.name
             tvHomeDiscountRate.text = homeResponseDto.discount.toString()
             binding.tvHomeDiscountedPrice.text = homeResponseDto.price.toString()
         }

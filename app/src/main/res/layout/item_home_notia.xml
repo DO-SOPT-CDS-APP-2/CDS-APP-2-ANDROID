@@ -17,8 +17,8 @@
 
     <ImageView
         android:id="@+id/iv_home_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/img_home_44"
         app:layout_constraintStart_toStartOf="@id/iv_home_line"
@@ -36,12 +36,12 @@
         tools:text="노티아" />
 
     <TextView
-        android:id="@+id/tv_home_brand_sub"
+        android:id="@+id/tv_home_sub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
         android:textSize="8sp"
-        app:layout_constraintBottom_toTopOf="@id/tv_home_discount_rate"
+        android:paddingTop="10dp"
         app:layout_constraintStart_toStartOf="@id/tv_home_brand"
         app:layout_constraintTop_toBottomOf="@id/tv_home_brand"
         tools:text="MERINO WOOL ROUND CARDIGAN - RED" />
@@ -53,9 +53,9 @@
         android:textAppearance="@style/TextAppearance.Kor.Bold"
         android:textColor="@color/point"
         android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@id/iv_home_image"
+        android:paddingTop="10dp"
         app:layout_constraintStart_toStartOf="@id/tv_home_brand"
-        app:layout_constraintTop_toBottomOf="@id/tv_home_brand_sub"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_sub"
         tools:text="10%" />
 
     <TextView
@@ -65,7 +65,7 @@
         android:layout_marginStart="10dp"
         android:textAppearance="@style/TextAppearance.Kor.Bold"
         android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@id/tv_home_discount_rate"
+        android:paddingTop="10dp"
         app:layout_constraintStart_toEndOf="@id/tv_home_discount_rate"
         app:layout_constraintTop_toTopOf="@id/tv_home_discount_rate"
         tools:text="106,200" />
@@ -83,11 +83,9 @@
         android:id="@+id/tv_home_like_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="148"
         android:textAppearance="@style/TextAppearance.Kor.Medium"
         android:textSize="8sp"
-        app:layout_constraintBottom_toTopOf="@id/tv_home_discount_rate"
         app:layout_constraintEnd_toEndOf="@id/iv_home_like"
         app:layout_constraintStart_toStartOf="@id/iv_home_like"
         app:layout_constraintTop_toBottomOf="@id/iv_home_like" />
