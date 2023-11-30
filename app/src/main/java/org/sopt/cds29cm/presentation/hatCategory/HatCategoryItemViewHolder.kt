@@ -1,7 +1,8 @@
 package org.sopt.cds29cm.presentation.hatCategory
 
+import android.annotation.SuppressLint
 import android.icu.text.DecimalFormat
-import android.view.View
+import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
@@ -9,50 +10,62 @@ import org.sopt.cds29cm.R
 import org.sopt.cds29cm.data.dataclass.HatCategoryItemComment
 import org.sopt.cds29cm.data.dto.response.ResponseCategoryItemDTO
 import org.sopt.cds29cm.databinding.ItemHatCategoryVerticalBinding
+import org.sopt.cds29cm.util.extension.setOnSingleClickListener
 
-class HatCategoryItemViewHolder(private val binding: ItemHatCategoryVerticalBinding) :
+interface SetOnClickListenerInterface {
+    fun listItemClickListener(itemData: String, binding: ItemHatCategoryVerticalBinding)
+}
+
+
+class HatCategoryItemViewHolder(
+    val binding: ItemHatCategoryVerticalBinding,
+    private val itemClick: (ResponseCategoryItemDTO, String, HatCategoryItemViewHolder) -> Unit,
+) :
     RecyclerView.ViewHolder(binding.root) {
-    fun onBind(itemDataList: ResponseCategoryItemDTO, commentDataList: HatCategoryItemComment) {
-        with(binding) {
-            ivHatCategoryVerticalItemImage.load(itemDataList.imageUrl)
-            tvHatCategoryVerticalItemBrand.text = itemDataList.brand
-            tvHatCategoryVerticalItemName.text = itemDataList.name
-            if (itemDataList.discount != 0) {
-                tvHatCategoryVerticalItemDiscount.text = itemDataList.discount.toString() + "%"
-            } else
-                tvHatCategoryVerticalItemDiscount.setPadding(0, 0, 0, 0)
-            val decimal = DecimalFormat("#,###")
-            tvHatCategoryVerticalItemPrice.text = decimal.format(itemDataList.price)
-            tvHatCategoryVerticalItemHeart.text = commentDataList.heart
-            tvHatCategoryVerticalItemMark.text = commentDataList.mark
-            tvHatCategoryVerticalItemMarkPeople.text = commentDataList.markPeople
-            if (itemDataList.brand.toString() == "시오르")
-                ivHatCategoryVerticalItemHeart.setImageResource(R.drawable.ic_like_on_black_24dp)
 
-/*
-            val listener = View.OnClickListener {
-                itemDataList.let {
-                    onClick(itemDataList)
-                }
-            }
-            ivHatCategoryVerticalItemHeart.setOnClickListener(listener)
-*/
+    private var onClickListener: SetOnClickListenerInterface? = null
 
-            //일단 각자 아이템 클릭 인식 가능, id 추출 가능
-            ivHatCategoryVerticalItemHeart.setOnClickListener { // 클릭 이벤트 리스너 처리
-                Toast.makeText(
-                    it.context,
-                    "ViewHolder Clicked -> ID : ${itemDataList.name}",
-                    Toast.LENGTH_SHORT
-                ).show()
+    @SuppressLint("SuspiciousIndentation")
+    fun onBind(itemData: ResponseCategoryItemDTO, commentDataList: HatCategoryItemComment) {
+        binding.ivHatCategoryVerticalItemImage.load(itemData.imageUrl)
+        binding.tvHatCategoryVerticalItemBrand.text = itemData.brand
+        binding.tvHatCategoryVerticalItemName.text = itemData.name
+        if (itemData.discount != 0) {
+            binding.tvHatCategoryVerticalItemDiscount.text = itemData.discount.toString() + "%"
+        } else
+            binding.tvHatCategoryVerticalItemDiscount.setPadding(0, 0, 0, 0)
+        val decimal = DecimalFormat("#,###")
+        binding.tvHatCategoryVerticalItemPrice.text = decimal.format(itemData.price)
+        binding.tvHatCategoryVerticalItemHeart.text = commentDataList.heart
+        binding.tvHatCategoryVerticalItemMark.text = commentDataList.mark
+        binding.tvHatCategoryVerticalItemMarkPeople.text = commentDataList.markPeople
+        binding.tvHatCategoryVerticalItemProductId.text = itemData.productId.toString()
+        if (itemData.brand.toString() == "시오르")
+            binding.ivHatCategoryVerticalItemHeart.setImageResource(R.drawable.ic_like_on_black_24dp)
 
-
-
-            }
+        binding.ivHatCategoryVerticalItemHeart.setOnSingleClickListener {
+            Log.d("어댑터", "클릭인식")
+            itemClick(itemData, itemData.productId.toString(), this)
+            Log.d("어댑터에서??", "클릭됌??")
+            Toast.makeText(
+                it.context,
+                "ViewHolder Clicked -> ID : ${itemData.productId.toString()}",
+                Toast.LENGTH_SHORT
+            ).show()
 
 
         }
     }
 
+
+    fun setHeart(a: String) {
+        if (a == "on")
+            binding.ivHatCategoryVerticalItemHeart.setImageResource(R.drawable.ic_like_on_black_24dp)
+        else
+            binding.ivHatCategoryVerticalItemHeart.setImageResource(R.drawable.ic_like_off_black_24dp)
+    }
+
+    fun listItemClickFunc(pOnClick: SetOnClickListenerInterface) {
+        this.onClickListener = pOnClick
     }
 }
