@@ -8,5 +8,5 @@ import retrofit2.http.GET
 
 interface HomeService {
     @GET("/api/v1/category/home")
-    suspend fun getHomeDataFromServer() : BaseResponse<HomeResponseDto>
+    suspend fun getHomeDataFromServer() : Response<BaseResponse<List<HomeResponseDto>>>
 }

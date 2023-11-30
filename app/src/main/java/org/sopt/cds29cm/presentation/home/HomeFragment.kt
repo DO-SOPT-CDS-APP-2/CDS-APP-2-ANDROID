@@ -80,7 +80,9 @@ class HomeFragment : Fragment() {
             if (it) {
                 toast("통신 성공")
                 val data = viewModel.dataResult.value
-                setDataList(listOf(data) as List<HomeResponseDto>)
+                if (data != null) {
+                    setDataList(data)
+                }
             } else {
                 toast("통신 실패")
             }
