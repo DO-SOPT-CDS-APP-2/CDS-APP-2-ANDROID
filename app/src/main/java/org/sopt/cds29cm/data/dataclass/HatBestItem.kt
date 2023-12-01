@@ -1,6 +1,6 @@
-package org.sopt.cds29cm.data
+package org.sopt.cds29cm.data.dataclass
 
-data class BestItem(
+data class HatBestItem(
     val itemName: String,
     val itemDiscount: String,
     val itemPrice: String,

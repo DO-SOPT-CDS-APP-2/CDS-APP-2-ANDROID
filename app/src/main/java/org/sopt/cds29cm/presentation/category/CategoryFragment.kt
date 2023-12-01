@@ -5,8 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
 import androidx.fragment.app.viewModels
+import org.sopt.cds29cm.R
 import org.sopt.cds29cm.databinding.FragmentCategoryBinding
+import org.sopt.cds29cm.presentation.hatCategorimport.HatCategoryFragment
 
 
 class CategoryFragment : Fragment() {
@@ -28,20 +32,42 @@ class CategoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initHorizontalAdapter()
+
+        initVerticalLeftAdapter()
+
+        initVerticalRightAdapter()
+
+    }
+
+    private fun initVerticalRightAdapter() {
+        val _categoryVerticalRightAdapter =
+            CategoryVerticalRightAdapter { CategoryVertical, categoryName, holder ->
+                //모자 fragment로 이동
+                if (categoryName == "모자")
+                    parentFragmentManager.beginTransaction().apply {
+                        replace(R.id.fcv_main, HatCategoryFragment())
+                        //백 기능 적용
+                        addToBackStack(null)
+                        commit()
+                    }
+            }
+        _categoryVerticalRightAdapter.setList(viewModel.CategoryVerticalRightDataList)
+        binding.rvCategoryVerticalRight.adapter = _categoryVerticalRightAdapter
+    }
+
+    private fun initVerticalLeftAdapter() {
+        val categoryVerticalLeftAdapter = CategoryVerticalLeftAdapter(requireContext())
+        categoryVerticalLeftAdapter.setList(viewModel.CategoryVerticalLeftDataList)
+        binding.rvCategoryVerticalLeft.adapter = categoryVerticalLeftAdapter
+    }
+
+    private fun initHorizontalAdapter() {
         //viewModel에서 가로 스크롤 카테고리 리스트 가져와서 생성
         val categoryHorizontalAdapter = CategoryHorizontalAdapter(requireContext())
-        categoryHorizontalAdapter.setCategoryHorizontalList(viewModel.categoryHorizontalDataList)
+        categoryHorizontalAdapter.setList(viewModel.categoryHorizontalDataList)
         //fragment영역에 적용
         binding.rvCategoryHorizontal.adapter = categoryHorizontalAdapter
-
-        val categoryVerticalLeftAdapter = CategoryVerticalLeftAdapter(requireContext())
-        categoryVerticalLeftAdapter.setCategoryVerticalLeftList(viewModel.CategoryVerticalLeftDataList)
-        binding.rvCategoryVerticalLeft.adapter = categoryVerticalLeftAdapter
-
-        val categoryVerticalRightAdapter = CategoryVerticalRightAdapter(requireContext())
-        categoryVerticalRightAdapter.setCategoryVerticalRightList(viewModel.CategoryVerticalRightDataList)
-        binding.rvCategoryVerticalRight.adapter = categoryVerticalRightAdapter
-
     }
 
     override fun onDestroyView() {

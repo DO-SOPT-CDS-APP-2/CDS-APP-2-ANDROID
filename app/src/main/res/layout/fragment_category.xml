@@ -94,6 +94,15 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_category_toolbar" />
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_hat_category_bottom_current_category"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="1dp"
+        app:dividerColor="@color/grayscale_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_category_horizontal" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_category_vertical"
@@ -102,16 +111,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_category_horizontal">
+        app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_current_category">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_category_vertical_left"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/grayscale_background"
-            android:paddingEnd="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/layout_category_vertical">
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_category_vertical_left"
@@ -119,6 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/layout_category_vertical_left"
                 app:layout_constraintStart_toStartOf="@id/layout_category_vertical_left"
                 app:layout_constraintTop_toTopOf="@id/layout_category_vertical_left" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -151,6 +162,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
+                        android:background="@drawable/shape_black_line_14_rect"
                         android:clipToOutline="true"
                         android:paddingHorizontal="15dp"
                         android:paddingVertical="8dp"
@@ -161,6 +173,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/shape_gray_line_14_rect"
                         android:paddingHorizontal="15dp"
                         android:paddingVertical="8dp"
                         android:text="MEN"
@@ -174,7 +187,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:src="@drawable/img_category_29"
+                    android:src="@drawable/img_category_banner"
                     app:layout_constraintStart_toEndOf="@id/rv_category_vertical_left"
                     tools:ignore="MissingConstraints" />
 

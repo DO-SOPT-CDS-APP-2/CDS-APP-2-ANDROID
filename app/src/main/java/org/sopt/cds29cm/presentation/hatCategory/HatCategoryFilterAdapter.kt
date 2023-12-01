@@ -4,14 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import org.sopt.cds29cm.data.CategoryFilter
+import org.sopt.cds29cm.data.dataclass.HatCategoryFilter
 import org.sopt.cds29cm.databinding.ItemHatCategoryFilterBinding
 
 class HatCategoryFilterAdapter(context: Context) :
     RecyclerView.Adapter<HatCategoryFilterViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
 
-    private var filterList: List<CategoryFilter> = emptyList()
+    private var filterList: List<HatCategoryFilter> = emptyList()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -27,7 +27,7 @@ class HatCategoryFilterAdapter(context: Context) :
 
     override fun getItemCount() = filterList.size
 
-    fun setList(categoryList: List<CategoryFilter>) {
+    fun setList(categoryList: List<HatCategoryFilter>) {
         this.filterList = categoryList.toList()
         notifyDataSetChanged()
     }

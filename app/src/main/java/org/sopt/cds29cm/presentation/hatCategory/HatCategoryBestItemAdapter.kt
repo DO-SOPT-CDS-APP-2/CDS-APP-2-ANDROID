@@ -4,14 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import org.sopt.cds29cm.data.BestItem
+import org.sopt.cds29cm.data.dataclass.HatBestItem
 import org.sopt.cds29cm.databinding.ItemHatCategoryBestHatBinding
 
 class HatCategoryBestItemAdapter(context: Context) :
     RecyclerView.Adapter<HatCategoryBestItemViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
 
-    private var bestItemList: List<BestItem> = emptyList()
+    private var bestItemList: List<HatBestItem> = emptyList()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -27,7 +27,7 @@ class HatCategoryBestItemAdapter(context: Context) :
 
     override fun getItemCount() = bestItemList.size
 
-    fun setList(categoryList: List<BestItem>) {
+    fun setList(categoryList: List<HatBestItem>) {
         this.bestItemList = categoryList.toList()
         notifyDataSetChanged()
     }

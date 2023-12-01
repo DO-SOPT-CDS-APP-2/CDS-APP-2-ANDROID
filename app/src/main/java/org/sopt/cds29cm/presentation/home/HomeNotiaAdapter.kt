@@ -4,12 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import android.content.Context
-import org.sopt.cds29cm.data.dataclass.HomeNotia
+import androidx.lifecycle.LiveData
+import org.sopt.cds29cm.data.dto.response.HomeResponseDto
 import org.sopt.cds29cm.databinding.ItemHomeNotiaBinding
 
 class HomeNotiaAdapter(context: Context) : RecyclerView.Adapter<HomeNotiaViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
-    private var homeNotiaList : List<HomeNotia> = emptyList()
+    private var homeNotiaList = mutableListOf<HomeResponseDto>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeNotiaViewHolder {
         val binding = ItemHomeNotiaBinding.inflate(inflater, parent, false)
@@ -22,10 +23,10 @@ class HomeNotiaAdapter(context: Context) : RecyclerView.Adapter<HomeNotiaViewHol
 
     override fun getItemCount() = homeNotiaList.size
 
-    fun setRecommendList(categoryList: List<HomeNotia>) {
-        this.homeNotiaList = categoryList.toList()
+    fun setRecommendList(categoryList: List<HomeResponseDto>) {
+        homeNotiaList.clear()
+        homeNotiaList.addAll(categoryList)
         notifyDataSetChanged()
     }
-
 
 }

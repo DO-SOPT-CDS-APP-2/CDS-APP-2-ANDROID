@@ -2,7 +2,7 @@ package org.sopt.cds29cm.presentation.hatCategory
 
 import android.graphics.Color
 import androidx.recyclerview.widget.RecyclerView
-import org.sopt.cds29cm.data.CategoryVertical
+import org.sopt.cds29cm.data.dataclass.CategoryVertical
 import org.sopt.cds29cm.databinding.ItemHatCategoryHorizontalCategoryBinding
 
 class HatCategoryHorizontalCategoryViewHolder(private val binding: ItemHatCategoryHorizontalCategoryBinding) :
@@ -14,7 +14,6 @@ class HatCategoryHorizontalCategoryViewHolder(private val binding: ItemHatCatego
                 tvHatCategoryHatSubCategory.setTextColor(Color.parseColor("#222222"))
         }
     }
-
 }
 
 
