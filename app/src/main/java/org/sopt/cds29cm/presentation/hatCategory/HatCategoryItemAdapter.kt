@@ -35,13 +35,14 @@ class HatCategoryItemAdapter(
     private lateinit var viewHolder: HatCategoryItemViewHolder
     private lateinit var itemDataList: List<ResponseCategoryItemDTO>
     private var onClickListener: SetOnClickListenerInterface? = null
-
+     var itemData:ResponseCategoryItemDTO?=null
     inner class ViewHolder(private val itemViewBinding: ItemHatCategoryVerticalBinding/*private val itemViewBinding: ItemHatCategoryVerticalBinding*/) :
         RecyclerView.ViewHolder(itemViewBinding.root/*itemViewBinding.root*/) {
         fun bind(
             mItemData: ResponseCategoryItemDTO,
             commentDataList: HatCategoryItemComment /*listener: OnClickListener, item:ResponseCategoryItemDTO*//*productId: String*/
         ) {
+            itemData=mItemData
             with(itemViewBinding) {
                 ivHatCategoryVerticalItemImage.load(mItemData.imageUrl)
                 tvHatCategoryVerticalItemBrand.text = mItemData.brand
@@ -88,5 +89,15 @@ class HatCategoryItemAdapter(
         this.itemCommentList = markList.toList()
         notifyDataSetChanged()
     }
+
+/*
+    fun notifyHeartChanged(position: Int, heart :Boolean){
+        if(position==itemDataList[position].productId)
+        viewHolder.setHeart(heart )
+
+
+    }
+*/
+
 
 }

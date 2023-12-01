@@ -90,16 +90,17 @@ class HatCategoryFragment : Fragment() {
                                                             "${position}번 하트 켜짐",
                                                             Toast.LENGTH_SHORT
                                                         ).show()
+                                                        holder.setHeart(nowHeartStatus)
                                                     }
 
                                                     //하트 켜지도록
                                                     else {
-                                                        //하트 꺼지돌록
                                                         Toast.makeText(
                                                             context,
                                                             "${position}번 하트 꺼짐",
                                                             Toast.LENGTH_SHORT
                                                         ).show()
+                                                        holder.setHeart(nowHeartStatus)
                                                     }
                                                 } else {
                                                     Toast.makeText(
