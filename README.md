@@ -1,6 +1,10 @@
 # CDS-APP-2-ANDROID
 이십구로이드
 
+## 🎥 구현 영상
+
+https://github.com/DO-SOPT-CDS-APP-2/CDS-APP-2-ANDROID/assets/97405341/4196bdc9-ac63-4ea8-be42-9fb2a372d352
+
 ## 💚 Android Developer
 | <img src="https://avatars.githubusercontent.com/u/97405341?v=4" width = "200"/> | <img src="https://avatars.githubusercontent.com/u/97686638?v=4" width = "200" /> | <img src="https://avatars.githubusercontent.com/u/128459613?v=4" width = "200"/> | 
 |:-------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------:|
