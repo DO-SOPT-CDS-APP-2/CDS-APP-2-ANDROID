@@ -72,7 +72,10 @@ class CategoryViewModel : ViewModel() {
         CategoryVertical(categoryName = "의류"),
         CategoryVertical(categoryName = "가방"),
         CategoryVertical(categoryName = "신발"),
-        CategoryVertical(categoryName = "액세서리"),
+        CategoryVertical(
+            categoryName = "액세서리",
+            font = R.style.TextAppearance_Kor_Bold
+    ),
         CategoryVertical(categoryName = "가구/인테리어"),
         CategoryVertical(categoryName = "주방/생활"),
         CategoryVertical(categoryName = "가전"),
@@ -82,16 +85,40 @@ class CategoryViewModel : ViewModel() {
     )
 
     val CategoryVerticalRightDataList = listOf<CategoryVertical>(
-        CategoryVertical(categoryName = "전체"),
-        CategoryVertical(categoryName = "FOR YOU"),
-        CategoryVertical(categoryName = "BEST"),
-        CategoryVertical(categoryName = "NEW"),
-        CategoryVertical(categoryName = "모자"),
-        CategoryVertical(categoryName = "주얼리"),
-        CategoryVertical(categoryName = "시계"),
-        CategoryVertical(categoryName = "아이웨어"),
-        CategoryVertical(categoryName = "패션 액세서리"),
-        CategoryVertical(categoryName = "EXCLUSIVE"),
-        CategoryVertical(categoryName = "해외브랜드"),
+        CategoryVertical(categoryName = "전체",
+            font = R.style.TextAppearance_Kor_SemiBold,
+        ),
+        CategoryVertical(
+            categoryName = "FOR YOU",
+            font = R.style.TextAppearance_Eng_Bold,
+            fontSize =10.0
+        ),
+        CategoryVertical(
+            categoryName = "BEST",
+            font = R.style.TextAppearance_Eng_Bold,
+            fontSize =10.0
+        ),
+        CategoryVertical(
+            categoryName = "NEW",
+            font = R.style.TextAppearance_Eng_Bold,
+            fontSize =10.0
+        ),
+        CategoryVertical(categoryName = "모자",
+            font = R.style.TextAppearance_Kor_SemiBold,),
+        CategoryVertical(categoryName = "주얼리",
+            font = R.style.TextAppearance_Kor_SemiBold,),
+        CategoryVertical(categoryName = "시계",
+            font = R.style.TextAppearance_Kor_SemiBold,),
+        CategoryVertical(categoryName = "아이웨어",
+            font = R.style.TextAppearance_Kor_SemiBold,),
+        CategoryVertical(categoryName = "패션 액세서리",
+            font = R.style.TextAppearance_Kor_SemiBold,),
+        CategoryVertical(
+            categoryName = "EXCLUSIVE",
+            font = R.style.TextAppearance_Eng_Bold,
+            fontSize =10.0
+        ),
+        CategoryVertical(categoryName = "해외브랜드",
+            font = R.style.TextAppearance_Kor_SemiBold,),
     )
 }

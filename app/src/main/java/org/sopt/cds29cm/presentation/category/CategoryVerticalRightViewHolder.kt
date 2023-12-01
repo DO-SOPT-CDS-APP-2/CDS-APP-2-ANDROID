@@ -12,6 +12,8 @@ class CategoryVerticalRightViewHolder(
     RecyclerView.ViewHolder(binding.root) {
     fun onBind(categoryData: CategoryVertical) {
         with(binding) {
+            tvCategoryVerticalRight.textSize = categoryData.fontSize.toFloat()
+            tvCategoryVerticalRight.setTextAppearance(categoryData.font)
             tvCategoryVerticalRight.text = categoryData.categoryName
 
             binding.layoutCategoryVerticalRight.setOnSingleClickListener {
