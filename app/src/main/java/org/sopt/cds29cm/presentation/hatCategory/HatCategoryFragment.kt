@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import org.sopt.cds29cm.R
 import org.sopt.cds29cm.data.dataclass.HatCategoryItem
 import org.sopt.cds29cm.data.dto.response.BaseResponse
 import org.sopt.cds29cm.data.dto.response.HeartDTO
@@ -24,6 +25,7 @@ import org.sopt.cds29cm.data.dto.response.ResponseHeartDTO
 import org.sopt.cds29cm.databinding.FragmentHatCategoryBinding
 import org.sopt.cds29cm.databinding.ItemHatCategoryVerticalBinding
 import org.sopt.cds29cm.module.ServicePool.itemService
+import org.sopt.cds29cm.presentation.category.CategoryFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -140,6 +142,16 @@ class HatCategoryFragment : Fragment() {
                         ).show()
                     }
                 })
+
+            //툴바 백버튼 기능
+            ivHatCategoryToolbarBack.setOnClickListener {
+                parentFragmentManager.beginTransaction().apply {
+                    replace(R.id.fcv_main, CategoryFragment())
+                    commit()
+                }
+
+            }
+
         }
 
 
