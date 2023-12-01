@@ -8,7 +8,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_category_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="58dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -16,18 +17,18 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_category_searchbox"
             android:layout_width="0dp"
-            android:layout_height="28dp"
-            android:layout_marginVertical="15dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="3dp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/layout_category_round"
+            android:paddingVertical="2dp"
             app:layout_constraintEnd_toStartOf="@id/iv_category_alarmIcon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tv_category_searchbox_text"
-                android:layout_width="187dp"
+                android:layout_width="0dp"
                 android:layout_height="19dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -38,6 +39,7 @@
                 android:textAppearance="@style/TextAppearance.Kor.Medium"
                 android:textColor="@color/grayscale_medium_gray"
                 android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +50,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="1dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="12dp"
                 android:clipToOutline="true"
                 android:contentDescription="TODO"
                 android:src="@drawable/ic_search_black"
@@ -62,7 +64,7 @@
             android:layout_height="24dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="3dp"
             android:layout_marginEnd="15dp"
             android:clipToOutline="true"
             android:src="@drawable/ic_alert_black"
@@ -75,12 +77,13 @@
             android:layout_height="24dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="3dp"
             android:layout_marginEnd="17dp"
             android:clipToOutline="true"
             android:src="@drawable/ic_cart_black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -93,7 +96,9 @@
         android:paddingBottom="21dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_category_toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/layout_category_toolbar"
+        tools:listitem="@layout/item_category_horizontal" />
+
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider_hat_category_bottom_current_category"
         android:layout_width="0dp"
@@ -113,7 +118,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_current_category">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_category_vertical_left"
             android:layout_width="wrap_content"
@@ -122,31 +126,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/layout_category_vertical">
 
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_category_vertical_left"
-                layout_constrainedHeight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="@id/layout_category_vertical_left"
                 app:layout_constraintStart_toStartOf="@id/layout_category_vertical_left"
-                app:layout_constraintTop_toTopOf="@id/layout_category_vertical_left" />
+                app:layout_constraintTop_toTopOf="@id/layout_category_vertical_left"
+                tools:listitem="@layout/item_category_vertical_left" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/sv_category_vertical_right"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@id/layout_category_vertical_left"
-            app:layout_constraintTop_toTopOf="@id/layout_category_vertical"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintTop_toTopOf="@id/layout_category_vertical">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="parent"
@@ -184,22 +186,28 @@
 
                 <ImageView
                     android:id="@+id/iv_category_banner"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:adjustViewBounds="true"
+                    android:layout_marginHorizontal="20dp"
                     android:src="@drawable/img_category_banner"
                     app:layout_constraintStart_toEndOf="@id/rv_category_vertical_left"
                     tools:ignore="MissingConstraints" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_category_vertical_right"
-                    android:layout_width="240dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:overScrollMode="never"
                     android:paddingEnd="11dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_category_vertical_right" />
+
             </LinearLayout>
+
         </androidx.core.widget.NestedScrollView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@ import org.sopt.cds29cm.util.extension.setOnSingleClickListener
 
 class CategoryVerticalRightViewHolder(
     private val binding: ItemCategoryVerticalRightBinding,
-    private val itemClick: (CategoryVertical, String, CategoryVerticalRightViewHolder) -> Unit,
+    private val itemClick: (String) -> Unit,
 ) :
     RecyclerView.ViewHolder(binding.root) {
     fun onBind(categoryData: CategoryVertical) {
@@ -17,11 +17,7 @@ class CategoryVerticalRightViewHolder(
             tvCategoryVerticalRight.text = categoryData.categoryName
 
             binding.layoutCategoryVerticalRight.setOnSingleClickListener {
-                itemClick(
-                    categoryData,
-                    categoryData.categoryName,
-                    this@CategoryVerticalRightViewHolder
-                )
+                itemClick(categoryData.categoryName)
             }
         }
     }

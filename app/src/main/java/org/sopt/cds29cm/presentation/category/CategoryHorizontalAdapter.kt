@@ -11,7 +11,7 @@ class CategoryHorizontalAdapter(context: Context) :
     RecyclerView.Adapter<CategoryHorizontalViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
 
-    private var CategoryHorizontalList: List<CategoryHorizontal> = emptyList()
+    private var categoryHorizontalList: List<CategoryHorizontal> = emptyList()
 
 
     override fun onCreateViewHolder(
@@ -23,13 +23,13 @@ class CategoryHorizontalAdapter(context: Context) :
     }
 
     override fun onBindViewHolder(holder: CategoryHorizontalViewHolder, position: Int) {
-        holder.onBind(CategoryHorizontalList[position])
+        holder.onBind(categoryHorizontalList[position])
     }
 
-    override fun getItemCount()= CategoryHorizontalList.size
+    override fun getItemCount()= categoryHorizontalList.size
 
     fun setList(categoryList: List<CategoryHorizontal>) {
-        this.CategoryHorizontalList = categoryList.toList()
+        this.categoryHorizontalList = categoryList.toList()
         notifyDataSetChanged()
     }
 }
