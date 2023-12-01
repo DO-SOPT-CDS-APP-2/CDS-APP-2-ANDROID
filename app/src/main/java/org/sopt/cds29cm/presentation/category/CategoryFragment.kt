@@ -5,12 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import android.widget.Toast.LENGTH_SHORT
 import androidx.fragment.app.viewModels
 import org.sopt.cds29cm.R
 import org.sopt.cds29cm.databinding.FragmentCategoryBinding
-import org.sopt.cds29cm.presentation.hatCategorimport.HatCategoryFragment
+import org.sopt.cds29cm.presentation.hatCategory.HatCategoryFragment
 
 
 class CategoryFragment : Fragment() {

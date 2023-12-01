@@ -1,14 +1,7 @@
-package org.sopt.cds29cm.presentation.hatCategorimport
+package org.sopt.cds29cm.presentation.hatCategory
 
 import android.content.Context
-import org.sopt.cds29cm.presentation.hatCategory.HatCategoryBestItemAdapter
-import org.sopt.cds29cm.presentation.hatCategory.HatCategoryFilterAdapter
-import org.sopt.cds29cm.presentation.hatCategory.HatCategoryHorizontalCategoryAdapter
-import org.sopt.cds29cm.presentation.hatCategory.HatCategoryItemAdapter
-import org.sopt.cds29cm.presentation.hatCategory.HatCategoryItemViewHolder
-import org.sopt.cds29cm.presentation.hatCategory.HatCategoryViewModel
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,13 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import org.sopt.cds29cm.R
 import org.sopt.cds29cm.data.dataclass.HatCategoryItem
-import org.sopt.cds29cm.data.dto.response.BaseResponse
 import org.sopt.cds29cm.data.dto.response.HeartDTO
-import org.sopt.cds29cm.data.dto.response.HeartResponseDto
 import org.sopt.cds29cm.data.dto.response.ResponseCategoryItemDTO
 import org.sopt.cds29cm.data.dto.response.ResponseHeartDTO
 import org.sopt.cds29cm.databinding.FragmentHatCategoryBinding
-import org.sopt.cds29cm.databinding.ItemHatCategoryVerticalBinding
 import org.sopt.cds29cm.module.ServicePool.itemService
 import org.sopt.cds29cm.presentation.category.CategoryFragment
 import retrofit2.Call
