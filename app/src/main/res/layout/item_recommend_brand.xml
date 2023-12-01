@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp">
+
+    <ImageView
+        android:id="@+id/iv_recommend_item"
+        android:layout_width="145dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/tv_recommend_brand"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.Kor.Bold"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@id/iv_recommend_like"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_recommend_item"
+        tools:text="타입서비스" />
+
+    <ImageView
+        android:id="@+id/iv_recommend_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="1dp"
+        android:src="@drawable/ic_like_off_gray_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_recommend_item" />
+
+    <TextView
+        android:id="@+id/tv_recommend_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="18dp"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.Eng.Medium"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_recommend_brand"
+        tools:text="[Exclusive] Holiday Santa hat" />
+
+    <TextView
+        android:id="@+id/tv_recommend_sale_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:includeFontPadding="false"
+        android:textAppearance="@style/TextAppearance.Eng.Bold"
+        android:textColor="@color/point"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_recommend_name"
+        tools:text="5%" />
+
+    <TextView
+        android:id="@+id/tv_recommend_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:includeFontPadding="false"
+        android:textAppearance="@style/TextAppearance.Eng.Bold"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_recommend_sale_percent"
+        app:layout_constraintStart_toEndOf="@id/tv_recommend_sale_percent"
+        app:layout_constraintTop_toTopOf="@id/tv_recommend_sale_percent"
+        tools:text="37,050" />
+
+    <TextView
+        android:id="@+id/tv_recommend_price_won"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:includeFontPadding="false"
+        android:text="원"
+        android:textAppearance="@style/TextAppearance.Kor.Bold"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/tv_recommend_price"
+        app:layout_constraintTop_toBottomOf="@id/tv_recommend_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/grayscale_background"
+        android:paddingHorizontal="4dp"
+        android:paddingVertical="1dp"
+        android:text="무료배송"
+        android:textAppearance="@style/TextAppearance.Kor.Regular"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_recommend_sale_percent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

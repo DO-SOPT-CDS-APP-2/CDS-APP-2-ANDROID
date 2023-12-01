@@ -37,12 +37,12 @@
         <item name="fontFamily">@font/font_noto_sans_kr_semibold</item>
     </style>
 
-    <style name="TextAppearance.Kor.Regular">
-        <item name="fontFamily">@font/font_noto_sans_kr_regular</item>
-    </style>
-
     <style name="TextAppearance.Kor.Medium">
         <item name="fontFamily">@font/font_noto_sans_kr_medium</item>
+    </style>
+
+    <style name="TextAppearance.Kor.Regular">
+        <item name="font">@font/noto_sans_kr_regular</item>
     </style>
 
     <!-- HatDetail 뷰 TabLayout 타이포그래피-->

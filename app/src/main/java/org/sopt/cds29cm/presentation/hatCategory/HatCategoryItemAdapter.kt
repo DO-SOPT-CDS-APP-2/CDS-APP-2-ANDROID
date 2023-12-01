@@ -1,7 +1,6 @@
 package org.sopt.cds29cm.presentation.hatCategory
 
 import android.icu.text.DecimalFormat
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -27,14 +26,15 @@ class HatCategoryItemAdapter(
     private lateinit var viewHolder: HatCategoryItemViewHolder
     private lateinit var itemDataList: List<ResponseCategoryItemDTO>
     private var onClickListener: SetOnClickListenerInterface? = null
-     var itemData:ResponseCategoryItemDTO?=null
+    var itemData: ResponseCategoryItemDTO? = null
+
     inner class ViewHolder(private val itemViewBinding: ItemHatCategoryVerticalBinding/*private val itemViewBinding: ItemHatCategoryVerticalBinding*/) :
         RecyclerView.ViewHolder(itemViewBinding.root/*itemViewBinding.root*/) {
         fun bind(
             mItemData: ResponseCategoryItemDTO,
             commentDataList: HatCategoryItemComment /*listener: OnClickListener, item:ResponseCategoryItemDTO*//*productId: String*/
         ) {
-            itemData=mItemData
+            itemData = mItemData
             with(itemViewBinding) {
                 ivHatCategoryVerticalItemImage.load(mItemData.imageUrl)
                 tvHatCategoryVerticalItemBrand.text = mItemData.brand

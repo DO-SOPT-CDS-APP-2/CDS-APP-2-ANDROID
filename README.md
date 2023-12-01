@@ -2,10 +2,10 @@
 이십구로이드
 
 ## 💚 Android Developer
-|<img src="https://avatars.githubusercontent.com/u/97405341?v=4" width = "200"/>|<img src="https://avatars.githubusercontent.com/u/97686638?v=4" width = "200" />|<img src="https://avatars.githubusercontent.com/u/128459613?v=4" width = "200"/>| 
-|:---------:|:---------:|:---------:|
-|[김상호](https://github.com/Marchbreeze)|[최민영](https://github.com/codingmy)|[이유빈](https://github.com/leeeyubin)|
-| `프로젝트 기초 세팅`<br/>`HatDetailActivity` | `CategoryFragment`<br/>`HatCategoryFragment` | `MainActivity & NavigationBar`<br/>`HomeFragment`|
+| <img src="https://avatars.githubusercontent.com/u/97405341?v=4" width = "200"/> | <img src="https://avatars.githubusercontent.com/u/97686638?v=4" width = "200" /> | <img src="https://avatars.githubusercontent.com/u/128459613?v=4" width = "200"/> | 
+|:-------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------:|
+|                      [김상호](https://github.com/Marchbreeze)                      |                        [최민영](https://github.com/codingmy)                        |                       [이유빈](https://github.com/leeeyubin)                        |
+|                          `프로젝트 기초 세팅`<br/>`상품 상세보기 화면`                          |                             `카테고리 화면`<br/>`상품 목록 화면`                             |                              `바텀 네비게이션`<br/>`홈 화면`                               |
 
 ## 💻 Git Convention
 - **[FEAT]** : 새로운 기능 구현
@@ -24,7 +24,7 @@
 
 ## 📁 폴더링
 ```
-📦java.sopt.cds29cm
+📦org.sopt.cds29cm
 ├─📂data
 |  ├─📂mock
 |  ├─📂data class
