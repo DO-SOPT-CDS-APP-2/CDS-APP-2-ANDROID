@@ -13,6 +13,6 @@ data class HomeResponseDto(
     val name: String,
     @SerialName("discount")
     val discount: Int,
-    @SerialName("Price")
-    val Price: Int,
+    @SerialName("price")
+    val price: Int,
 )
