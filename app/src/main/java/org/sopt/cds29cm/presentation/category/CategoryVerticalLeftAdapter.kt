@@ -11,7 +11,7 @@ class CategoryVerticalLeftAdapter(context: Context) :
     RecyclerView.Adapter<CategoryVerticalLeftViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
 
-    private var CategoryVerticalLeftList: List<CategoryVertical> = emptyList()
+    private var categoryVerticalLeftList: List<CategoryVertical> = emptyList()
 
 
     override fun onCreateViewHolder(
@@ -23,13 +23,13 @@ class CategoryVerticalLeftAdapter(context: Context) :
     }
 
     override fun onBindViewHolder(holder: CategoryVerticalLeftViewHolder, position: Int) {
-        holder.onBind(CategoryVerticalLeftList[position])
+        holder.onBind(categoryVerticalLeftList[position])
     }
 
-    override fun getItemCount() = CategoryVerticalLeftList.size
+    override fun getItemCount() = categoryVerticalLeftList.size
 
     fun setList(categoryList: List<CategoryVertical>) {
-        this.CategoryVerticalLeftList = categoryList.toList()
+        this.categoryVerticalLeftList = categoryList.toList()
         notifyDataSetChanged()
     }
 }

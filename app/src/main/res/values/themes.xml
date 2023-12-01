@@ -18,7 +18,7 @@
     </style>
 
     <!-- black status bar color -->
-    <style name="AppTheme.DarkStatusBar" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppTheme.DarkStatusBar" parent="Theme.Material3.Dark.NoActionBar">
         <item name="android:statusBarColor">@color/grayscale_black</item>
     </style>
 </resources>

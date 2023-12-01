@@ -1,6 +1,5 @@
 package org.sopt.cds29cm.presentation.home
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -20,7 +19,6 @@ class HomeViewModel(private val homeService: HomeService) : ViewModel() {
     val responseSuccess: LiveData<Boolean> get() = _responseSuccess
 
     private val _dataResult: MutableLiveData<List<HomeResponseDto>?> = MutableLiveData()
-
     val dataResult: LiveData<List<HomeResponseDto>?> get() = _dataResult
 
     fun getData() {
@@ -28,11 +26,9 @@ class HomeViewModel(private val homeService: HomeService) : ViewModel() {
             runCatching {
                 homeService.getHomeDataFromServer()
             }.onSuccess {
-                Log.e("LYB", "onsuccess")
                 _dataResult.value = homeService.getHomeDataFromServer().body()?.data
                 _responseSuccess.value = true
             }.onFailure {
-                Log.e("LYB", "onfailure")
                 _responseSuccess.value = false
             }
         }

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import org.sopt.cds29cm.R
 import org.sopt.cds29cm.databinding.FragmentCategoryBinding
@@ -24,6 +25,7 @@ class CategoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentCategoryBinding.inflate(inflater, container, false)
+        activity?.window?.statusBarColor = ContextCompat.getColor(requireContext(), R.color.white)
         return binding.root
     }
 
@@ -39,8 +41,8 @@ class CategoryFragment : Fragment() {
     }
 
     private fun initVerticalRightAdapter() {
-        val _categoryVerticalRightAdapter =
-            CategoryVerticalRightAdapter { CategoryVertical, categoryName, holder ->
+        val categoryVerticalRightAdapter =
+            CategoryVerticalRightAdapter { categoryName ->
                 //모자 fragment로 이동
                 if (categoryName == "모자")
                     parentFragmentManager.beginTransaction().apply {
@@ -50,8 +52,8 @@ class CategoryFragment : Fragment() {
                         commit()
                     }
             }
-        _categoryVerticalRightAdapter.setList(viewModel.CategoryVerticalRightDataList)
-        binding.rvCategoryVerticalRight.adapter = _categoryVerticalRightAdapter
+        categoryVerticalRightAdapter.setList(viewModel.categoryVerticalRightDataList)
+        binding.rvCategoryVerticalRight.adapter = categoryVerticalRightAdapter
     }
 
     private fun initVerticalLeftAdapter() {
