@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
 import androidx.fragment.app.viewModels
 import org.sopt.cds29cm.databinding.FragmentCategoryBinding
 
@@ -28,21 +30,86 @@ class CategoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initHorizontalAdapter()
+
+        initVerticalLeftAdapter()
+
+        /*
+                val categoryVerticalRightAdapter = CategoryVerticalRightAdapter(requireContext())
+                categoryVerticalRightAdapter.setList(viewModel.CategoryVerticalRightDataList)
+                binding.rvCategoryVerticalRight.adapter = categoryVerticalRightAdapter
+        */
+
+        val _categoryVerticalRightAdapter =
+            CategoryVerticalRightAdapter{ CategoryVertical, categoryName, holder ->
+                //fragment이동
+                Toast.makeText(context, "${categoryName}페이지 이동", Toast.LENGTH_SHORT).show()}
+                _categoryVerticalRightAdapter.setList(viewModel.CategoryVerticalRightDataList)
+        binding.rvCategoryVerticalRight.adapter = _categoryVerticalRightAdapter
+
+        binding.rvCategoryVerticalRight.setOnClickListener {
+            Toast.makeText(context, "여기", LENGTH_SHORT).show()
+            /*
+                        when(it.verticalScrollbarPosition){
+                            4->{
+                                replaceFragment(HatCategoryFragment())
+                                true
+                            }
+                            else -> false
+
+                        }
+            */
+        }
+
+
+        /*
+                initCategoryRecyclerView(viewModel.CategoryVerticalLeftDataList, binding.rvCategoryVerticalLeft, Vate)
+                initCategoryRecyclerView(viewModel.CategoryVerticalRightDataList, binding.rvCategoryVerticalRight)
+        //        binding.layoutCategoryVertical.setOnClickListener(this)
+        */
+    }
+
+    private fun initVerticalLeftAdapter() {
+        val categoryVerticalLeftAdapter = CategoryVerticalLeftAdapter(requireContext())
+        categoryVerticalLeftAdapter.setList(viewModel.CategoryVerticalLeftDataList)
+        binding.rvCategoryVerticalLeft.adapter = categoryVerticalLeftAdapter
+    }
+
+    private fun initHorizontalAdapter() {
         //viewModel에서 가로 스크롤 카테고리 리스트 가져와서 생성
         val categoryHorizontalAdapter = CategoryHorizontalAdapter(requireContext())
         categoryHorizontalAdapter.setList(viewModel.categoryHorizontalDataList)
         //fragment영역에 적용
         binding.rvCategoryHorizontal.adapter = categoryHorizontalAdapter
-
-        val categoryVerticalLeftAdapter = CategoryVerticalLeftAdapter(requireContext())
-        categoryVerticalLeftAdapter.setList(viewModel.CategoryVerticalLeftDataList)
-        binding.rvCategoryVerticalLeft.adapter = categoryVerticalLeftAdapter
-
-        val categoryVerticalRightAdapter = CategoryVerticalRightAdapter(requireContext())
-        categoryVerticalRightAdapter.setList(viewModel.CategoryVerticalRightDataList)
-        binding.rvCategoryVerticalRight.adapter = categoryVerticalRightAdapter
-
     }
+
+    /*
+        private fun initCategoryRecyclerView(categoryList: List<CategoryVertical>, recyclerBinding:RecyclerView, categoryAdapter: RecyclerView.Adapter<ViewHolder>) {
+            val adapter = categoryAdapter(requireContext())
+            adapter.setCategoryVerticalRightList(categoryList)
+            recyclerBinding.adapter = adapter
+        }
+    */
+
+    fun setOnClickListener(v: View) {
+        /*
+                when(v.id){
+                    R.id.layout_category_vertical_right ->
+                    {
+                        when(R.id.layout_category_vertical_right.)
+                    }
+                            when
+                }
+        */
+    }
+    /*
+        private fun replaceFragment(fragment: Fragment) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fcv_home, fragment)
+                .commit()
+        }
+    */
+
 
     override fun onDestroyView() {
         _binding = null
