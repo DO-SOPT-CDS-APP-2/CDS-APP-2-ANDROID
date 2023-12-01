@@ -11,7 +11,8 @@ import org.sopt.cds29cm.util.extension.setOnSingleClickListener
 
 class HatCategoryItemViewHolder(
     val binding: ItemHatCategoryVerticalBinding,
-    private val itemClick: (Int, HatCategoryItemViewHolder) -> Unit,
+    private val heartClick: (Int, HatCategoryItemViewHolder) -> Unit,
+    private val itemClick: (Int) -> Unit,
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun onBind(itemData: ResponseCategoryItemDTO, commentDataList: HatCategoryItemComment) {
@@ -31,7 +32,11 @@ class HatCategoryItemViewHolder(
         binding.tvHatCategoryVerticalItemMarkPeople.text = commentDataList.markPeople
 
         binding.ivHatCategoryVerticalItemHeart.setOnSingleClickListener {
-            itemClick(itemData.productId, this)
+            heartClick(itemData.productId, this)
+        }
+
+        binding.root.setOnSingleClickListener {
+            itemClick(itemData.productId)
         }
     }
 

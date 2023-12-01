@@ -8,8 +8,10 @@ import org.sopt.cds29cm.data.dto.response.ResponseCategoryItemDTO
 import org.sopt.cds29cm.databinding.ItemHatCategoryVerticalBinding
 
 class HatCategoryItemAdapter(
-    private val itemClick: (Int, HatCategoryItemViewHolder) -> Unit
-) : RecyclerView.Adapter<HatCategoryItemViewHolder>() {
+    private val heartClick: (Int, HatCategoryItemViewHolder) -> Unit,
+    private val itemClick: (Int) -> Unit,
+
+    ) : RecyclerView.Adapter<HatCategoryItemViewHolder>() {
 
     private var itemList: List<ResponseCategoryItemDTO> = emptyList()
     private var itemCommentList: List<HatCategoryItemComment> = emptyList()
@@ -20,7 +22,7 @@ class HatCategoryItemAdapter(
         val inflater by lazy { LayoutInflater.from(parent.context) }
         val binding: ItemHatCategoryVerticalBinding =
             ItemHatCategoryVerticalBinding.inflate(inflater, parent, false)
-        return HatCategoryItemViewHolder(binding, itemClick)
+        return HatCategoryItemViewHolder(binding, heartClick, itemClick)
     }
 
     override fun onBindViewHolder(holder: HatCategoryItemViewHolder, position: Int) {

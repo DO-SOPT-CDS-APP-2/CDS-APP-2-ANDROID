@@ -1,6 +1,8 @@
 package org.sopt.cds29cm.presentation.hatCategory
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +17,7 @@ import org.sopt.cds29cm.data.dto.response.ResponseHeartDTO
 import org.sopt.cds29cm.databinding.FragmentHatCategoryBinding
 import org.sopt.cds29cm.module.ServicePool.itemService
 import org.sopt.cds29cm.presentation.category.CategoryFragment
+import org.sopt.cds29cm.presentation.hatDetail.HatDetailActivity
 import org.sopt.cds29cm.util.extension.toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -28,8 +31,7 @@ class HatCategoryFragment : Fragment() {
     private val hatCateViewModel by viewModels<HatCategoryViewModel>()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHatCategoryBinding.inflate(inflater, container, false)
         activity?.window?.statusBarColor = ContextCompat.getColor(requireContext(), R.color.white)
@@ -60,54 +62,58 @@ class HatCategoryFragment : Fragment() {
     }
 
     private fun initCategoryItemAdapter() {
-        itemService.getCategoryItem()
-            .enqueue(object : Callback<HatCategoryItem> {
-                override fun onResponse(
-                    call: Call<HatCategoryItem>,
-                    response: Response<HatCategoryItem>
-                ) {
-                    if (response.isSuccessful) {
-                        val itemDataList: List<ResponseCategoryItemDTO> =
-                            requireNotNull(response.body()!!.data)
+        itemService.getCategoryItem().enqueue(object : Callback<HatCategoryItem> {
+            override fun onResponse(
+                call: Call<HatCategoryItem>, response: Response<HatCategoryItem>
+            ) {
+                if (response.isSuccessful) {
+                    val itemDataList: List<ResponseCategoryItemDTO> =
+                        requireNotNull(response.body()!!.data)
 
-                        _adapter =
-                            HatCategoryItemAdapter { position, holder ->
-                                itemService.putHeartItem(position)
-                                    .enqueue(object : Callback<ResponseHeartDTO<HeartDTO>> {
-                                        override fun onResponse(
-                                            call: Call<ResponseHeartDTO<HeartDTO>>,
-                                            response: Response<ResponseHeartDTO<HeartDTO>>
-                                        ) {
-                                            if (response.isSuccessful) {
-                                                val nowHeartStatus: Boolean =
-                                                    response.body()!!.data.isMade
-                                                holder.setHeart(nowHeartStatus)
-                                            } else {
-                                                toast("서버 통신 오류")
-                                            }
+                    _adapter = HatCategoryItemAdapter(
+                        { productId, holder ->
+                            itemService.putHeartItem(productId)
+                                .enqueue(object : Callback<ResponseHeartDTO<HeartDTO>> {
+                                    override fun onResponse(
+                                        call: Call<ResponseHeartDTO<HeartDTO>>,
+                                        response: Response<ResponseHeartDTO<HeartDTO>>
+                                    ) {
+                                        if (response.isSuccessful) {
+                                            val nowHeartStatus: Boolean =
+                                                response.body()!!.data.isMade
+                                            holder.setHeart(nowHeartStatus)
+                                        } else {
+                                            toast("서버 통신 오류")
                                         }
+                                    }
 
-                                        override fun onFailure(
-                                            call: Call<ResponseHeartDTO<HeartDTO>>,
-                                            t: Throwable
-                                        ) {
-                                            toast("서버 통신 실패")
-                                        }
-                                    })
+                                    override fun onFailure(
+                                        call: Call<ResponseHeartDTO<HeartDTO>>, t: Throwable
+                                    ) {
+                                        toast("서버 통신 실패")
+                                    }
+                                })
+                        },
+                        { productId ->
+                            if (productId == 3) {
+                                Intent(activity, HatDetailActivity::class.java).apply {
+                                    startActivity(this)
+                                }
                             }
+                        }
+                    )
 
-                        adapter.setList(
-                            itemDataList,
-                            hatCateViewModel.hatItemCommentDataList
-                        )
-                        binding.rvHatCategoryItem.adapter = adapter
-                    }
+                    adapter.setList(
+                        itemDataList, hatCateViewModel.hatItemCommentDataList
+                    )
+                    binding.rvHatCategoryItem.adapter = adapter
                 }
+            }
 
-                override fun onFailure(call: Call<HatCategoryItem>, t: Throwable) {
-                    toast("서버 통신 실패")
-                }
-            })
+            override fun onFailure(call: Call<HatCategoryItem>, t: Throwable) {
+                toast("서버 통신 실패")
+            }
+        })
     }
 
 
