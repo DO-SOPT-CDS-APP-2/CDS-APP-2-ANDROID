@@ -1,11 +1,9 @@
 package org.sopt.cds29cm.presentation.hatCategory
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -17,16 +15,18 @@ import org.sopt.cds29cm.data.dto.response.ResponseHeartDTO
 import org.sopt.cds29cm.databinding.FragmentHatCategoryBinding
 import org.sopt.cds29cm.module.ServicePool.itemService
 import org.sopt.cds29cm.presentation.category.CategoryFragment
+import org.sopt.cds29cm.util.extension.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class HatCategoryFragment : Fragment() {
+
     private var _binding: FragmentHatCategoryBinding? = null
     private val binding: FragmentHatCategoryBinding get() = requireNotNull(_binding)
+
     private val hatCateViewModel by viewModels<HatCategoryViewModel>()
-    private var itemsAdapter: HatCategoryItemAdapter? = null
-    private var itemsViewHolder: HatCategoryItemViewHolder? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,41 +37,29 @@ class HatCategoryFragment : Fragment() {
     }
 
     private var _adapter: HatCategoryItemAdapter? = null
-    lateinit private var fragContext: Context
     private val adapter get() = requireNotNull(_adapter) { "adapter has not initialized" }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        fragContext = context
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        with(binding)
-        {
-            initHatCategoryAdapter()
 
-            initBestItemAdapter()
-
-            initItemFilterAdapter()
-
-            initCategoryItemAdapter()
-
-            //툴바 백버튼 기능
-            ivHatCategoryToolbarBack.setOnClickListener {
-                parentFragmentManager.beginTransaction().apply {
-                    replace(R.id.fcv_main, CategoryFragment())
-                    commit()
-                }
-
-            }
-
-        }
-
-
+        initHatCategoryAdapter()
+        initBestItemAdapter()
+        initItemFilterAdapter()
+        initCategoryItemAdapter()
+        initBackBtnListener()
     }
 
-    private fun FragmentHatCategoryBinding.initCategoryItemAdapter() {
+    private fun initBackBtnListener() {
+        //툴바 백버튼 기능
+        binding.ivHatCategoryToolbarBack.setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.fcv_main, CategoryFragment())
+                commit()
+            }
+        }
+    }
+
+    private fun initCategoryItemAdapter() {
         itemService.getCategoryItem()
             .enqueue(object : Callback<HatCategoryItem> {
                 override fun onResponse(
@@ -83,7 +71,7 @@ class HatCategoryFragment : Fragment() {
                             requireNotNull(response.body()!!.data)
 
                         _adapter =
-                            HatCategoryItemAdapter { ResponseCategoryItemDTO, position, holder ->
+                            HatCategoryItemAdapter { position, holder ->
                                 itemService.putHeartItem(position)
                                     .enqueue(object : Callback<ResponseHeartDTO<HeartDTO>> {
                                         override fun onResponse(
@@ -93,19 +81,9 @@ class HatCategoryFragment : Fragment() {
                                             if (response.isSuccessful) {
                                                 val nowHeartStatus: Boolean =
                                                     response.body()!!.data.isMade
-                                                if (nowHeartStatus) {
-                                                    holder.setHeart(nowHeartStatus)
-                                                }
-                                                //하트 켜지도록
-                                                else {
-                                                    holder.setHeart(nowHeartStatus)
-                                                }
+                                                holder.setHeart(nowHeartStatus)
                                             } else {
-                                                Toast.makeText(
-                                                    context,
-                                                    "서버 통신 실패",
-                                                    Toast.LENGTH_SHORT
-                                                ).show()
+                                                toast("서버 통신 오류")
                                             }
                                         }
 
@@ -113,11 +91,7 @@ class HatCategoryFragment : Fragment() {
                                             call: Call<ResponseHeartDTO<HeartDTO>>,
                                             t: Throwable
                                         ) {
-                                            Toast.makeText(
-                                                context,
-                                                "서버 통신 실패",
-                                                Toast.LENGTH_SHORT
-                                            ).show()
+                                            toast("서버 통신 실패")
                                         }
                                     })
                             }
@@ -126,37 +100,33 @@ class HatCategoryFragment : Fragment() {
                             itemDataList,
                             hatCateViewModel.hatItemCommentDataList
                         )
-                        rvHatCategoryItem.adapter = adapter
+                        binding.rvHatCategoryItem.adapter = adapter
                     }
                 }
 
                 override fun onFailure(call: Call<HatCategoryItem>, t: Throwable) {
-                    Toast.makeText(
-                        context,
-                        "서버 통신 실패",
-                        Toast.LENGTH_SHORT,
-                    ).show()
+                    toast("서버 통신 실패")
                 }
             })
     }
 
 
-    private fun FragmentHatCategoryBinding.initItemFilterAdapter() {
+    private fun initItemFilterAdapter() {
         val itemFilterAdapter = HatCategoryFilterAdapter(requireContext())
         itemFilterAdapter.setList(hatCateViewModel.filterDataList)
-        rvHatCategoryFilter.adapter = itemFilterAdapter
+        binding.rvHatCategoryFilter.adapter = itemFilterAdapter
     }
 
-    private fun FragmentHatCategoryBinding.initBestItemAdapter() {
+    private fun initBestItemAdapter() {
         val bestItemAdapter = HatCategoryBestItemAdapter(requireContext())
         bestItemAdapter.setList(hatCateViewModel.bestItemDataList)
-        rvHatCategoryBestItem.adapter = bestItemAdapter
+        binding.rvHatCategoryBestItem.adapter = bestItemAdapter
     }
 
-    private fun FragmentHatCategoryBinding.initHatCategoryAdapter() {
+    private fun initHatCategoryAdapter() {
         val hatSubCategoryAdapter = HatCategoryHorizontalCategoryAdapter(requireContext())
         hatSubCategoryAdapter.setList(hatCateViewModel.subCategoryHatDataList)
-        rvHatCategoryHatSubCategory.adapter = hatSubCategoryAdapter
+        binding.rvHatCategoryHatSubCategory.adapter = hatSubCategoryAdapter
     }
 
     override fun onDestroyView() {

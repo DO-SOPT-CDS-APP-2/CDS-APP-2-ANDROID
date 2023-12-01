@@ -86,11 +86,4 @@ class HatCategoryViewModel : ViewModel() {
             markPeople = "(4091)"
         ),
     )
-
-     private var itemId:Int? =null
-    var itemHolder : HatCategoryItemViewHolder? =null
-    fun setPositionAndHolder(productId: Int, holder: HatCategoryItemViewHolder) {
-        itemId = productId
-        itemHolder = holder
-    }
 }

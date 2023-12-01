@@ -157,7 +157,8 @@
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/layout_hat_category_toolbar_hat_category" />
+            app:layout_constraintTop_toTopOf="@id/layout_hat_category_toolbar_hat_category"
+            tools:listitem="@layout/item_hat_category_horizontal_category" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.divider.MaterialDivider
@@ -173,7 +174,9 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/sv_hat_category_item"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider_hat_category_bottom_hat_category">
@@ -197,6 +200,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_hat_category_best_item"
+                tools:listitem="@layout/item_hat_category_best_hat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -232,11 +236,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginBottom="16dp"
+                    tools:listitem="@layout/item_hat_category_filter"
                     android:orientation="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_hat_category_item"
+                    tools:listitem="@layout/item_hat_category_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -245,6 +251,9 @@
                     tools:listItem="@layout/content_item" />
 
             </LinearLayout>
+
         </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
