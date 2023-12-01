@@ -13,7 +13,6 @@ class HatCategoryHorizontalCategoryAdapter(context: Context) :
 
     private var hatSubCategoryList: List<CategoryVertical> = emptyList()
 
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int

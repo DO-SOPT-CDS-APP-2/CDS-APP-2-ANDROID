@@ -14,7 +14,6 @@ class HatCategoryHorizontalCategoryViewHolder(private val binding: ItemHatCatego
                 tvHatCategoryHatSubCategory.setTextColor(Color.parseColor("#222222"))
         }
     }
-
 }
 
 

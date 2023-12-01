@@ -1,18 +1,10 @@
 package org.sopt.cds29cm.presentation.hatCategory
 
-import android.content.Context
 import android.icu.text.DecimalFormat
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
-import android.widget.ListAdapter
-import android.widget.Toast
-import androidx.core.content.contentValuesOf
-import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import coil.load
 import org.sopt.cds29cm.R
 import org.sopt.cds29cm.data.dataclass.HatCategoryItemComment
@@ -56,7 +48,6 @@ class HatCategoryItemAdapter(
                 tvHatCategoryVerticalItemHeart.text = commentDataList.heart
                 tvHatCategoryVerticalItemMark.text = commentDataList.mark
                 tvHatCategoryVerticalItemMarkPeople.text = commentDataList.markPeople
-                tvHatCategoryVerticalItemProductId.text = mItemData.productId.toString()
                 if (mItemData.brand.toString() == "시오르")
                     ivHatCategoryVerticalItemHeart.setImageResource(R.drawable.ic_like_on_black_24dp)
                 if (adapterPosition != RecyclerView.NO_POSITION) {
@@ -65,7 +56,6 @@ class HatCategoryItemAdapter(
                             mItemData.productId.toString(),
                             itemViewBinding
                         )
-                        Log.d("어댑터에서", "클릭됌")
                     }
                 }
 
@@ -89,15 +79,5 @@ class HatCategoryItemAdapter(
         this.itemCommentList = markList.toList()
         notifyDataSetChanged()
     }
-
-/*
-    fun notifyHeartChanged(position: Int, heart :Boolean){
-        if(position==itemDataList[position].productId)
-        viewHolder.setHeart(heart )
-
-
-    }
-*/
-
 
 }

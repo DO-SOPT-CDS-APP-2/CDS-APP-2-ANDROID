@@ -63,85 +63,7 @@ class HatCategoryFragment : Fragment() {
 
             initItemFilterAdapter()
 
-
-            //item 불러오기
-            itemService.getCategoryItem()
-                .enqueue(object : Callback<HatCategoryItem> {
-                    override fun onResponse(
-                        call: Call<HatCategoryItem>,
-                        response: Response<HatCategoryItem>
-                    ) {
-                        if (response.isSuccessful) {
-                            val itemDataList: List<ResponseCategoryItemDTO> =
-                                requireNotNull(response.body()!!.data)
-
-                            _adapter =
-                                HatCategoryItemAdapter { ResponseCategoryItemDTO, position, holder ->
-                                    itemService.putHeartItem(position)
-                                        .enqueue(object : Callback<ResponseHeartDTO<HeartDTO>> {
-                                            override fun onResponse(
-                                                call: Call<ResponseHeartDTO<HeartDTO>>,
-                                                response: Response<ResponseHeartDTO<HeartDTO>>
-                                            ) {
-                                                if (response.isSuccessful) {
-                                                    val nowHeartStatus: Boolean =
-                                                        response.body()!!.data.isMade
-                                                    if (nowHeartStatus) {
-                                                        Toast.makeText(
-                                                            context,
-                                                            "${position}번 하트 켜짐",
-                                                            Toast.LENGTH_SHORT
-                                                        ).show()
-                                                        holder.setHeart(nowHeartStatus)
-                                                    }
-
-                                                    //하트 켜지도록
-                                                    else {
-                                                        Toast.makeText(
-                                                            context,
-                                                            "${position}번 하트 꺼짐",
-                                                            Toast.LENGTH_SHORT
-                                                        ).show()
-                                                        holder.setHeart(nowHeartStatus)
-                                                    }
-                                                } else {
-                                                    Toast.makeText(
-                                                        context,
-                                                        "서버 통신 실패",
-                                                        Toast.LENGTH_SHORT
-                                                    ).show()
-                                                }
-                                            }
-
-                                            override fun onFailure(
-                                                call: Call<ResponseHeartDTO<HeartDTO>>,
-                                                t: Throwable
-                                            ) {
-                                                Toast.makeText(
-                                                    context,
-                                                    "서버 통신 실패",
-                                                    Toast.LENGTH_SHORT
-                                                ).show()
-                                            }
-                                        })
-                                }
-
-                            adapter.setList(
-                                itemDataList,
-                                hatCateViewModel.hatItemCommentDataList
-                            )
-                            rvHatCategoryItem.adapter = adapter
-                        }
-                    }
-
-                    override fun onFailure(call: Call<HatCategoryItem>, t: Throwable) {
-                        Toast.makeText(
-                            context,
-                            "서버 통신 실패",
-                            Toast.LENGTH_SHORT,
-                        ).show()
-                    }
-                })
+            initCategoryItemAdapter()
 
             //툴바 백버튼 기능
             ivHatCategoryToolbarBack.setOnClickListener {
@@ -155,6 +77,75 @@ class HatCategoryFragment : Fragment() {
         }
 
 
+    }
+
+    private fun FragmentHatCategoryBinding.initCategoryItemAdapter() {
+        itemService.getCategoryItem()
+            .enqueue(object : Callback<HatCategoryItem> {
+                override fun onResponse(
+                    call: Call<HatCategoryItem>,
+                    response: Response<HatCategoryItem>
+                ) {
+                    if (response.isSuccessful) {
+                        val itemDataList: List<ResponseCategoryItemDTO> =
+                            requireNotNull(response.body()!!.data)
+
+                        _adapter =
+                            HatCategoryItemAdapter { ResponseCategoryItemDTO, position, holder ->
+                                itemService.putHeartItem(position)
+                                    .enqueue(object : Callback<ResponseHeartDTO<HeartDTO>> {
+                                        override fun onResponse(
+                                            call: Call<ResponseHeartDTO<HeartDTO>>,
+                                            response: Response<ResponseHeartDTO<HeartDTO>>
+                                        ) {
+                                            if (response.isSuccessful) {
+                                                val nowHeartStatus: Boolean =
+                                                    response.body()!!.data.isMade
+                                                if (nowHeartStatus) {
+                                                    holder.setHeart(nowHeartStatus)
+                                                }
+                                                //하트 켜지도록
+                                                else {
+                                                    holder.setHeart(nowHeartStatus)
+                                                }
+                                            } else {
+                                                Toast.makeText(
+                                                    context,
+                                                    "서버 통신 실패",
+                                                    Toast.LENGTH_SHORT
+                                                ).show()
+                                            }
+                                        }
+
+                                        override fun onFailure(
+                                            call: Call<ResponseHeartDTO<HeartDTO>>,
+                                            t: Throwable
+                                        ) {
+                                            Toast.makeText(
+                                                context,
+                                                "서버 통신 실패",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        }
+                                    })
+                            }
+
+                        adapter.setList(
+                            itemDataList,
+                            hatCateViewModel.hatItemCommentDataList
+                        )
+                        rvHatCategoryItem.adapter = adapter
+                    }
+                }
+
+                override fun onFailure(call: Call<HatCategoryItem>, t: Throwable) {
+                    Toast.makeText(
+                        context,
+                        "서버 통신 실패",
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                }
+            })
     }
 
 

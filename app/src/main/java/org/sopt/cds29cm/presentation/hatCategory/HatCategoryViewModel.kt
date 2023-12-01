@@ -93,6 +93,4 @@ class HatCategoryViewModel : ViewModel() {
         itemId = productId
         itemHolder = holder
     }
-
-
 }

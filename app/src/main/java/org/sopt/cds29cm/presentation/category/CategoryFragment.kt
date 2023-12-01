@@ -21,9 +21,6 @@ class CategoryFragment : Fragment() {
     //viewModel 생성
     private val viewModel by viewModels<CategoryViewModel>()
 
-    /*
-        private lateinit var categoryItem : ItemCategoryVerticalRightBinding?= null
-    */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,12 +36,11 @@ class CategoryFragment : Fragment() {
 
         initVerticalLeftAdapter()
 
-        /*
-                val categoryVerticalRightAdapter = CategoryVerticalRightAdapter(requireContext())
-                categoryVerticalRightAdapter.setList(viewModel.CategoryVerticalRightDataList)
-                binding.rvCategoryVerticalRight.adapter = categoryVerticalRightAdapter
-        */
+        initVerticalRightAdapter()
 
+    }
+
+    private fun initVerticalRightAdapter() {
         val _categoryVerticalRightAdapter =
             CategoryVerticalRightAdapter { CategoryVertical, categoryName, holder ->
                 //모자 fragment로 이동
@@ -58,27 +54,6 @@ class CategoryFragment : Fragment() {
             }
         _categoryVerticalRightAdapter.setList(viewModel.CategoryVerticalRightDataList)
         binding.rvCategoryVerticalRight.adapter = _categoryVerticalRightAdapter
-
-        binding.rvCategoryVerticalRight.setOnClickListener {
-            Toast.makeText(context, "여기", LENGTH_SHORT).show()
-            /*
-                        when(it.verticalScrollbarPosition){
-                            4->{
-                                replaceFragment(HatCategoryFragment())
-                                true
-                            }
-                            else -> false
-
-                        }
-            */
-        }
-
-
-        /*
-                initCategoryRecyclerView(viewModel.CategoryVerticalLeftDataList, binding.rvCategoryVerticalLeft, Vate)
-                initCategoryRecyclerView(viewModel.CategoryVerticalRightDataList, binding.rvCategoryVerticalRight)
-        //        binding.layoutCategoryVertical.setOnClickListener(this)
-        */
     }
 
     private fun initVerticalLeftAdapter() {
@@ -94,34 +69,6 @@ class CategoryFragment : Fragment() {
         //fragment영역에 적용
         binding.rvCategoryHorizontal.adapter = categoryHorizontalAdapter
     }
-
-    /*
-        private fun initCategoryRecyclerView(categoryList: List<CategoryVertical>, recyclerBinding:RecyclerView, categoryAdapter: RecyclerView.Adapter<ViewHolder>) {
-            val adapter = categoryAdapter(requireContext())
-            adapter.setCategoryVerticalRightList(categoryList)
-            recyclerBinding.adapter = adapter
-        }
-    */
-
-    fun setOnClickListener(v: View) {
-        /*
-                when(v.id){
-                    R.id.layout_category_vertical_right ->
-                    {
-                        when(R.id.layout_category_vertical_right.)
-                    }
-                            when
-                }
-        */
-    }
-    /*
-        private fun replaceFragment(fragment: Fragment) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fcv_home, fragment)
-                .commit()
-        }
-    */
-
 
     override fun onDestroyView() {
         _binding = null
