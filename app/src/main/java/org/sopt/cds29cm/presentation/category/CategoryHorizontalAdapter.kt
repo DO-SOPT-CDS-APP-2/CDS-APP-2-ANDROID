@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import org.sopt.cds29cm.data.CategoryHorizontal
+import org.sopt.cds29cm.data.dataclass.CategoryHorizontal
 import org.sopt.cds29cm.databinding.ItemCategoryHorizontalBinding
 
 class CategoryHorizontalAdapter(context: Context) :

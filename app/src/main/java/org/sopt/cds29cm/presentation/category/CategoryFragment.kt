@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.fragment.app.viewModels
+import org.sopt.cds29cm.R
 import org.sopt.cds29cm.databinding.FragmentCategoryBinding
+import org.sopt.cds29cm.presentation.hatCategorimport.HatCategoryFragment
 
 
 class CategoryFragment : Fragment() {
@@ -19,6 +21,9 @@ class CategoryFragment : Fragment() {
     //viewModel 생성
     private val viewModel by viewModels<CategoryViewModel>()
 
+    /*
+        private lateinit var categoryItem : ItemCategoryVerticalRightBinding?= null
+    */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,10 +46,17 @@ class CategoryFragment : Fragment() {
         */
 
         val _categoryVerticalRightAdapter =
-            CategoryVerticalRightAdapter{ CategoryVertical, categoryName, holder ->
-                //fragment이동
-                Toast.makeText(context, "${categoryName}페이지 이동", Toast.LENGTH_SHORT).show()}
-                _categoryVerticalRightAdapter.setList(viewModel.CategoryVerticalRightDataList)
+            CategoryVerticalRightAdapter { CategoryVertical, categoryName, holder ->
+                //모자 fragment로 이동
+                if (categoryName == "모자")
+                    parentFragmentManager.beginTransaction().apply {
+                        replace(R.id.fcv_main, HatCategoryFragment())
+                        //백 기능 적용
+                        addToBackStack(null)
+                        commit()
+                    }
+            }
+        _categoryVerticalRightAdapter.setList(viewModel.CategoryVerticalRightDataList)
         binding.rvCategoryVerticalRight.adapter = _categoryVerticalRightAdapter
 
         binding.rvCategoryVerticalRight.setOnClickListener {
