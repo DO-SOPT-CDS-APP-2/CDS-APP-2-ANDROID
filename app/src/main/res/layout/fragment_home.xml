@@ -91,6 +91,7 @@
         android:id="@+id/sv_home"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:overScrollMode="never"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -318,7 +319,7 @@
                 android:id="@+id/rv_home_recommend"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="6dp"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
@@ -329,8 +330,9 @@
 
             <TextView
                 android:id="@+id/tv_home_recommend_btn"
-                android:layout_width="336dp"
+                android:layout_width="0dp"
                 android:layout_height="46dp"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/shape_gray_line_rect"
                 android:gravity="center"
@@ -356,7 +358,7 @@
                 android:id="@+id/rv_home_issue"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="6dp"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -437,7 +439,7 @@
                 android:id="@+id/rv_home_popular"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="6dp"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

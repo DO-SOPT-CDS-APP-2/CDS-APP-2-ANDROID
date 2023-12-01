@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import org.sopt.cds29cm.R
 import org.sopt.cds29cm.data.dto.response.HomeResponseDto
 import org.sopt.cds29cm.databinding.FragmentHomeBinding
 import org.sopt.cds29cm.module.ServicePool.homeService
@@ -24,6 +26,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        activity?.window?.statusBarColor = ContextCompat.getColor(requireContext(), R.color.black)
         return binding.root
     }
 
@@ -77,7 +80,6 @@ class HomeFragment : Fragment() {
     private fun observeResponseSuccess() {
         viewModel.responseSuccess.observe(viewLifecycleOwner) {
             if (it) {
-                toast("통신 성공")
                 val data = viewModel.dataResult.value
                 if (data != null) {
                     setDataList(data)

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import org.sopt.cds29cm.R
@@ -31,6 +32,7 @@ class HatCategoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHatCategoryBinding.inflate(inflater, container, false)
+        activity?.window?.statusBarColor = ContextCompat.getColor(requireContext(), R.color.white)
         return binding.root
     }
 
