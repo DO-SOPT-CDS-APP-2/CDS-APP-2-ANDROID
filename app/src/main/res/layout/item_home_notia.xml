@@ -7,8 +7,9 @@
 
     <ImageView
         android:id="@+id/iv_home_line"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/ic_line_gray"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,9 +40,9 @@
         android:id="@+id/tv_home_sub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
         android:textSize="8sp"
-        android:paddingTop="10dp"
         app:layout_constraintStart_toStartOf="@id/tv_home_brand"
         app:layout_constraintTop_toBottomOf="@id/tv_home_brand"
         tools:text="MERINO WOOL ROUND CARDIGAN - RED" />
@@ -50,10 +51,10 @@
         android:id="@+id/tv_home_discount_rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
         android:textAppearance="@style/TextAppearance.Kor.Bold"
         android:textColor="@color/point"
         android:textSize="10sp"
-        android:paddingTop="10dp"
         app:layout_constraintStart_toStartOf="@id/tv_home_brand"
         app:layout_constraintTop_toBottomOf="@id/tv_home_sub"
         tools:text="10%" />
@@ -63,9 +64,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:paddingTop="10dp"
         android:textAppearance="@style/TextAppearance.Kor.Bold"
         android:textSize="10sp"
-        android:paddingTop="10dp"
         app:layout_constraintStart_toEndOf="@id/tv_home_discount_rate"
         app:layout_constraintTop_toTopOf="@id/tv_home_discount_rate"
         tools:text="106,200" />

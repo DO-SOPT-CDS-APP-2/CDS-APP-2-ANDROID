@@ -135,7 +135,7 @@
                 app:layout_constraintTop_toBottomOf="@id/iv_home_main_image">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="parent">
@@ -262,9 +262,11 @@
 
             <ImageView
                 android:id="@+id/iv_home_recommendation"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
                 android:src="@drawable/img_home_43"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -283,13 +285,14 @@
 
             <TextView
                 android:id="@+id/tv_home_recommendation_sub"
-                android:layout_width="340dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="노티아와 크리에이터 디팟이 추천합니다. 올 겨울 코디하기 좋은
 다양한 룩을 준비했어요."
                 android:textAppearance="@style/TextAppearance.Kor.Regular"
                 android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/iv_home_recommendation"
                 app:layout_constraintStart_toStartOf="@id/iv_home_recommendation"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_44" />
 
@@ -450,9 +453,11 @@
 
             <ImageView
                 android:id="@+id/iv_home_58"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="40dp"
+                android:adjustViewBounds="true"
                 android:src="@drawable/img_home_58"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -462,7 +467,7 @@
                 android:id="@+id/tv_home_59"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="20dp"
                 android:text="디팟입점회로 만나요"
                 android:textAppearance="@style/TextAppearance.Kor.Bold"
                 android:textSize="18sp"
@@ -471,22 +476,24 @@
 
             <TextView
                 android:id="@+id/tv_home_60"
-                android:layout_width="340dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="10dp"
                 android:text="마론에디션의 디팟입점회가 시작되었어요. 29% 쿠폰으로 만나는 큰
 혜택, 놓치지 마시길 바라요!"
                 android:textAppearance="@style/TextAppearance.Kor.Regular"
                 android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@id/iv_home_recommendation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_59" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_marron"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
                 android:orientation="vertical"
+                android:paddingBottom="20dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
